@@ -1,0 +1,26 @@
+
+#wrapper{
+    width:940px;
+    height:501px;
+	text-align:left;
+    margin: 0 auto 0px;
+    padding:0 0px 0px 10px;
+	border:none;
+	display:block;
+}
+
+
+#bigPic{
+	width:940px;
+	height:501px;
+	padding:1px;
+	display:block;
+	
+	
+	
+}
+#bigPic img{
+	position:relative;
+	display:none;
+	
+}
