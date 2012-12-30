@@ -15,16 +15,16 @@ class c_sitead extends CI_Controller {
             $username = $this->input->post('username');
             $password = $this->input->post('password');
 
-            $user_id = $this->load->sitead->valid_user_pass($username, $password);
+            $user_id = $this->sitead->valid_user_pass($username, $password);
 
             if (!$user_id) {
-                $login_data = array("logged_error" => true);
-                $this->load->view('view_login');
+                $login_data = array("login_error" => true);
+                $this->load->view('view_login',$login_data);
             } else {
 
                 $login_data = array("logged_in" => true, "user_id" => $user_id);
                 $this->session->set_userdata($login_data);
-                redirect('');
+                redirect('site');
             }
         }
     }

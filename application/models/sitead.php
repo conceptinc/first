@@ -2,7 +2,7 @@
 
 class sitead extends CI_Model {
 
-    function valid_user_pass($user, $pass) {
+    public function valid_user_pass($user, $pass) {
 
         $this->db->select('id,username,password');
         $this->db->from('sitead');

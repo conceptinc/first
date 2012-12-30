@@ -74,7 +74,7 @@
             <h1>Please login</h1>
             <p>Use the form below to login to our site..</p>
             <div >
-                <?php echo form_open(''); ?>
+                <?php echo form_open('c_sitead/valid_loign'); ?>
 
                 <ul >
 
@@ -83,9 +83,11 @@
 
                     <li><label>Password</label></li>
                     <div><?php echo form_password(array('id' => 'password', 'name' => 'password')); ?></div><?php
-                if ($this->session->flashdata('login_error')) {
+               
+                    if ($this->session->flashdata('login_error')) {
                     echo "Username or Password is incorrect";
                 }
+                
                 echo '<p class="error"> ' . validation_errors() . '</p>';
                 ?>
                     <li><?php echo form_submit(array('name' => 'submit'), 'login'); ?></li>
