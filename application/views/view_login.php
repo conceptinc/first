@@ -83,16 +83,18 @@
 
                     <li><label>Password</label></li>
                     <div><?php echo form_password(array('id' => 'password', 'name' => 'password')); ?></div><?php
-               
-                    if ($this->session->flashdata('login_error')) {
-                    echo "Username or Password is incorrect";
-                }
                 
+                    if (isset($login_error)) {
+                    if ($login_error) {
+                        echo "Username or Password is incorrect";
+                    }
+                }
+
                 echo '<p class="error"> ' . validation_errors() . '</p>';
                 ?>
                     <li><?php echo form_submit(array('name' => 'submit'), 'login'); ?></li>
                 </ul>
-                <?php echo form_close(); ?>
+<?php echo form_close(); ?>
 
             </div>
 

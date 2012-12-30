@@ -11,5 +11,12 @@ class site extends CI_Controller {
             $this->load->view('view_login');
         }
 	
+        public function load_admin(){
+              if ($this->session->userdata('logged_in')){
+            $this->load->view('admin/view_admin');
+        } else {
+            $this->load->view('view_login');
+        }
+        }
 	
 }
