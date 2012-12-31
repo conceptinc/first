@@ -13,7 +13,7 @@ class site extends CI_Controller {
 	
         public function load_admin(){
               if ($this->session->userdata('logged_in')){
-            $this->load->view('admin/view_admin');
+            $this->load->view('civou/view_admin');
         } else {
             $this->load->view('view_login');
         }

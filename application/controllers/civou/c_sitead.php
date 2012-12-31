@@ -8,7 +8,7 @@ class c_sitead extends CI_Controller {
 
     public function is_loged_in() {
         if ($this->session->userdata('logged_in')) {
-            $this->load->view('admin/view_admin');
+            $this->load->view('civou/view_admin');
         } else {
             $this->load->view('view_login');
         }

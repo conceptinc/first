@@ -74,7 +74,7 @@
             <h1>Please login</h1>
             <p>Use the form below to login to our site..</p>
             <div >
-                <?php echo form_open('c_sitead/valid_loign'); ?>
+                <?php echo form_open('civou/c_sitead/valid_loign'); ?>
 
                 <ul >
 
