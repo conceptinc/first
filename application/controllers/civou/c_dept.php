@@ -12,6 +12,8 @@
  */
 class c_dept extends CI_Controller {
 
+    // add main deprtment 
+
     public function add() {
 
         if ($this->session->userdata('logged_in')) {
@@ -33,6 +35,7 @@ class c_dept extends CI_Controller {
         }
     }
 
+    // show all dept in order 
     public function load_dept_view() {
         if ($this->session->userdata('logged_in')) {
             $this->load->model('dept');
@@ -43,8 +46,9 @@ class c_dept extends CI_Controller {
         }
     }
 
+    // edit the order of  the  dept 
     public function edit_order() {
-        
+
         if ($this->session->userdata('logged_in')) {
             $this->load->model('dept');
             for ($i = 1;; $i++) {
@@ -61,8 +65,37 @@ class c_dept extends CI_Controller {
             redirect('');
         }
     }
+
+    // methos to  handle  sub department 
+
+    public function loadSubDeptView() {
+        if ($this->session->userdata('logged_in')) {
+            $this->load->model('dept');
+            $data['re'] = $this->dept->showAll();
+            $this->load->view('civou/view_subDept', $data);
+        } else {
+            redirect('admin/login');
+        }
+    }
     
-    
+    function addSubDept() {
+        
+        if ($this->session->userdata('logged_in')) {
+            $this->load->library('form_validation');
+            $this->form_validation->set_rules('subdeptname', 'Sub_Department Name ', 'required|trim|max_length[45]|xss_clean');
+              if ($this->form_validation->run() == false) {
+            } else {    
+                $d_n = $this->input->post('subdeptname');
+                $d_id = $this->input->post('dept');
+                $da = array('name' => $d_n,'dept_id' => $d_id);
+                $this->load->model('dept');
+                $this->dept->createSubDept($da);
+                $this->load->view('civou/view_admin');
+            }
+        } else {
+            redirect('admin/login');
+        }
+    }
 
 }
 

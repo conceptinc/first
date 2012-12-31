@@ -18,8 +18,10 @@ class dept extends CI_Model {
         $this->db->where('id', $id);
         $this->db->update('dept', $data);
     }
-    
-    
+
+    function createSubDept($data) {
+        $this->db->insert("sub_dept", $data);
+    }
 
 }
 

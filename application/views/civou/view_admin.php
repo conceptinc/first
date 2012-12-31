@@ -14,28 +14,32 @@
             td{
                 height: 45px;
                 padding-left: 8px;
-				text-align:center;
+                text-align:center;
             }
             a{
                 text-decoration: none;
-				color:#600;
+                color:#600;
             }
-			a:hover{text-decoration:underline; color:#C00}
-			
+            a:hover{text-decoration:underline; color:#C00}			
         </style>
     </head>
     <body>
 
         <div id="header" >
         </div>
-        
+
         <div id="content">
             <table border="1" width="900" >
-                <h3> اداره  الاعلانات</h3>                                          
+                <h3> اداره  الاقسام 
+                </h3>                                          
                 <tr>                                                 
-                   <td>
-                       <a href="<?php echo site_url('civou/c_dept/load_dept_view'); ?>"  >   اداره الاقسام  الرئيسيه  </a>
-                   </td>
+                    <td>
+                        <a href="<?php echo site_url('civou/c_dept/load_dept_view'); ?>"  >   اداره الاقسام  الرئيسيه  </a>
+                    </td>
+                    <td>
+                        <a href="<?php echo site_url('civou/c_dept/loadSubDeptView'); ?>"  >   اداره الاقسام  الفرعيه   </a>
+                    </td>
+
                 </tr>
             </table>                                               
         </div>
