@@ -41,6 +41,11 @@
                     </td>
 
                 </tr>
+                <tr>
+                    <td>
+                        <a href="<?php echo site_url('civou/c_adv/load_adv_add'); ?>" > اداره الاعلانات </a>
+                    </td>
+                </tr>
             </table>                                               
         </div>
 

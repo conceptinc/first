@@ -51,6 +51,7 @@ class c_dept extends CI_Controller {
 
         if ($this->session->userdata('logged_in')) {
             $this->load->model('dept');
+            
             for ($i = 1;; $i++) {
                 $nn = $this->input->post('order' . $i);
                 if ($nn != "") {
