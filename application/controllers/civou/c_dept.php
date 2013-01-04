@@ -14,23 +14,6 @@ class c_dept extends CI_Controller {
 
     // add main deprtment 
 
-    public function mohamed() {
-        
-    }
-
-    public function malah(){
-        
-    }
-    
-    public function temraz(){
-        
-    }
-
-    
-    public function third(){
-        
-       
-    }
 
     public function add() {
 
