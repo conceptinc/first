@@ -22,8 +22,16 @@ class c_dept extends CI_Controller {
         
     }
     
+    public function temraz(){
+        
+    }
+
     
-    
+    public function third(){
+        
+       
+    }
+
     public function add() {
 
         if ($this->session->userdata('logged_in')) {
