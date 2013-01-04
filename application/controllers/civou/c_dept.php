@@ -14,8 +14,14 @@ class c_dept extends CI_Controller {
 
     // add main deprtment 
 
-    
-   
+
+    public function mohamed() {
+        
+    }
+
+    public function malah(){
+        
+    }
     
     public function add() {
 
@@ -54,7 +60,7 @@ class c_dept extends CI_Controller {
 
         if ($this->session->userdata('logged_in')) {
             $this->load->model('dept');
-            
+
             for ($i = 1;; $i++) {
                 $nn = $this->input->post('order' . $i);
                 if ($nn != "") {
@@ -81,17 +87,18 @@ class c_dept extends CI_Controller {
             redirect('admin/login');
         }
     }
-    
+
     function addSubDept() {
-        
+
         if ($this->session->userdata('logged_in')) {
             $this->load->library('form_validation');
             $this->form_validation->set_rules('subdeptname', 'Sub_Department Name ', 'required|trim|max_length[45]|xss_clean');
-              if ($this->form_validation->run() == false) {
-            } else {    
+            if ($this->form_validation->run() == false) {
+                
+            } else {
                 $d_n = $this->input->post('subdeptname');
                 $d_id = $this->input->post('dept');
-                $da = array('name' => $d_n,'dept_id' => $d_id);
+                $da = array('name' => $d_n, 'dept_id' => $d_id);
                 $this->load->model('dept');
                 $this->dept->createSubDept($da);
                 $this->load->view('civou/view_admin');
