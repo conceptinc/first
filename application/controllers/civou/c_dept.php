@@ -21,7 +21,11 @@ class c_dept extends CI_Controller {
     public function malah(){
         
     }
-    
+    public function temraz(){
+        
+    }
+
+
     public function add() {
 
         if ($this->session->userdata('logged_in')) {
