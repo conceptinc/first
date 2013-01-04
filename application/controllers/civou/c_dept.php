@@ -14,6 +14,9 @@ class c_dept extends CI_Controller {
 
     // add main deprtment 
 
+    
+   
+    
     public function add() {
 
         if ($this->session->userdata('logged_in')) {
