@@ -14,7 +14,6 @@ class c_dept extends CI_Controller {
 
     // add main deprtment 
 
-
     public function mohamed() {
         
     }
