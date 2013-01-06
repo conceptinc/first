@@ -67,14 +67,15 @@
                 var completed 			= '0%'; //initial progressbar value
                 var FileInputsHolder 	= $('#AddFileInputBox'); //Element where additional file inputs are appended
                 var MaxFileInputs		= 20; //Maximum number of file input boxs
-
+                      var m=1;
                 // adding and removing file input box
                 var i = $('#AddFileInputBox div').size() + 1;
                 $('#AddMoreFileBox').live('click', function() {
                     if(i < MaxFileInputs)
                     {
-                        $('<span><input type="file" id="fileInputBox" size="20" name="file[]" class="addedInput" value=""/><a href="#" class="small2" id="removeFileBox"><img src="<?php echo base_url(); ?>images/close_icon.gif" border="0" /></a></span>').appendTo(FileInputsHolder);
+                        $('<span><input type="file" id="fileInputBox" size="20" name="file'+m+'"  class="addedInput" value=""/><a href="#" class="small2" id="removeFileBox"><img src="<?php echo base_url(); ?>images/close_icon.gif" border="0" /></a></span>').appendTo(FileInputsHolder);
                         i++;
+                        m++;
                     }
                     return false;
                 });
@@ -132,39 +133,36 @@
 
     <body>
 
+        <?php echo form_open_multipart('civou/c_adv/test'); ?>
 
-        <?php echo form_open_multipart('c_golden_adv/add_golden_adv'); ?>
+        <!--        <form action="#" name="form" id="form" method="post" onsubmit="return alert_id();"
+                      enctype="multipart/form-data"  >-->
 
-
-        <form action="#" name="form" id="form" method="post" onsubmit="return alert_id();" enctype="multipart/form-data">
-
-            <div class="both">
-                <h4>Select Category</h4>
-                <select name="search_category"  id="search_category_id">
-                    <option value="" selected="selected"></option>
-                    <?php
-                    $query = "select * from dept";
-                    $results = mysql_query($query);
-                    while ($rows = mysql_fetch_assoc(@$results)) {
-                        ?>
-                        <option value="<?php echo $rows['id']; ?>"><?php echo $rows['name']; ?></option>
-                    <?php }
+        <div class="both">
+            <h4>Select Category</h4>
+            <select name="search_category"  id="search_category_id">
+                <option value="" selected="selected"></option>
+                <?php
+                $query = "select * from dept";
+                $results = mysql_query($query);
+                while ($rows = mysql_fetch_assoc(@$results)) {
                     ?>
-                </select>		
-            </div>
+                    <option value="<?php echo $rows['id']; ?>"><?php echo $rows['name']; ?></option>
+                <?php }
+                ?>
+            </select>		
+        </div>
 
-            <div class="both">
-                <h4 id="show_heading">Select Sub Category</h4>
-                <div id="show_sub_categories" align="center">
-                    <img src="<?php echo base_url(); ?>images/loader.gif" style="margin-top:8px; float:left" id="loader" alt="" />
-                </div>
+        <div class="both">
+            <h4 id="show_heading">Select Sub Category</h4>
+            <div id="show_sub_categories" align="center">
+                <img src="<?php echo base_url(); ?>images/loader.gif" style="margin-top:8px; float:left" id="loader" alt="" />
             </div>
-            <br clear="all" /><br clear="all" />
-        </form>
-
+        </div>
+        <br clear="all" /><br clear="all" />
+        <!--        </form>-->
 
         <div>
-
             <?php
             echo "<br/><br/>";
             echo "الاسم   :   ";
@@ -194,25 +192,25 @@
 
         </div>
 
-
         <div id="uploaderform">
-            <form  name="UploadForm" id="UploadForm">
+<!--            <form  name="UploadForm" id="UploadForm">-->
                 <label>  صور خاصه بالاعلان 
                     <span class="small"><a href="#" id="AddMoreFileBox">Add More Files</a></span>
                 </label>
                 <div id="AddFileInputBox">
-                    <input id="fileInputBox" style="margin-bottom: 5px;" type="file"  name="file[]"/></div>
+                    <input id="fileInputBox" style="margin-bottom: 5px;" type="file"  name="file"/></div>
                 <div class="sep_s"></div>
 
                 <div id="progressbox"><div id="progressbar"></div ><div id="statustxt">0%</div ></div>
-            </form>
+<!--            </form>-->
         </div>
-
         <br/><br/>
 
         <?php
         echo form_submit('upload', 'حفظ');
+
         echo "<br/><br/>";
+
         echo form_close();
         ?>
 
