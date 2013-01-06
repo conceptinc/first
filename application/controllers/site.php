@@ -4,8 +4,22 @@ class site extends CI_Controller {
 
 	public function index()
 	{
-	$this->load->view('index');	
+		
+	$this->start();
 	}
+	
+          function start(){
+			   $this->load->model('slider_model');
+
+        $slider_pics = $this->slider_model->load_img();
+
+        if ($slider_pics->num_rows() > 0) {
+            $data1['big_pics'] = $slider_pics->result();
+        }
+		
+		$this->load->view('index' ,$data1);	
+			  }
+		////////////////////////////////////	  
 	
         public function login(){
             $this->load->view('view_login');
