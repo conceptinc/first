@@ -67,7 +67,7 @@
                 var completed 			= '0%'; //initial progressbar value
                 var FileInputsHolder 	= $('#AddFileInputBox'); //Element where additional file inputs are appended
                 var MaxFileInputs		= 20; //Maximum number of file input boxs
-                      var m=1;
+                var m=1;
                 // adding and removing file input box
                 var i = $('#AddFileInputBox div').size() + 1;
                 $('#AddMoreFileBox').live('click', function() {
@@ -163,6 +163,13 @@
         <!--        </form>-->
 
         <div>
+
+            <select name="advtype">
+                <option value="1" >ذهبى </option>
+                <option value="2" >فضى </option>
+                <option value="3" >عادى</option>
+            </select>
+
             <?php
             echo "<br/><br/>";
             echo "الاسم   :   ";
@@ -193,26 +200,26 @@
         </div>
 
         <div id="uploaderform">
-<!--            <form  name="UploadForm" id="UploadForm">-->
-                <label>  صور خاصه بالاعلان 
-                    <span class="small"><a href="#" id="AddMoreFileBox">Add More Files</a></span>
-                </label>
-                <div id="AddFileInputBox">
-                    <input id="fileInputBox" style="margin-bottom: 5px;" type="file"  name="file"/></div>
-                <div class="sep_s"></div>
+            <!--            <form  name="UploadForm" id="UploadForm">-->
+            <label>  صور خاصه بالاعلان 
+                <span class="small"><a href="#" id="AddMoreFileBox">Add More Files</a></span>
+            </label>
+            <div id="AddFileInputBox">
+                <input id="fileInputBox" style="margin-bottom: 5px;" type="file"  name="file"/></div>
+            <div class="sep_s"></div>
 
-                <div id="progressbox"><div id="progressbar"></div ><div id="statustxt">0%</div ></div>
-<!--            </form>-->
+            <div id="progressbox"><div id="progressbar"></div ><div id="statustxt">0%</div ></div>
+            <!--            </form>-->
         </div>
         <br/><br/>
 
-        <?php
-        echo form_submit('upload', 'حفظ');
+<?php
+echo form_submit('upload', 'حفظ');
 
-        echo "<br/><br/>";
+echo "<br/><br/>";
 
-        echo form_close();
-        ?>
+echo form_close();
+?>
 
     </body>  
 
