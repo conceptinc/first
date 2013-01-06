@@ -50,22 +50,12 @@
 		
 		<div id='body'>
 			<div id="bigPic">
-				<img src="<?php echo base_url();?>images/slide1.jpg" width="940" height="500"  />
-				<img src="<?php echo base_url();?>images/slide12.jpg" width="940" height="500"  />
-				<img src="<?php echo base_url();?>images/slide3.jpg" width="940" height="500"  />
-                
-				<img src="<?php echo base_url();?>images/slide1.jpg" width="940" height="500"  />
-				<img src="<?php echo base_url();?>images/slide12.jpg" width="940" height="500"  />
-				<img src="<?php echo base_url();?>images/slide3.jpg" width="940" height="500"  />
-                
-				<img src="<?php echo base_url();?>images/slide1.jpg" width="940" height="500"  />
-				<img src="<?php echo base_url();?>images/slide12.jpg" width="940" height="500"  />
-				<img src="<?php echo base_url();?>images/slide3.jpg" width="940" height="500"  />
-                
-				<img src="<?php echo base_url();?>images/slide1.jpg" width="940" height="500"  />
-				<img src="<?php echo base_url();?>images/slide12.jpg" width="940" height="500"  />
-				<img src="<?php echo base_url();?>images/slide3.jpg" width="940" height="500"  />
-                
+				 <?php if (isset($big_pics)) { ?>
+                  <?php foreach ($big_pics as $pic) { ?>
+				<a href="<?php echo $pic->link ; ?>">
+   <img src="<?php echo base_url(); ?>public/uploads/slider/<?php echo $pic->pic_name; ?>" width="940" height="500"  /></a>
+				 <?php } ?>
+             <?php } ?>
 				
 				
 				
@@ -113,3 +103,4 @@
     
 	
 </div> <!-- end #featured -->	
+
