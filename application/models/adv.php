@@ -21,7 +21,11 @@ class adv extends CI_Model {
     }
 
     function addGalleryPhoto($data) {
-        $this->db->insert("photo", $data);
+        $this->db->insert("gallery", $data);
+    }
+
+    function addGoldenAdv($data) {
+        $this->db->insert("golden", $data);
     }
 
 }

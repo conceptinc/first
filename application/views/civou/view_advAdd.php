@@ -86,6 +86,38 @@
                     }
                     return false;
                 });
+                // congiguration to  uploadform2  div 
+
+                var progressbox 		= $('#progressbox'); //progress bar wrapper
+                var progressbar 		= $('#progressbar'); //progress bar element
+                var statustxt 			= $('#statustxt'); //status text element
+                var submitbutton 		= $("#SubmitButton"); //submit button
+                var myform 				= $("#UploadForm2"); //upload form
+                var output 				= $("#output"); //ajax result output element
+                var completed 			= '0%'; //initial progressbar value
+                var FileInputsHolder2 	= $('#AddFileInputBox2'); //Element where additional file inputs are appended
+                var MaxFileInputs		= 20; //Maximum number of file input boxs
+                var m=1;
+                // adding and removing file input box
+                var i = $('#AddFileInputBox2 div').size() + 1;
+                $('#AddMoreFileBox2').live('click', function() {
+                    if(i < MaxFileInputs)
+                    {
+                        $('<span><input type="file" id="fileInputBox" size="20" name="gallery'+m+'"  class="addedInput" value=""/><a href="#" class="small2" id="removeFileBox"><img src="<?php echo base_url(); ?>images/close_icon.gif" border="0" /></a></span>').appendTo(FileInputsHolder2);
+                        i++;
+                        m++;
+                    }
+                    return false;
+                });
+
+                $('#removeFileBox').live('click', function() { 
+                    if( i > 1 ) {
+                        $(this).parents('span').remove();i--;
+                    }
+                    return false;
+                });
+
+                //////////////// end of  upload formdiv2 ////////////////////////////
 
                 $("#ShowForm").click(function () {
                     $("#uploaderform").slideToggle(); //Slide Toggle upload form on click
@@ -195,6 +227,10 @@
             echo "كلمه السر    :  ";
             echo form_input('pass');
             echo "<br/><br/>";
+
+            echo "   الفيديو :   :  ";
+            echo form_input('vedio');
+            echo "<br/><br/>";
             ?>
 
         </div>
@@ -211,6 +247,20 @@
             <div id="progressbox"><div id="progressbar"></div ><div id="statustxt">0%</div ></div>
             <!--            </form>-->
         </div>
+
+        <div id="uploaderform2">
+            <!--            <form  name="UploadForm" id="UploadForm">-->
+            <label>  صور خاصه بالبوم الصور للاعلان الذهبى  
+                <span class="small"><a href="#" id="AddMoreFileBox2">Add More Files</a></span>
+            </label>
+            <div id="AddFileInputBox2">
+                <input id="fileInputBox" style="margin-bottom: 5px;" type="file"  name="gallery0"/></div>
+            <div class="sep_s"></div>
+
+            <div id="progressbox"><div id="progressbar"></div ><div id="statustxt">0%</div ></div>
+            <!--            </form>-->
+        </div>
+
         <br/><br/>
 
         <?php
