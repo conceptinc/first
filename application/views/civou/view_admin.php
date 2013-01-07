@@ -24,10 +24,8 @@
         </style>
     </head>
     <body>
-
         <div id="header" >
         </div>
-
         <div id="content">
             <table border="1" width="900" >
                 <h3> اداره  الاقسام 

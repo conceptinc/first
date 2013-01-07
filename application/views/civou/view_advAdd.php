@@ -133,7 +133,7 @@
 
     <body>
 
-        <?php echo form_open_multipart('civou/c_adv/test'); ?>
+        <?php echo form_open_multipart('civou/c_adv/addAdv'); ?>
 
         <!--        <form action="#" name="form" id="form" method="post" onsubmit="return alert_id();"
                       enctype="multipart/form-data"  >-->
@@ -205,7 +205,7 @@
                 <span class="small"><a href="#" id="AddMoreFileBox">Add More Files</a></span>
             </label>
             <div id="AddFileInputBox">
-                <input id="fileInputBox" style="margin-bottom: 5px;" type="file"  name="file"/></div>
+                <input id="fileInputBox" style="margin-bottom: 5px;" type="file"  name="file0"/></div>
             <div class="sep_s"></div>
 
             <div id="progressbox"><div id="progressbar"></div ><div id="statustxt">0%</div ></div>
@@ -213,13 +213,13 @@
         </div>
         <br/><br/>
 
-<?php
-echo form_submit('upload', 'حفظ');
+        <?php
+        echo form_submit('upload', 'حفظ');
 
-echo "<br/><br/>";
+        echo "<br/><br/>";
 
-echo form_close();
-?>
+        echo form_close();
+        ?>
 
     </body>  
 

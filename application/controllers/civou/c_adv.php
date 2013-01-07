@@ -11,53 +11,74 @@ class c_adv extends CI_Controller {
         }
     }
 
-    // 
+    // method that have code that add data about level 2 adv that include sliver  and golden adv 
+    function addLevel2($type, $advName) {
+        $this->load->model('adv');
+        $username = $this->input->post('username');
+        $pass = $this->input->post('pass');
+        $advId = $this->adv->getAdvIdByName($advName);
+        $db_value = array('type' => $type, 'username' => $username, 'password' => $pass);
+        $this->adv->addLevel2Adv($db_value);
+        $photo_name = array();
+        ///// configuration for upload library
+        $gallery_path = realpath(APPPATH . '../public/original/');
+        $config['upload_path'] = $gallery_path;
+        $config['allowed_types'] = 'gif|jpg|png|jpeg|bmp';
+        $config['max_size'] = '20000';
+        $this->load->library('upload', $config);
 
-    function test() {
+        ///////////// for loop and code that upload  photo /////////////////////  
+        $i = 0;
+        foreach ($_FILES as $file) {
+            $this->upload->do_upload("file" . $i);
+            $phot_data = $this->upload->data();
+            $photo_name[$i] = $phot_data['file_name'];
+            $i++;
+        }
+        ///////////// code that store //////////////////////////////////////////
+        $ar = array();
+        foreach ($photo_name as $value) {
+            $ar['name'] = $value;
+            $ar['level2_id'] = $advId;
+            $this->adv->addLevel2Photo($ar);
+        }
+    }
 
-        $d1 = $this->input->post('search_category');
-        $dsub = $this->input->post('sub_category');
-        $d2 = $this->input->post('adv_name');
-        $d2 = $this->input->post('desc');
-        $d3 = $this->input->post('adv_nashat');
-        $d4 = $this->input->post('adv_address');
-        $d5 = $this->input->post('adv_phone');
-        $d6 = $this->input->post('username');
-        $d7 = $this->input->post('pass');
-
+    function addAdv() {
         $type = $this->input->post('advtype');
+        $dept = $this->input->post('search_category');
+        $subDept = $this->input->post('sub_category');
+        $name = $this->input->post('adv_name');
+        $desc = $this->input->post('desc');
+        $nashat = $this->input->post('adv_nashat');
+        $address = $this->input->post('adv_address');
+        $phone = $this->input->post('adv_phone');
 
-        echo $type;
+        $db_value = array(
+            'name' => $name,
+            'desc' => $desc,
+            'nashat' => $nashat,
+            'address' => $address,
+            'phone' => $phone,
+            'dept_id' => $dept,
+            'sub_dept_id' => $subDept
+        );
 
-        
-        echo $d1;
-        echo " <br/>  //////  1 ";
-        echo $dsub;
-        echo " <br/>  //////  sub  ";
-        echo $d2;
-        echo " <br/>  //////  2 ";
-        echo $d3;
-        echo " <br/>  //////  3  ";
-        echo $d4;
-        echo " <br/>  //////  4 ";
-        echo $d5;
-        echo " <br/>  //////   5";
-        echo $d6;
-        echo " <br/>  //////   6";
-        echo $d7;
-        echo " <br/>  //////  7 ";
-
-
-        $file = $_FILES["file"]['name'];
-        echo " <br/>  //////  file ";
-        $file1 = $_FILES["file1"]['name'];
-        echo " <br/>  //////  file1 ";
-        $file2 = $_FILES["file2"]['name'];
-        echo " <br/>  //////  file2 ";
-
-        echo $file;
-        echo $file1;
-        echo $file2;
+        if ($type == 3) {
+            $db_value['type'] = 'n';
+            $this->load->model('adv');
+            $this->adv->addNormalAdv($db_value);
+        } else if ($type == 2) {
+            $db_value['type'] = 's';
+            $this->load->model('adv');
+            $this->adv->addNormalAdv($db_value);
+            $this->addLevel2('s', $name);
+        } else if ($type == 1) {
+            $db_value[] = array('type' => 'g');
+            $this->load->model('adv');
+            $this->adv->addNormalAdv($db_value);
+            $this->addLevel2('g', $advName);
+        }
     }
 
 }

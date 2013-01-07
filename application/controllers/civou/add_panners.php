@@ -31,6 +31,7 @@ class Add_panners extends CI_Controller {
 
     function upload_big() {
         if ($this->session->userdata('logged_in')) {
+           
             if ($this->input->post('upload')) {
                 $gallery_path = realpath(APPPATH . '../public/uploads/slider/');
 

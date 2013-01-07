@@ -11,7 +11,7 @@ if ($_REQUEST) {
         <?php
         while ($rows = mysql_fetch_assoc(@$results)) {
             ?>
-            <option value="<?php echo $rows['name']; ?>  ID=<?php echo $rows['id']; ?>"><?php echo $rows['name']; ?></option>
+            <option value="<?php echo $rows['id']; ?>"><?php echo $rows['name']; ?></option>
         <?php }
         ?>
     </select>	
