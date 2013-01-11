@@ -2,15 +2,7 @@
 		<div class="container clearfix">
 			<a href="<?php echo base_url();?>site/"><img src="<?php echo base_url();?>images/logo.png"  id="logo"/></a>
 			
-							<ul id="top-menu" class="nav superfish clearfix">
-						
-												
-						
-<li class="page_item page-item-275"><a href="#">اتصل بنا</a></li>
-<li class="page_item page-item-"><a href="#">عن الموقع</a></li>
-<li class="page_item page-item-"><a href="#">الاكثر مشاهده</a></li>
-<li class="current_page_item"><a href="<?php echo base_url();?>site/">الرئيسيه</a></li>
-									</ul> <!-- ul#nav -->
+							
 						
 			<div id="search-bar">
 				<form method="get" id="searchform1" action="#">
@@ -22,7 +14,17 @@
 			</div> <!-- #search-bar -->
 						
 			<div id="menu">
-            
+            <ul id="secondary-menu" class="nav superfish clearfix">
+						
+												
+					<li  class="current_page_item"><a href="<?php echo base_url();?>site/"><strong>الرئيسيه</strong></a></li>	
+                    <li class="page_item page-item-"><a href="#"><strong>الاطباء</strong></a></li>
+                    <li class="page_item page-item-"><a href="#"><strong>مواعيد القطارات</strong></a></li>
+<li class="page_item page-item-275"><a href="#"><strong>اتصل بنا</strong></a></li>
+<li class="page_item page-item-"><a href="#"><strong>عن الموقع</strong></a></li>
+
+
+									</ul> <!-- ul#nav -->
 				</div> <!-- #menu -->
 			
 		</div> <!-- .container -->
@@ -39,7 +41,7 @@
 						<div class="product">
 														
                                                         <p class="info">
-للمواطنين مدينه طنطاطنطا يم خدمات  مدينه طنطاطنطا هو اكبر موقع تقديم خدمات للمواطنين مدينه طنطاطنطا هو اكبر موقع تقديم خدمات للمواطنين مدينه طنطاطنطا هو اكبر موقع تقديم خدمات للمواطنين مدينه طنطاطنطا هو اكبر موقع تقديم خدمات للمواطنين مدينه طنطاطنطاخدمات للمواطنين مدينه 
+للمواطنين مدينه طنطاطنطا يم خدمات  مدينه طنطاطنطا هو اكبر موقع تقديم خدمات للمواطنين مدينه طنطاطنطا هو اكبر موقع تقديم خدمات للمواطنين مدينه طنطاطنطا هو اكبر موقع تقديم خدمات للمواطنين مدينه طنطاطنطا هو اكبر موقع ت
                                                        </p>
 							<a class="more" href="-p=20.htm" ><span style="float:left;">التفاصيل</span></a>
 						</div> <!-- .product -->
