@@ -28,6 +28,18 @@ class adv extends CI_Model {
         $this->db->insert("golden", $data);
     }
 
+    public function showAllBySubDeptID($sub_id, $type) {
+        $query = "select id,name,nashat,address,phone,type from adv where sub_dept_id = ? and type='$type'";
+        $result = $this->db->query($query, $sub_id);
+        return $result->result();
+    }
+
+    function selectLevel2PhotoById($id) {
+        $query = "select * from photo where level2_id= ?";
+        $result = $this->db->query($query, $id);
+        return $result->result();
+    }
+
 }
 
 ?>

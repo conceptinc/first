@@ -96,16 +96,16 @@
                 var output 				= $("#output"); //ajax result output element
                 var completed 			= '0%'; //initial progressbar value
                 var FileInputsHolder2 	= $('#AddFileInputBox2'); //Element where additional file inputs are appended
-                var MaxFileInputs		= 20; //Maximum number of file input boxs
-                var m=1;
+                var MaxFileInputs2		= 20; //Maximum number of file input boxs
+                var mm=1;
                 // adding and removing file input box
                 var i = $('#AddFileInputBox2 div').size() + 1;
                 $('#AddMoreFileBox2').live('click', function() {
-                    if(i < MaxFileInputs)
+                    if(i < MaxFileInputs2)
                     {
-                        $('<span><input type="file" id="fileInputBox" size="20" name="gallery'+m+'"  class="addedInput" value=""/><a href="#" class="small2" id="removeFileBox"><img src="<?php echo base_url(); ?>images/close_icon.gif" border="0" /></a></span>').appendTo(FileInputsHolder2);
+                        $('<span><input type="file" id="fileInputBox" size="20" name="gallery'+mm+'"  class="addedInput" value=""/><a href="#" class="small2" id="removeFileBox"><img src="<?php echo base_url(); ?>images/close_icon.gif" border="0" /></a></span>').appendTo(FileInputsHolder2);
                         i++;
-                        m++;
+                        mm++;
                     }
                     return false;
                 });
