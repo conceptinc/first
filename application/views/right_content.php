@@ -20,8 +20,8 @@
         </div>
         
 <!----------------------------------------------- main menu ----------------------------------------------->        
- <div class="main_menu" >
-        <ul class="nav2" style="margin-top:-10px">
+ <div class="main_menu"  >
+        <ul class="nav2" style="margin-top:-10px;">
                                                                                            
                              
 							<li><a > خدمات الكمبيوتر </a></li>

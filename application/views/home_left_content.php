@@ -2,7 +2,7 @@
 		<div class="product-content clearfix">
 			<a href="#"  class="image">
 				<span class="rounded" ><img src="<?php echo base_url();?>images/adv.jpg" width="192" height="189" /></span>
-									<span class="tag" style="left: -8px;"><span>95</span></span>
+									<span class="tag" style="left: 0px;"><span>95</span></span>
 							</a>
 			
 			<h5>اسم الشركه</h5>
@@ -54,7 +54,7 @@
 		<div class="product-content clearfix">
 			<a href="#"  class="image">
 				<span class="rounded" style="background: url('http://elegantthemes.com/preview/eStore/wp-content/uploads/et_temp/toil-1-31244_193x130.jpg') no-repeat;"></span>
-									<span class="tag" style="left: -8px;"><span>95</span></span>
+									<span class="tag" style="left: -10px;"><span>95</span></span>
 							</a>
 			
 			<h5>اسم الشركه</h5>

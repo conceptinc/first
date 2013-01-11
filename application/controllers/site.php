@@ -32,5 +32,10 @@ class site extends CI_Controller {
             $this->load->view('view_login');
         }
         }
+		//////////////////////////////////////
+		function doc(){
+			
+			 $this->load->view('index_doctor');
+			}
 	
 }
