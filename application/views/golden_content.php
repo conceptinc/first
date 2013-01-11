@@ -60,7 +60,9 @@
                                         <div class="top">
                                             <b>صور خاصة بالاعلان</b>
                                             <span>
+
                                                 <img src="<?php echo base_url(); ?>/images/arrow-small.png" class="icon">
+
                                             </span>
                                         </div>
 
@@ -97,50 +99,13 @@
 
                                         <ul class="gallery clearfix" id="gallery">
 
-                                            <li class="photos" > 
-                                                <a href="<?php echo base_url(); ?>/images/slide12.jpg "  rel="prettyPhoto[gallery]"  >  <img class="img_gallery" src="<?php echo base_url(); ?>/images/slide12.jpg " width="132" height="120" />   
-                                                </a> </li>
-
-                                            <li class="photos" > 
-                                                <a href="<?php echo base_url(); ?>/images/slide12.jpg "  rel="prettyPhoto[gallery]"  >  <img class="img_gallery" src="<?php echo base_url(); ?>/images/slide12.jpg " width="132" height="120"  />   
-                                                </a> </li> 
-
-                                            <li class="photos" >  
-                                                <a href="<?php echo base_url(); ?>/images/slide12.jpg"  rel="prettyPhoto[gallery]"  >  <img class="img_gallery" src="<?php echo base_url(); ?>/images/slide12.jpg " width="132" height="120"  /> 
-                                                </a> </li>
-
-                                            <li class="photos"> 
-                                                <a href="<?php echo base_url(); ?>/images/slide12.jpg "  rel="prettyPhoto[gallery]"  >  <img class="img_gallery" src="<?php echo base_url(); ?>/images/slide12.jpg " width="132" height="120" />   
-                                                </a> </li>
-
-                                            <li class="photos" > 
-                                                <a href="<?php echo base_url(); ?>/images/slide12.jpg "  rel="prettyPhoto[gallery]"  >  <img class="img_gallery" src="<?php echo base_url(); ?>/images/slide12.jpg " width="132" height="120" />   
-                                                </a> </li>
-
-                                            <li class="photos" > 
-                                                <a href="<?php echo base_url(); ?>/images/slide12.jpg "  rel="prettyPhoto[gallery]"  >  <img class="img_gallery" src="<?php echo base_url(); ?>/images/slide12.jpg " width="132" height="120" />   
-                                                </a> </li>
-                                            <li class="photos" > 
-                                                <a href="<?php echo base_url(); ?>/images/slide12.jpg "  rel="prettyPhoto[gallery]"  >  <img class="img_gallery" src="<?php echo base_url(); ?>/images/slide12.jpg " width="132" height="120" />   
-                                                </a> </li>
-
-                                            <li class="photos" > 
-                                                <a href="<?php echo base_url(); ?>/images/slide12.jpg "  rel="prettyPhoto[gallery]"  >  <img class="img_gallery" src="<?php echo base_url(); ?>/images/slide12.jpg " width="132" height="120" />   
-                                                </a> </li> <li class="photos" > 
-                                                <a href="<?php echo base_url(); ?>/images/slide12.jpg "  rel="prettyPhoto[gallery]"  >  <img class="img_gallery" src="<?php echo base_url(); ?>/images/slide12.jpg " width="132" height="120" />   
-                                                </a> </li>
-
-                                            <li class="photos" > 
-                                                <a href="<?php echo base_url(); ?>/images/slide12.jpg "  rel="prettyPhoto[gallery]"  >  <img class="img_gallery" src="<?php echo base_url(); ?>/images/slide12.jpg " width="132" height="120" />   
-                                                </a> </li>
-                                            <li class="photos" > 
-                                                <a href="<?php echo base_url(); ?>/images/slide12.jpg "  rel="prettyPhoto[gallery]"  >  <img class="img_gallery" src="<?php echo base_url(); ?>/images/slide12.jpg " width="132" height="120" />   
-                                                </a> </li>
-
-                                            <li class="photos" > 
-                                                <a href="<?php echo base_url(); ?>/images/slide12.jpg "  rel="prettyPhoto[gallery]"  >  <img class="img_gallery" src="<?php echo base_url(); ?>/images/slide12.jpg " width="132" height="120" />   
-                                                </a> </li>
-
+                                            <?php foreach ($gallery as $im) { ?>
+                                                <li class="photos" > 
+                                                    <a href="<?php echo $im['url_ga'] ?> "  rel="prettyPhoto[gallery]"  > 
+                                                        <img class="img_gallery" src="<?php echo $im['th_url'] ?> " width="120" height="120" />   
+                                                    </a> 
+                                                </li>
+                                            <?php } ?>
                                         </ul>
                                     </li>
 
@@ -155,8 +120,10 @@
 
 
                                         <div class="clear"> </div>
-                                        <iframe width="668" height="370" src="http://www.youtube.com/embed/5tZ3Zu-IPb4?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
-                                        <br />
+                                        <iframe width='640' height='360'
+                                                src='http://www.youtube.com/embed/<?php echo $s->vedio; ?>?feature=player_detailpage' 
+                                                frameborder='0' allowfullscreen>
+                                        </iframe>       <br />
                                         <br><br>
 
 

@@ -89,6 +89,7 @@ class site extends CI_Controller {
             $phot = array();
             foreach ($z as $value) {
                 $phot[] = array('url' => base_url() . "public/original/" . $value->name
+                    
                 );
             }
             $data1['photo'] = $phot;
@@ -99,8 +100,8 @@ class site extends CI_Controller {
             $z2 = $data1['gallery'];
             $ga = array();
             foreach ($z2 as $value) {
-                $ga[] = array('url' => base_url() . "public/golden/" . $value->name,
-                    'th_url' => base_url() . "public/golden/" . $value->name
+                $ga[] = array('url_ga' => base_url() . "public/golden/" . $value->name,
+                    'th_url' => "public/golden/thumbs/" . $value->name."thumb" 
                 );
             }
             $data1['gallery'] = $ga;
