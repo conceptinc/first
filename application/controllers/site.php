@@ -89,19 +89,18 @@ class site extends CI_Controller {
             $phot = array();
             foreach ($z as $value) {
                 $phot[] = array('url' => base_url() . "public/original/" . $value->name
-                    
                 );
             }
             $data1['photo'] = $phot;
 
             // load adv gallery 
 
-            $data1['gallery'] = $this->golden->selectGalleryPhotoByID($adv_id);
-            $z2 = $data1['gallery'];
+            $z2 = $this->golden->selectGalleryPhotoByID($adv_id);
+            ;
             $ga = array();
             foreach ($z2 as $value) {
                 $ga[] = array('url_ga' => base_url() . "public/golden/" . $value->name,
-                    'th_url' => base_url() ."public/golden/thumbs/" . $value->name 
+                    'th_url' => base_url() . "public/golden/thumbs/" . $value->name
                 );
             }
             $data1['gallery'] = $ga;

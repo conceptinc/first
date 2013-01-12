@@ -160,6 +160,7 @@
 
         <!-- end of upload form code **************************************************** -->
 
+
     </head>
     <?php include('dbcon.php'); ?>
 
@@ -196,7 +197,7 @@
 
         <div>
 
-            <select name="advtype">
+            <select name="advtype"  id="type" >
                 <option value="1" >ذهبى </option>
                 <option value="2" >فضى </option>
                 <option value="3" >عادى</option>
@@ -220,17 +221,21 @@
             echo form_input('adv_phone');
             echo "<br/><br/>";
 
-            echo "اسم دخول صاحب الاعلان    :  ";
+            echo " <div id='user' >";
+            echo "  صاحب الاعلان    :  ";
             echo form_input('username');
             echo "<br/><br/>";
 
             echo "كلمه السر    :  ";
             echo form_input('pass');
             echo "<br/><br/>";
+            echo "</div>";
 
-            echo "   الفيديو :   :  ";
+            echo " <div id='vedio' >";
+            echo "  الفيديو :   ";
             echo form_input('vedio');
             echo "<br/><br/>";
+            echo "</div>";
             ?>
 
         </div>
@@ -243,7 +248,6 @@
             <div id="AddFileInputBox">
                 <input id="fileInputBox" style="margin-bottom: 5px;" type="file"  name="file0"/></div>
             <div class="sep_s"></div>
-
             <div id="progressbox"><div id="progressbar"></div ><div id="statustxt">0%</div ></div>
             <!--            </form>-->
         </div>
@@ -270,6 +274,47 @@
 
         echo form_close();
         ?>
+        <script src="<?php echo base_url(); ?>js/jquery.js" type="text/javascript" ></script>
+        <script src="<?php echo base_url(); ?>js/jquery.js" type="text/javascript" ></script>
+        <script type="text/javascript">
+            
+            $(document).ready(function() {$('#uploaderform2').hide();
+                $('#uploaderform').hide();
+                $('#vedio').hide();
+                $('#user').hide();
+                $('#pass').hide(); });
+             
+            $('#type').change( 
+            function(){
+                var list_value=$('#type').val();
+                
+                if(list_value=='1'){
+                    $('#uploaderform2').show();
+                    $('#uploaderform').show();
+                    $('#vedio').show();
+                    $('#user').show();
+                    $('#pass').show();
+                }
+                
+                else if(list_value=='2'){
+                    $('#uploaderform2').hide();
+                    $('#uploaderform').show();
+                    $('#vedio').hide();
+                    $('#user').show();
+                    $('#pass').show();
+                }
+                
+                else if(list_value=='3'){
+                    $('#uploaderform2').hide();
+                    $('#uploaderform').hide();
+                    $('#vedio').hide();
+                    $('#user').hide();
+                    $('#pass').hide();
+                }
+            }
+        );
+    
+        </script> 
 
     </body>  
 

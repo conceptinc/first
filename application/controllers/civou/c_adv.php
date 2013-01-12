@@ -107,7 +107,6 @@ class c_adv extends CI_Controller {
             'image_library' => 'gd2',
             'source_image' => '',
             'maintain_ratio' => TRUE,
-            'create_thumb' => TRUE,
             'width' => 100,
             'height' => 100,
             'new_image' => $thum_path
