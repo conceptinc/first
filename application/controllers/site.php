@@ -101,13 +101,11 @@ class site extends CI_Controller {
             $ga = array();
             foreach ($z2 as $value) {
                 $ga[] = array('url_ga' => base_url() . "public/golden/" . $value->name,
-                    'th_url' => "public/golden/thumbs/" . $value->name."thumb" 
+                    'th_url' => base_url() ."public/golden/thumbs/" . $value->name 
                 );
             }
             $data1['gallery'] = $ga;
-
             ///////////////////////////
-
             $this->load->view('index_golden', $data1);
         } else {
             $this->load->view('view_error');
