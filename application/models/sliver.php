@@ -8,7 +8,11 @@ class sliver extends CI_Model {
         return $result->result();
     }
 
-
+ function selectAll() {
+        $query = "select * from sliver_view";
+        $result = $this->db->query($query, $id);
+        return $result->result();
+    }
 }
 
 ?>

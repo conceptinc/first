@@ -55,7 +55,7 @@
 				 <?php if (isset($big_pics)) { ?>
                   <?php foreach ($big_pics as $pic) { ?>
 				<a href="<?php echo $pic->link ; ?>">
-   <img src="<?php echo base_url(); ?>public/uploads/slider/<?php echo $pic->pic_name; ?>" width="940" height="500"  /></a>
+   <img src="<?php echo base_url(); ?>public/uploads/slider/<?php echo $pic->pic_name; ?>" width="940" height="400"  /></a>
 				 <?php } ?>
              <?php } ?>
 				
