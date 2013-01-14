@@ -51,7 +51,9 @@
                     <td>
                         <a href="<?php echo site_url('civou/c_adv/load_adv_edit'); ?>" >   التعديل على الاعلانات </a>
                     </td>
-                   
+                    <td>
+                        <a href="<?php echo site_url('civou/c_doctor/load_doctor'); ?>" >     اداره الاطباء  </a>
+                    </td>
                 </tr>
             </table>                                               
         </div>

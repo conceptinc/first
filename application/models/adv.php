@@ -28,6 +28,10 @@ class adv extends CI_Model {
         $this->db->insert("golden", $data);
     }
 
+    function createDoctor($dc) {
+        $this->db->insert("doctor", $dc);
+    }
+
     public function showAllBySubDeptID($sub_id, $type) {
         $query = "select id,name,nashat,address,phone,type from adv where sub_dept_id = ? and type='$type'";
         $result = $this->db->query($query, $sub_id);
@@ -37,6 +41,13 @@ class adv extends CI_Model {
     function selectLevel2PhotoById($id) {
         $query = "select * from photo where level2_id= ?";
         $result = $this->db->query($query, $id);
+        return $result->result();
+    }
+
+    // get all sub department of doctor 
+    function selectDocSubDept() {
+        $query = "select * from sub_dept where dept_id= 1";
+        $result = $this->db->query($query);
         return $result->result();
     }
 
