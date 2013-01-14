@@ -25,10 +25,13 @@ class dept extends CI_Model {
 
     public function showAll_deptANDsub() {
 
-        $query = "select dept.name as d_name,sub_dept.name as sd_name,dept.id as d_id ,sub_dept.id as sd_id 
-                   from dept
-                  left join sub_dept 
-                 on dept.id=sub_dept.dept_id ";
+        $query = "select dept.name as d_name,
+            sub_dept.name as sd_name,
+            dept.id as d_id ,
+            sub_dept.id as sd_id 
+            from dept
+            left join sub_dept 
+            on dept.id=sub_dept.dept_id ";
 
         $result = $this->db->query($query);
 

@@ -43,7 +43,11 @@
 
                 foreach ($result as $r) {
                     if ($r->d_name == $v) {
-                        echo "<p><a href=" . site_url() . "site/showBySubId/" . $r->sd_id . "  style=\"color:0\">" . $r->sd_name . "</a></p>";
+                        if ($r->d_id != 1) {
+                            echo "<p><a href=" . site_url() . "site/showBySubId/" . $r->sd_id . "  style=\"color:0\">" . $r->sd_name . "</a></p>";
+                        } else {
+                            echo "<p><a href=" . site_url() . "site/showDoctor/" . $r->sd_id . "  style=\"color:0\">" . $r->sd_name . "</a></p>";
+                        }
                     }
                 }
                 echo " </div>";

@@ -17,8 +17,10 @@ class c_adv extends CI_Controller {
             $this->load->model('adv');
             $username = $this->input->post('username');
             $pass = $this->input->post('pass');
+            $main_photo = $_FILES['file0']['name'];
             $advId = $this->adv->getAdvIdByName($advName);
-            $db_value = array('adv_id' => $advId, 'type' => $type, 'username' => $username, 'password' => $pass);
+            $db_value = array('adv_id' => $advId, 'type' => $type, 'username' => $username,
+                'password' => $pass, 'main_photo' => $main_photo);
             $this->adv->addLevel2Adv($db_value);
             ///// configuration for upload library
             $photo_name = array();
@@ -177,9 +179,8 @@ class c_adv extends CI_Controller {
             $this->load->model('golden');
 
             if ($type == 1) {
-                $data['res']=$this->golden->selectAll($dept,$subDept);
-                $this->load->view('civou/view_edit2',$data);
-                        
+                $data['res'] = $this->golden->selectAll($dept, $subDept);
+                $this->load->view('civou/view_edit2', $data);
             } else if ($type == 2) {
                 
             } else if ($type == 3) {
@@ -192,9 +193,10 @@ class c_adv extends CI_Controller {
         }
     }
 
-    function delete(){
+    function delete() {
         
     }
+
 }
 
 ?>

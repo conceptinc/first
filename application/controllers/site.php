@@ -16,10 +16,9 @@ class site extends CI_Controller {
         $slider_pics = $this->slider_model->load_img();
         if ($slider_pics->num_rows() > 0)
             $data1['big_pics'] = $slider_pics->result();
-
+        
         $this->load->model('dept');
         $data1['result'] = $this->dept->showAll_deptANDsub();
-
 
         $this->load->view('index', $data1);
     }
@@ -116,6 +115,27 @@ class site extends CI_Controller {
     function showSliverAdvDetail() {
         
     }
+    
+    function showDoctor(){
+         if ($this->uri->segment(3) != '') {
+            // data on home page 
+            $data1 = array();
+            $this->load->model('slider_model');
+            $slider_pics = $this->slider_model->load_img();
+            if ($slider_pics->num_rows() > 0)
+                $data1['big_pics'] = $slider_pics->result();
+            $this->load->model('dept');
+            $data1['result'] = $this->dept->showAll_deptANDsub();
+            // load adv data  
+            $this->load->model('adv');
+            $adv_id = mysql_escape_string($this->uri->segment(3));
+            $data1['doctor'] = $this->adv->showDoctorAdvDetail($adv_id);
+            $this->load->view('index_doctor', $data1);
+        } else {
+            $this->load->view('view_error');
+        }
+    }
+    
 
     //////////////////////////////////////////
 }

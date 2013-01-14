@@ -45,6 +45,11 @@ class adv extends CI_Model {
     }
 
     // get all sub department of doctor 
+     public function showDoctorAdvDetail($sub_id) {
+        $query = "select id,name,spe,address,phone,f_time,f_date,book from doctor where sdept_id = ?";
+        $result = $this->db->query($query, $sub_id);
+        return $result->result();
+    }
     function selectDocSubDept() {
         $query = "select * from sub_dept where dept_id= 1";
         $result = $this->db->query($query);
