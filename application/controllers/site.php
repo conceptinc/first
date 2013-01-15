@@ -23,6 +23,10 @@ class site extends CI_Controller {
         if ($slider_last_add->num_rows() > 0) {
             $data1['slider1_pics'] = $slider_last_add->result();
         }
+		$slider_last_add_top = $this->slider_model->last_adv_add_top();
+        if ($slider_last_add_top->num_rows() > 0) {
+            $data1['slider1_pics_top'] = $slider_last_add_top->result();
+        }
 		
 		$last_views = $this->slider_model->select_last_views();
         $data1['last_views'] = $last_views;
@@ -66,7 +70,14 @@ class site extends CI_Controller {
             $data1['normal'] = $this->adv->showAllBySubDeptID($adv_id, 'n');
             $this->load->view('index_1', $data1);
         } else {
-            $this->load->view('view_error');
+			 $this->load->model('slider_model');
+        $slider_pics = $this->slider_model->load_img();
+        if ($slider_pics->num_rows() > 0)
+            $data['big_pics'] = $slider_pics->result();
+        
+        $this->load->model('dept');
+        $data['result'] = $this->dept->showAll_deptANDsub();
+            $this->load->view('view_error' ,$data);
         }
     }
 
@@ -114,7 +125,14 @@ class site extends CI_Controller {
             ///////////////////////////
             $this->load->view('index_golden', $data1);
         } else {
-            $this->load->view('view_error');
+			 $this->load->model('slider_model');
+        $slider_pics = $this->slider_model->load_img();
+        if ($slider_pics->num_rows() > 0)
+            $data['big_pics'] = $slider_pics->result();
+        
+        $this->load->model('dept');
+        $data['result'] = $this->dept->showAll_deptANDsub();
+            $this->load->view('view_error',$data);
         }
     }
 
@@ -140,7 +158,14 @@ class site extends CI_Controller {
             $data1['doctor'] = $this->adv->showDoctorAdvDetail($adv_id);
             $this->load->view('index_doctor', $data1);
         } else {
-            $this->load->view('view_error');
+			 $this->load->model('slider_model');
+        $slider_pics = $this->slider_model->load_img();
+        if ($slider_pics->num_rows() > 0)
+            $data['big_pics'] = $slider_pics->result();
+        
+        $this->load->model('dept');
+        $data['result'] = $this->dept->showAll_deptANDsub();
+            $this->load->view('view_error' ,$data);
         }
     }
     

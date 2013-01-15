@@ -83,22 +83,17 @@
 		<div class="container">
 			<div id="switcher" >
 				
-									<div class="item active">
-						<a href="#" class="product">
-							<img src="<?php echo base_url();?>images/feature-3-2-61784_109x109.jpg"alt='Richie Sambora Line' width='109' height='109' />															<span class="tag" style="min-width:20px;"><span >99</span></span>
-													</a>
-					</div> <!-- .item -->
+                  <?php if (isset($slider1_pics_top)) { ?>
+        <?php foreach ($slider1_pics_top as $pic) { ?>	
+                
+		
 									<div class="item">
-						<a href="#" class="product">
-							<img src="<?php echo base_url();?>images/feature-2-2-64365_109x109.jpg" alt='Designer Chairs' width='109' height='109' />															<span class="tag" style="min-width:20px;"><span>95</span></span>
+						<a href="<?php echo base_url(); ?>site/showGoldenAdvDetail/<?php echo $pic->adv_id; ?>" class="product">
+	<img src="<?php echo base_url(); ?>public/original/<?php echo $pic->main_photo ;?>"  width='109' height='109' />															<span class="tag" style="min-width:20px;"><span>95</span></span>
 													</a>
 					</div> <!-- .item -->
-                    
-									<div class="item">
-						<a href="#" class="product">
-							<img src="<?php echo base_url();?>images/feature-1-2-65851_109x109.jpg" alt='Trendy New Clothes' width='109' height='109' />															<span class="tag" style="min-width:20px;"><span>99</span></span>
-													</a>
-					</div> <!-- .item -->
+                    <?php } ?>
+                   <?php } ?>
                     
 					
 			</div> <!-- #switcher -->

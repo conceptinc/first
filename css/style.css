@@ -324,7 +324,7 @@ ul#top-menu { float: right; padding: 25px 40px 0px 0px; font-family: Arial, Verd
 			ul#top-menu li:hover ul, ul#top-menu li.sfHover ul { left:0px; top:36px; }
 			ul#top-menu li li:hover ul, ul#top-menu li li.sfHover ul { left:173px; top:0px; }
 		
-ul#secondary-menu { padding: 25px 0px 0px 23px; }
+ul#secondary-menu { padding: 25px 0px 0px 0px; }
 	ul#secondary-menu li { padding-left: 20px; float:right;margin-right:24px;}
 		ul#secondary-menu li.current_page_item > a > strong, , ul#secondary-menu li.current-menu-item > a > strong { color:#fff; }
 		ul#secondary-menu li a strong { color:#ffffff; display:block; font-size:20px; font-weight:normal; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3); text-transform:uppercase; margin-bottom:-3px; }
@@ -333,12 +333,13 @@ ul#secondary-menu { padding: 25px 0px 0px 23px; }
 				ul#secondary-menu li a:hover strong { color: #ede7c2; }
 				ul#secondary-menu li a:hover span, ul#secondary-menu li > a > span { color: #7b786a; }
 		
-		ul#secondary-menu ul {float:right; text-align:right; width: 170px; background: url("../images/secondary-dropdown.png") repeat-y; padding: 0px 0px 15px; box-shadow: 3px 6px 7px 1px rgba(0, 0, 0, 0.5); -moz-box-shadow:3px 6px 7px 1px rgba(0, 0, 0, 0.5); -webkit-box-shadow: 3px 6px 7px 1px rgba(0, 0, 0, 0.5); border-radius: 8px; -moz-border-radius: 8px; -webkit-border-radius: 8px; border-top-left-radius: 0px; -moz-border-radius-topleft: 0px; -webkit-border-top-left-radius: 0px; border-top-right-radius: 0px; -moz-border-radius-topright: 0px; -webkit-border-top-right-radius: 0px; border: 1px solid #232323; border-top: none; }
-		ul#secondary-menu li:hover ul, ul#secondary-menu li.sfHover ul { left:0px; top:46px; }
+		ul#secondary-menu ul { float:right; text-align:right; width: 240px; background: #3d3d3d url("../images/secondary-dropdown.png") repeat-x; padding: 0px 0px 0px; box-shadow: 3px 6px 7px 1px rgba(0, 0, 0, 0.5); -moz-box-shadow:3px 6px 7px 1px rgba(0, 0, 0, 0.5); -webkit-box-shadow: 3px 6px 7px 1px rgba(0, 0, 0, 0.5); border-radius: 8px; -moz-border-radius: 8px; -webkit-border-radius: 8px; border-top-left-radius: 0px; -moz-border-radius-topleft: 0px; -webkit-border-top-left-radius: 0px; border-top-right-radius: 0px; -moz-border-radius-topright: 0px; -webkit-border-top-right-radius: 0px; border: 1px solid #232323; border-top: none; }
+		ul#secondary-menu li:hover ul, ul#secondary-menu li.sfHover ul { left:-100px; top:46px; }
 			ul#secondary-menu li:hover ul ul, ul#secondary-menu li.sfHover ul ul { right:-10px; top:-3px; border-radius: 8px; -moz-border-radius: 8px; -webkit-border-radius: 8px; border: 1px solid #232323; }
 			
 			ul#secondary-menu ul li { background: url("../images/secondary-dropdown-bottom.png") repeat-x bottom left; padding: 0px 0px 2px 2px; }
-				ul#secondary-menu ul li a { float:right; text-align:right; display: block; padding: 9px 0px 9px 0px; width: 160px; color: #ffffff; font-size:15px; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3); background: url("../images/secondary-dropdown-bullet.png")/*tpa=http://elegantthemes.com/preview/eStore/wp-content/themes/eStore/images/secondary-dropdown-bullet.png*/ no-repeat 15px 17px; }
+			
+				ul#secondary-menu ul li a { text-align:right; display: block; padding: 9px 0px 9px 0px; width: 190px; color: #ffffff; font-size:15px; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3); background: url("../images/secondary-dropdown-bullet.png") no-repeat 15px 50px; }
 				ul#secondary-menu ul li a:hover { background-color: #383838; color: #ede7c2; }
 		
 

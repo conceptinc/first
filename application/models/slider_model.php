@@ -75,6 +75,15 @@ class Slider_model extends CI_Model {
         }
     }
 
+ function last_adv_add_top() {
+
+        $sql = "select adv_id , main_photo ,type,name  from last_add where type='s' or type='g'  limit 3 ";
+        if ($result = $this->db->query($sql)) {
+            return $result;
+        } else {
+            return false;
+        }
+    }
     ////////////////////////////////////////////
     function save_small($pic_name) {
         //$day=$this->input->post('day');
@@ -212,7 +221,7 @@ class Slider_model extends CI_Model {
     ////////////////////////////////////////////////////////
 /////
     function select_last_views() {
-        $sql = "select * from max_views where type='g' or type='s' order by views ASC";
+        $sql = "select * from max_views where type='g' or type='s' order by views ASC limit 9";
         $result = $this->db->query($sql);
         if ($result->num_rows() > 0) {
             return $result;
