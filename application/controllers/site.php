@@ -19,8 +19,16 @@ class site extends CI_Controller {
         
         $this->load->model('dept');
         $data1['result'] = $this->dept->showAll_deptANDsub();
+        $slider_last_add = $this->slider_model->last_adv_add();
+        if ($slider_last_add->num_rows() > 0) {
+            $data1['slider1_pics'] = $slider_last_add->result();
+        }
+		
+		$last_views = $this->slider_model->select_last_views();
+        $data1['last_views'] = $last_views;
 
         $this->load->view('index', $data1);
+		
     }
 
     ////////////////////////////////////	  
