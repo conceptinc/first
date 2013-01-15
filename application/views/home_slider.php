@@ -9,6 +9,9 @@
         <ul id='carousel_ul'>
         <div id="items">
         <div class="block">		
+          
+                 <?php if (isset($slider1_pics)) { ?>
+        <?php foreach ($slider1_pics as $pic) { ?>		
             <li><div class="item">
 					<div class="item-top"></div>
 					
@@ -16,90 +19,17 @@
 												
 				<span class="tag"><span>12</span></span>
 												
-		         <img src="<?php echo base_url();?>images/hat-2-34802_162x112.jpg"  alt='Smooth Crocodile Skin' width='162' height='112' />												
+		          <img style="margin-left:-14px; margin-top:-7px;" src="<?php echo base_url(); ?>public/original/<?php echo $pic->main_photo ;?>"  alt='<?php echo $pic->name ?>' width='196' height='152' />											
 					</div> <!-- .item-content -->
 					
-					<a href="#"  class="more"><span>التفاصيل</span></a>
+					<a href="<?php echo base_url(); ?>site/showGoldenAdvDetail/<?php echo $pic->adv_id; ?>"  class="more"><span>التفاصيل</span></a>
 				</div> <!-- .item -->
 						</li>
-            <li><div class="item">
-					<div class="item-top"></div>
-					
-					<div class="item-content">
-												
-				<span class="tag"><span>12</span></span>
-												
-		         <img src="<?php echo base_url();?>images/hat-2-34802_162x112.jpg"  alt='Smooth Crocodile Skin' width='162' height='112' />												
-					</div> <!-- .item-content -->
-					
-					<a href="#"  class="more"><span>التفاصيل</span></a>
-				</div> <!-- .item -->
-						</li>
-            <li>
-            <div class="item">
-					<div class="item-top"></div>
-					
-					<div class="item-content">
-												
-				<span class="tag"><span>99</span></span>
-												
-		         <img src="<?php echo base_url();?>images/hat-2-34802_162x112.jpg"  alt='Smooth Crocodile Skin' width='162' height='112' />												
-					</div> <!-- .item-content -->
-					
-					<a href="#"  class="more"><span>التفاصيل</span></a>
-				</div> <!-- .item --></li>
-            <li>
-            <div class="item">
-					<div class="item-top"></div>
-					
-					<div class="item-content">
-												
-				<span class="tag"><span>99</span></span>
-												
-		         <img src="<?php echo base_url();?>images/hat-2-34802_162x112.jpg"  alt='Smooth Crocodile Skin' width='162' height='112' />												
-					</div> <!-- .item-content -->
-					
-					<a href="#"  class="more"><span>التفاصيل</span></a>
-				</div> <!-- .item --></li>
-            <li>
-            <div class="item">
-					<div class="item-top"></div>
-					
-					<div class="item-content">
-												
-				<span class="tag"><span>12</span></span>
-												
-		         <img src="<?php echo base_url();?>images/hat-2-34802_162x112.jpg"  alt='Smooth Crocodile Skin' width='162' height='112' />												
-					</div> <!-- .item-content -->
-					
-					<a href="#"  class="more"><span>التفاصيل</span></a>
-				</div> <!-- .item --></li>
-              <li>
-              <div class="item">
-					<div class="item-top"></div>
-					
-					<div class="item-content">
-												
-				<span class="tag"><span>90</span></span>
-												
-		         <img src="<?php echo base_url();?>images/hat-2-34802_162x112.jpg"  alt='Smooth Crocodile Skin' width='162' height='112' />												
-					</div> <!-- .item-content -->
-					
-					<a href="#"  class="more"><span>التفاصيل</span></a>
-				</div> <!-- .item --></li>
-            <li>
-            <div class="item">
-					<div class="item-top"></div>
-					
-					<div class="item-content">
-												
-				<span class="tag"><span>99</span></span>
-												
-		         <img src="<?php echo base_url();?>images/hat-2-34802_162x112.jpg"  alt='Smooth Crocodile Skin' width='162' height='112' />												
-					</div> <!-- .item-content -->
-					
-					<a href="#"  class="more"><span>التفاصيل</span></a>
-				</div> <!-- .item --></li>
+                     <?php } ?>
+                   <?php } ?>
+            
+           
+
             </div>
             </div>
         </ul>

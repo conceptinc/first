@@ -19,8 +19,16 @@ class site extends CI_Controller {
         
         $this->load->model('dept');
         $data1['result'] = $this->dept->showAll_deptANDsub();
+        $slider_last_add = $this->slider_model->last_adv_add();
+        if ($slider_last_add->num_rows() > 0) {
+            $data1['slider1_pics'] = $slider_last_add->result();
+        }
+		
+		$last_views = $this->slider_model->select_last_views();
+        $data1['last_views'] = $last_views;
 
         $this->load->view('index', $data1);
+		
     }
 
     ////////////////////////////////////	  
@@ -138,4 +146,15 @@ class site extends CI_Controller {
     
 
     //////////////////////////////////////////
+	function load_trains(){
+		$data1 = array();
+        $this->load->model('slider_model');
+        $slider_pics = $this->slider_model->load_img();
+        if ($slider_pics->num_rows() > 0)
+            $data1['big_pics'] = $slider_pics->result();
+        
+        $this->load->model('dept');
+        $data1['result'] = $this->dept->showAll_deptANDsub();
+		  $this->load->view('index_trains' ,$data1);
+		}
 }

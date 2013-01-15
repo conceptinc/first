@@ -67,7 +67,7 @@ class Slider_model extends CI_Model {
     //////////////////////////////////////////
     function last_adv_add() {
 
-        $sql = "select file1 ,id  from golden limit 20 ";
+        $sql = "select adv_id , main_photo ,type,name  from last_add where type='s' or type='g'  limit 20 ";
         if ($result = $this->db->query($sql)) {
             return $result;
         } else {
@@ -212,7 +212,7 @@ class Slider_model extends CI_Model {
     ////////////////////////////////////////////////////////
 /////
     function select_last_views() {
-        $sql = "select * from last_view order by count_views ASC";
+        $sql = "select * from max_views where type='g' or type='s' order by views ASC";
         $result = $this->db->query($sql);
         if ($result->num_rows() > 0) {
             return $result;
