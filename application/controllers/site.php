@@ -16,23 +16,27 @@ class site extends CI_Controller {
         $slider_pics = $this->slider_model->load_img();
         if ($slider_pics->num_rows() > 0)
             $data1['big_pics'] = $slider_pics->result();
-        
+
         $this->load->model('dept');
         $data1['result'] = $this->dept->showAll_deptANDsub();
+        
+        // photo for last add 
         $slider_last_add = $this->slider_model->last_adv_add();
         if ($slider_last_add->num_rows() > 0) {
             $data1['slider1_pics'] = $slider_last_add->result();
         }
-		$slider_last_add_top = $this->slider_model->last_adv_add_top();
+        
+        // photo for 3 adv top 
+        $slider_last_add_top = $this->slider_model->last_adv_add_top();
         if ($slider_last_add_top->num_rows() > 0) {
             $data1['slider1_pics_top'] = $slider_last_add_top->result();
         }
-		
-		$last_views = $this->slider_model->select_last_views();
+
+        // photo for max views 
+        $last_views = $this->slider_model->select_last_views();
         $data1['last_views'] = $last_views;
 
         $this->load->view('index', $data1);
-		
     }
 
     ////////////////////////////////////	  
@@ -49,6 +53,31 @@ class site extends CI_Controller {
         }
     }
 
+    function load_whoAre(){
+        
+            $data1 = array();
+        $this->load->model('slider_model');
+        $slider_pics = $this->slider_model->load_img();
+        if ($slider_pics->num_rows() > 0)
+            $data1['big_pics'] = $slider_pics->result();
+
+        $this->load->model('dept');
+        $data1['result'] = $this->dept->showAll_deptANDsub();
+        
+        // photo for last add 
+        $slider_last_add = $this->slider_model->last_adv_add();
+        if ($slider_last_add->num_rows() > 0) {
+            $data1['slider1_pics'] = $slider_last_add->result();
+        }
+        
+        // photo for 3 adv top 
+        $slider_last_add_top = $this->slider_model->last_adv_add_top();
+        if ($slider_last_add_top->num_rows() > 0) {
+            $data1['slider1_pics_top'] = $slider_last_add_top->result();
+        }
+        $this->load->view('view_whoAre',$data1);
+    }
+    
     ///////////////////////////////////////
 
     function showBySubId() {
@@ -70,14 +99,14 @@ class site extends CI_Controller {
             $data1['normal'] = $this->adv->showAllBySubDeptID($adv_id, 'n');
             $this->load->view('index_1', $data1);
         } else {
-			 $this->load->model('slider_model');
-        $slider_pics = $this->slider_model->load_img();
-        if ($slider_pics->num_rows() > 0)
-            $data['big_pics'] = $slider_pics->result();
-        
-        $this->load->model('dept');
-        $data['result'] = $this->dept->showAll_deptANDsub();
-            $this->load->view('view_error' ,$data);
+            $this->load->model('slider_model');
+            $slider_pics = $this->slider_model->load_img();
+            if ($slider_pics->num_rows() > 0)
+                $data['big_pics'] = $slider_pics->result();
+
+            $this->load->model('dept');
+            $data['result'] = $this->dept->showAll_deptANDsub();
+            $this->load->view('view_error', $data);
         }
     }
 
@@ -104,6 +133,7 @@ class site extends CI_Controller {
             // load adv photo 
 
             $z = $this->adv->selectLevel2PhotoById($adv_id);
+            $this->adv->incremetAdv($adv_id);
             $phot = array();
             foreach ($z as $value) {
                 $phot[] = array('url' => base_url() . "public/original/" . $value->name
@@ -125,25 +155,63 @@ class site extends CI_Controller {
             ///////////////////////////
             $this->load->view('index_golden', $data1);
         } else {
-			 $this->load->model('slider_model');
-        $slider_pics = $this->slider_model->load_img();
-        if ($slider_pics->num_rows() > 0)
-            $data['big_pics'] = $slider_pics->result();
-        
-        $this->load->model('dept');
-        $data['result'] = $this->dept->showAll_deptANDsub();
-            $this->load->view('view_error',$data);
+            $this->load->model('slider_model');
+            $slider_pics = $this->slider_model->load_img();
+            if ($slider_pics->num_rows() > 0)
+                $data['big_pics'] = $slider_pics->result();
+
+            $this->load->model('dept');
+            $data['result'] = $this->dept->showAll_deptANDsub();
+            $this->load->view('view_error', $data);
         }
     }
 
     //////////////////////////////////////////
 
     function showSliverAdvDetail() {
-        
+        if ($this->uri->segment(3) != '') {
+            // data on home page 
+            $data1 = array();
+            $this->load->model('slider_model');
+            $this->load->model('sliver');
+            $this->load->model('adv');
+            $slider_pics = $this->slider_model->load_img();
+            if ($slider_pics->num_rows() > 0)
+                $data1['big_pics'] = $slider_pics->result();
+            $this->load->model('dept');
+            $data1['result'] = $this->dept->showAll_deptANDsub();
+
+            // load adv data  
+            $adv_id = mysql_escape_string($this->uri->segment(3));
+            $data1['res'] = $this->sliver->selectAllFromSliver($adv_id);
+
+            // load adv photo 
+            $z = $this->adv->selectLevel2PhotoById($adv_id);
+            $this->adv->incremetAdv($adv_id);
+            $phot = array();
+            foreach ($z as $value) {
+                $phot[] = array('url' => base_url() . "public/original/" . $value->name
+                );
+            }
+            $data1['photo'] = $phot;
+
+            // load adv gallery 
+            ///////////////////////////
+            $this->load->view('index_silver', $data1);
+        } else {
+            $this->load->model('slider_model');
+            $slider_pics = $this->slider_model->load_img();
+            if ($slider_pics->num_rows() > 0)
+                $data['big_pics'] = $slider_pics->result();
+
+            $this->load->model('dept');
+            $data['result'] = $this->dept->showAll_deptANDsub();
+            $this->load->view('view_error', $data);
+        }
     }
-    
-    function showDoctor(){
-         if ($this->uri->segment(3) != '') {
+
+    function showDoctor() {
+        if ($this->uri->segment(3) != '') {
             // data on home page 
             $data1 = array();
             $this->load->model('slider_model');
@@ -158,28 +226,28 @@ class site extends CI_Controller {
             $data1['doctor'] = $this->adv->showDoctorAdvDetail($adv_id);
             $this->load->view('index_doctor', $data1);
         } else {
-			 $this->load->model('slider_model');
-        $slider_pics = $this->slider_model->load_img();
-        if ($slider_pics->num_rows() > 0)
-            $data['big_pics'] = $slider_pics->result();
-        
-        $this->load->model('dept');
-        $data['result'] = $this->dept->showAll_deptANDsub();
-            $this->load->view('view_error' ,$data);
+            $this->load->model('slider_model');
+            $slider_pics = $this->slider_model->load_img();
+            if ($slider_pics->num_rows() > 0)
+                $data['big_pics'] = $slider_pics->result();
+
+            $this->load->model('dept');
+            $data['result'] = $this->dept->showAll_deptANDsub();
+            $this->load->view('view_error', $data);
         }
     }
-    
 
     //////////////////////////////////////////
-	function load_trains(){
-		$data1 = array();
+    function load_trains() {
+        $data1 = array();
         $this->load->model('slider_model');
         $slider_pics = $this->slider_model->load_img();
         if ($slider_pics->num_rows() > 0)
             $data1['big_pics'] = $slider_pics->result();
-        
+
         $this->load->model('dept');
         $data1['result'] = $this->dept->showAll_deptANDsub();
-		  $this->load->view('index_trains' ,$data1);
-		}
+        $this->load->view('index_trains', $data1);
+    }
+
 }

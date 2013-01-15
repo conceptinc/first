@@ -11,13 +11,13 @@ class adv extends CI_Model {
         $result = $this->db->query($query, $name);
         return $result->row(0)->id;
     }
-   
-   function getTypeById($id) {
+
+    function getTypeById($id) {
         $query = "select type from adv where id = ?";
         $result = $this->db->query($query, $id);
         return $result->row(0)->type;
     }
-   
+
     function addLevel2Adv($dat) {
         $this->db->insert("level2", $dat);
     }
@@ -39,7 +39,7 @@ class adv extends CI_Model {
     }
 
     public function showAllBySubDeptID($sub_id, $type) {
-        $query = "select id,name,nashat,address,phone,type from adv where sub_dept_id = ? and type='$type'";
+        $query = "select id,name,nashat,address,phone,type from adv where sub_dept_id = ? and type='$type' order by id desc";
         $result = $this->db->query($query, $sub_id);
         return $result->result();
     }
@@ -50,12 +50,18 @@ class adv extends CI_Model {
         return $result->result();
     }
 
+    function incremetAdv($adv_id) {
+        $query = "update level2 set views = views+1  where adv_id=?";
+        $this->db->query($query, $adv_id);
+    }
+
     // get all sub department of doctor 
-     public function showDoctorAdvDetail($sub_id) {
+    public function showDoctorAdvDetail($sub_id) {
         $query = "select id,name,spe,address,phone,f_time,f_date,book from doctor where sdept_id = ?";
         $result = $this->db->query($query, $sub_id);
         return $result->result();
     }
+
     function selectDocSubDept() {
         $query = "select * from sub_dept where dept_id= 1";
         $result = $this->db->query($query);

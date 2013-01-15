@@ -8,7 +8,7 @@ $db_host = "localhost";
 // your username will be the one you specify when you create your database on your server
 $db_username = "root";
 // your password that you specify when you create your database on your server
-$db_pass = ""; 
+$db_pass = "root"; 
 // your db_name will be to database name that you used when creating your database
 $db_name = "tanta"; 
 
