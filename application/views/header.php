@@ -31,7 +31,7 @@
     <li id="menu-item-341" class="menu-item menu-item-type-taxonomy menu-item-object-category"><a href="-cat=13.htm" tppabs="http://elegantthemes.com/preview/eStore/?cat=13">مواعيد الاطباء<span></span></a></li>
 </ul>
                     </li>
-                    <li class="page_item page-item-"><a href="#"><strong>مواعيد القطارات</strong></a></li>
+                    <li class="page_item page-item-"><a href="<?php echo base_url();?>site/load_trains/"><strong>مواعيد القطارات</strong></a></li>
 <li class="page_item page-item-275"><a href="#"><strong>اتصل بنا</strong></a></li>
 <li class="page_item page-item-"><a href="#"><strong>عن الموقع</strong></a></li>
 

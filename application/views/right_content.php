@@ -25,13 +25,6 @@
     <ul class="nav2" style="margin-top:-10px">
 
 
-        <li> 
-            <a > خدمات الكمبيوتر </a>
-        </li>
-        <div class="sub_links" style="display: none; ">
-            <p><a href="#"  >بيع</a></p>
-            <p><a href="#" >تصليح</a></p>
-        </div>
 
         <?php
         $v = "";

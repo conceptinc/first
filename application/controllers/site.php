@@ -146,4 +146,15 @@ class site extends CI_Controller {
     
 
     //////////////////////////////////////////
+	function load_trains(){
+		$data1 = array();
+        $this->load->model('slider_model');
+        $slider_pics = $this->slider_model->load_img();
+        if ($slider_pics->num_rows() > 0)
+            $data1['big_pics'] = $slider_pics->result();
+        
+        $this->load->model('dept');
+        $data1['result'] = $this->dept->showAll_deptANDsub();
+		  $this->load->view('index_trains' ,$data1);
+		}
 }

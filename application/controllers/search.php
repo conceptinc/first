@@ -9,7 +9,13 @@ class Search extends CI_Controller {
 	
 	
 	function search_golden(){
-		
+		 $this->load->model('slider_model');
+        $slider_pics = $this->slider_model->load_img();
+        if ($slider_pics->num_rows() > 0)
+            $data['big_pics'] = $slider_pics->result();
+        
+        $this->load->model('dept');
+        $data['result'] = $this->dept->showAll_deptANDsub();
 		if($this->input->post('keywords')!=''){
 			$this->load->model("search_model");
 	$suffix="";
@@ -51,13 +57,7 @@ class Search extends CI_Controller {
 	}       
 	         
 	      
-        $this->load->model('slider_model');
-        $slider_pics = $this->slider_model->load_img();
-        if ($slider_pics->num_rows() > 0)
-            $data['big_pics'] = $slider_pics->result();
-        
-        $this->load->model('dept');
-        $data['result'] = $this->dept->showAll_deptANDsub();
+       
 	         $this->load->view('search_view',$data);
 
 		}
