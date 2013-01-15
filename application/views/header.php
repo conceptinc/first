@@ -5,12 +5,13 @@
 							
 						
 			<div id="search-bar">
-				<form method="get" id="searchform1" action="#">
+				 <?php echo form_open_multipart('search/'); ?>
                 <input type="image" src="<?php echo base_url();?>images/search-icon.png"  />
-					<input type="text" placeHolder="....ابحث في الموقع" name="s" id="searchinput" />
+		
+                 <?php echo form_input(array('id'=>'searchinput','name'=>'keywords','placeHolder'=>'....ابحث في الموقع'));?>
 
 					
-				</form>
+				 <?php echo form_close(); ?>
 			</div> <!-- #search-bar -->
 						
 			<div id="menu">
