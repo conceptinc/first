@@ -6,6 +6,11 @@ class dept extends CI_Model {
         $this->db->insert("dept", $data);
     }
 
+    public function createDocDept($data) {
+        $this->db->insert('sub_dept', $data);
+    }
+
+    
     public function showAll() {
         $this->db->order_by('order');
         $query = $this->db->get('dept');

@@ -193,8 +193,27 @@ class c_adv extends CI_Controller {
         }
     }
 
-    function delete() {
-        
+    function delete($type, $id) {
+        if ($this->session->userdata('logged_in')) {
+            if ($this->uri->segment(3) != '') {
+                $id = $this->uri->segment(3);
+                $this->load->model('adv');
+                $this->adv->getTypeById($id);
+
+                if ($type == 1) {
+                    $data['res'] = $this->golden->selectAll($dept, $subDept);
+                    $this->load->view('civou/view_edit2', $data);
+                } else if ($type == 2) {
+                    
+                } else if ($type == 3) {
+                    
+                } else {
+                    
+                }
+            }
+        } else {
+            
+        }
     }
 
 }

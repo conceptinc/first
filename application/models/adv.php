@@ -11,7 +11,13 @@ class adv extends CI_Model {
         $result = $this->db->query($query, $name);
         return $result->row(0)->id;
     }
-
+   
+   function getTypeById($id) {
+        $query = "select type from adv where id = ?";
+        $result = $this->db->query($query, $id);
+        return $result->row(0)->type;
+    }
+   
     function addLevel2Adv($dat) {
         $this->db->insert("level2", $dat);
     }

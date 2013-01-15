@@ -57,6 +57,26 @@ class c_doctor extends CI_Controller {
         }
     }
 
+    function addDocDept() {
+        if ($this->session->userdata('logged_in')) {
+
+            $this->load->library('form_validation');
+            $this->form_validation->set_rules('dept_name', 'Department Name ', 'required|trim|max_length[45]|xss_clean');
+
+            if ($this->form_validation->run() == false) {
+                $this->load->view("doc_dept_add_form");
+            } else {
+                $d_n = $this->input->post('dept_name');
+                $da = array('dept_name' => $d_n,'dept_id'=>'1');
+                $this->load->model('dept');
+                $this->dept->createDocDept($da);
+              
+            }
+        } else {
+            redirect('admin/login');
+        }
+    }
+
 }
 
 ?>
