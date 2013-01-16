@@ -77,6 +77,15 @@ class c_doctor extends CI_Controller {
         }
     }
 
+  function  load_doctorDeptAdd(){
+  if ($this->session->userdata('logged_in')) {
+         
+            $this->load->view('civou/view_doctorDeptAdd');
+        } else {
+            
+        }
+
+  }
 }
 
 ?>

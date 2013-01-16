@@ -225,7 +225,7 @@ class Slider_model extends CI_Model {
         $sql = "select * from max_views where type='g' or type='s' order by views desc limit 9";
         $result = $this->db->query($sql);
         if ($result->num_rows() > 0) {
-            return $result;
+            return $result->result();
         } else {
             return false;
         }

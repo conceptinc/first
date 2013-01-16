@@ -55,6 +55,12 @@
                         <a href="<?php echo site_url('civou/c_doctor/load_doctor'); ?>" >     اداره الاطباء  </a>
                     </td>
                 </tr>
+                <tr>
+                   
+                    <td>
+                        <a href="<?php echo site_url('civou/c_doctor/load_doctorDeptAdd'); ?>" >     اضافه قسم الاطباء  </a>
+                    </td>
+                </tr>
             </table>                                               
         </div>
 

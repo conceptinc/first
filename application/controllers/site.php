@@ -19,13 +19,13 @@ class site extends CI_Controller {
 
         $this->load->model('dept');
         $data1['result'] = $this->dept->showAll_deptANDsub();
-        
+
         // photo for last add 
         $slider_last_add = $this->slider_model->last_adv_add();
         if ($slider_last_add->num_rows() > 0) {
             $data1['slider1_pics'] = $slider_last_add->result();
         }
-        
+
         // photo for 3 adv top 
         $slider_last_add_top = $this->slider_model->last_adv_add_top();
         if ($slider_last_add_top->num_rows() > 0) {
@@ -34,7 +34,11 @@ class site extends CI_Controller {
 
         // photo for max views 
         $last_views = $this->slider_model->select_last_views();
-        $data1['last_views'] = $last_views;
+        if ($last_views != false) {
+            $data1['last_views'] = $last_views;
+        }
+
+
 
         $this->load->view('index', $data1);
     }
@@ -53,9 +57,9 @@ class site extends CI_Controller {
         }
     }
 
-    function load_whoAre(){
-        
-            $data1 = array();
+    function load_whoAre() {
+
+        $data1 = array();
         $this->load->model('slider_model');
         $slider_pics = $this->slider_model->load_img();
         if ($slider_pics->num_rows() > 0)
@@ -63,21 +67,21 @@ class site extends CI_Controller {
 
         $this->load->model('dept');
         $data1['result'] = $this->dept->showAll_deptANDsub();
-        
+
         // photo for last add 
         $slider_last_add = $this->slider_model->last_adv_add();
         if ($slider_last_add->num_rows() > 0) {
             $data1['slider1_pics'] = $slider_last_add->result();
         }
-        
+
         // photo for 3 adv top 
         $slider_last_add_top = $this->slider_model->last_adv_add_top();
         if ($slider_last_add_top->num_rows() > 0) {
             $data1['slider1_pics_top'] = $slider_last_add_top->result();
         }
-        $this->load->view('view_whoAre',$data1);
+        $this->load->view('view_whoAre', $data1);
     }
-    
+
     ///////////////////////////////////////
 
     function showBySubId() {

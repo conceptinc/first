@@ -1,5 +1,5 @@
 <?php if (isset($last_views)) { ?> 
-    <?php foreach ($last_views->result() as $last_view) { ?>
+    <?php foreach ($last_views as $last_view) { ?>
         <div class="product">
             <div class="product-content clearfix">
                 <?php if ($last_view->type == 'g') { ?>
