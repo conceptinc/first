@@ -102,7 +102,7 @@ img#about-image { float: left; margin: 3px 8px 8px 0px; }
 
 #header { padding: 25px 0px 0px; background: #ffffff url("../images/header-bottom-bg.png")/*tpa=http://elegantthemes.com/preview/eStore/wp-content/themes/eStore/images/header-bottom-bg.png*/ repeat-x bottom left; height: 101px; }
 	img#logo { float: right; margin: 0px 23px 0px 0px; }
-	#search-bar { float: left; background: url("../images/search-bg.png") no-repeat; width: 162px; height: 31px; margin-top: 21px; margin-right:6px;font-family: 'myfont'; }
+	#search-bar { float: left; margin-left:10px; background: url("../images/search-bg.png") no-repeat; width: 162px; height: 31px; margin-top: 21px; margin-right:6px;font-family: 'myfont'; }
 		#search-bar #searchinput { background: none; border: none; float: left; margin: -23px 0px 0 30px; width: 112px; padding-left: 10px; font-size: 13px;  text-align:right;font-family: 'myfont';}
 		#search-bar #searchsubmit { margin-top: 1px; }
 	
