@@ -234,7 +234,7 @@ body#home #content { background: #f3f3f3 url("../images/content-bg.png")/*tpa=ht
 			#main-content { background: url("../images/main-bg.png")/*tpa=http://elegantthemes.com/preview/eStore/wp-content/themes/eStore/images/main-bg.png*/ repeat-y; padding: 0px 1px 15px 1px; }
 				#left-column { float: left; width: 720px; margin-top:-8px; }
 					
-					#left-column .product { float: left; background: url("../images/product-right.png")/*tpa=http://elegantthemes.com/preview/eStore/wp-content/themes/eStore/images/product-right.png*/ repeat-y top right; position: relative;  }
+					#left-column .product { float: right; background: url("../images/product-right.png")/*tpa=http://elegantthemes.com/preview/eStore/wp-content/themes/eStore/images/product-right.png*/ repeat-y top right; position: relative;  }
 						.product .product-content { padding: 24px 23px 19px 24px; width: 193px; background: url("../images/product-bottom.png")/*tpa=http://elegantthemes.com/preview/eStore/wp-content/themes/eStore/images/product-bottom.png*/ repeat-x bottom left; }
 							.product a.image { display: block; position: relative; }
 								.product a.image:hover { text-decoration: none; }

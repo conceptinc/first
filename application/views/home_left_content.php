@@ -15,7 +15,7 @@
 
                 <?php } ?>   
                 <h5><?php echo $last_view->name; ?></h5>
-                <p style="height:72px;">
+                <p style="height:55px;">
                     <?php echo $last_view->desc; ?>
                 </p>
 

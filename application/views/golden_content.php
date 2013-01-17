@@ -98,7 +98,7 @@
                                         </div>
 
                                         <ul class="gallery clearfix" id="gallery">
-
+                                            <?php if(isset($gallery)){?>
                                             <?php foreach ($gallery as $im) { ?>
                                                 <li class="photos" > 
                                                     <a href="<?php echo $im['url_ga'] ?> "  rel="prettyPhoto[gallery]"  > 
@@ -106,6 +106,7 @@
                                                     </a> 
                                                 </li>
                                             <?php } ?>
+                                             <?php } ?>
                                         </ul>
                                     </li>
 
