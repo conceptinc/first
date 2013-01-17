@@ -165,7 +165,7 @@ img#about-image { float: left; margin: 3px 8px 8px 0px; }
 
 
 
-#login{margin-left:30px;padding-top:10px;font-family: 'myfont';}
+#login{margin-left:34px;padding-top:10px;font-family: 'myfont';}
 .form-4 input[type=text]{
 	padding:0px;
 	font-family: 'myfont';
@@ -180,15 +180,17 @@ img#about-image { float: left; margin: 3px 8px 8px 0px; }
 	padding-right:4px;
 	background:url("../images/login.png");
 	font-family: 'myfont';
+	border-radius: 6px; -webkit-border-radius: 6px; -moz-border-radius: 6px;
 	}	
 .form-4 input[type=submit]{
 	background: none; border: none;
 	text-align:right;
-	width:130px;
-	height:30px;
+	width:100px;
+	height:27px;
 	padding-right:4px;
-	margin-left:20px;
+	margin-left:35px;
 	text-align:center;
+	border-radius: 10px; -webkit-border-radius: 10px; -moz-border-radius: 10px;
 	background:url("../images/login.png");
 	cursor:pointer;
 	font-family: 'myfont';
