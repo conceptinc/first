@@ -1,4 +1,4 @@
-<h2 style="padding: 80px;">
+<h2 id="about-us" style="padding: 80px; text-align:right">
 
 
 

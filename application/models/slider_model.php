@@ -13,7 +13,7 @@ class Slider_model extends CI_Model {
     }
 
     function load_img() {
-        $sql = "select id , pic_name , caption, active,link from big_slider where active=1 ";
+        $sql = "select id , pic_name , caption, active,link from big_slider where active=1 order by date DESc ";
         if ($result = $this->db->query($sql)) {
             return $result;
         } else {

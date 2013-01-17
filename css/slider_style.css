@@ -1,21 +1,23 @@
 
 #wrapper{
-    width:940px;
-    height:500px;
+    width:930px;
+    height:420px;
 	text-align:left;
-    margin: 0 auto 0px;
-    padding:0 0px 0px 10px;
+    margin: auto ;
+	
+    padding:40px 0px 0px 8px;
 	border:none;
 	display:block;
+	
 }
 
 
 #bigPic{
-	width:940px;
-	height:500px;
-	padding:1px;
+	width:930px;
+	height:420px;
+	padding:0px;
 	display:block;
-	
+	border: 7px solid #fff;
 	
 	
 }

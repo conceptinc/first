@@ -60,6 +60,7 @@
                     <td>
                         <a href="<?php echo site_url('civou/c_doctor/load_doctorDeptAdd'); ?>" >     اضافه قسم الاطباء  </a>
                     </td>
+                    <td><a href="<?php echo site_url('site/logout'); ?>" >خروج </a> </td>
                 </tr>
             </table>                                               
         </div>

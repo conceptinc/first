@@ -62,6 +62,8 @@
 
 		
 	 
+	
+	 <script type="text/javascript" src="<?php echo base_url();?>js/superfish.js" ></script>
 <script type="text/javascript">
 	var currentImage;
     var currentIndex = -1;
@@ -101,7 +103,16 @@
 	});
     
 	
-	</script>	
+		jQuery('ul#secondary-menu').superfish({ 
+			delay:       300,                            // one second delay on mouseout 
+			animation:   {opacity:'show',height:'show'},  // fade-in and slide-down animation 
+			speed:       'fast',                          // faster animation speed 
+			autoArrows:  true,                           // disable generation of arrow mark-up 
+			dropShadows: false                            // disable drop shadows 
+		});
+		
+		et_search_bar();
+	</script>		
 </body>
 
 </html>			

@@ -15,7 +15,7 @@
 
     </style>
     <body >
-
+<?php include('view_menu.php')?>
         <table border="1" width="900">
 
             <th> مسح</th>

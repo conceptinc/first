@@ -48,7 +48,7 @@
 
 <div id="featured">
     <div id="slides">
-        <div class="slide active"  style="background: #eb7f43  no-repeat top center; " >
+        <div class="slideactive" >
 
             <div class="container">
                 <div id="main_s" style="width:940px;margin-left:0px;"><!------------main slider----------------->
@@ -61,7 +61,7 @@
                                     <?php foreach ($big_pics as $pic) { ?>
                                         <a href="<?php echo $pic->link; ?>">
 
-                                            <img src="<?php echo base_url(); ?>public/uploads/slider/<?php echo $pic->pic_name; ?>" width="940" height="500"  /></a>
+                                            <img src="<?php echo base_url(); ?>public/uploads/slider/<?php echo $pic->pic_name; ?>" width="930" height="420"  /></a>
 
                                     <?php } ?>
                                 <?php } ?>
@@ -85,7 +85,7 @@
         <div class="container">
             <div id="switcher" >
 
-                <?php if (isset($slider1_pics_top)) { ?>
+                <?php if (isset($slider1_pics_toop)) { ?>
                     <?php foreach ($slider1_pics_top as $pic) { ?>	
 
                         <div class="item">

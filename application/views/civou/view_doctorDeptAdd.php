@@ -8,7 +8,7 @@
     </head>
 
     <body>
-
+<?php include('view_menu.php')?>
         <h2> Add Doc  Dept </h2>
         <br/>
         <?php echo form_open("civou/c_doctor/addDocDept"); ?>

@@ -15,6 +15,7 @@ body{width:945px; margin:auto; }
 
 </style>
 <body >
+<?php include('view_menu.php')?>
 <div id="upload_form">
 <?php if(isset($errors)){echo '<p style="color:#F00">'.$errors.'</p>' ;}?>
 
@@ -61,7 +62,7 @@ body{width:945px; margin:auto; }
 
 
 <td><a class="delete" href="<?php echo base_url();?>civou/add_panners/deleteImage?id=<?php echo $pic->id ;?>&path=
-<?php echo APPPATH.'../public/uploads/slider/'.$pic->pic_name.'&path2='.APPPATH.'../public/uploads/slider/thumb/'.$pic->pic_name ;?>
+<?php echo APPPATH.'../public/uploads/slider/'.$pic->pic_name.'&path2='.APPPATH.'../public/uploads/slider/thumbs/'.$pic->pic_name ;?>
 " >مسح</a></td>
 
 <td>

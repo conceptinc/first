@@ -22,12 +22,12 @@
         <!--            sliver adv data -->
 
         <?php foreach ($sliver as $value) { ?>
-            <li class="silver">  
+            <li class="gold">  
                 <table><tbody><tr>
                             <td width="40%"><h2> <?php echo $value->nashat; ?> </h2></td>
                             <td ><h2> <?php echo $value->name; ?> </h2>  </td>
                         </tr> <tr>
-                            <td><h2> <?php echo $value->phone; ?> <a  href="<?php echo site_url('site/showSliverAdvDetail/' . $value->id . ''); ?>"  title="التفاصيل" class="moree">التفاصيل</a></h2></td>
+                            <td><h2> <?php echo $value->phone; ?> <a style="font-size:16px;"  href="<?php echo site_url('site/showSliverAdvDetail/' . $value->id . ''); ?>"  title="التفاصيل" class="moree">التفاصيل</a></h2></td>
                             <td width="40%"><h2> <?php echo $value->address; ?></h2>  </td>
                         </tr></tbody></table>  
             </li>                
@@ -39,10 +39,10 @@
 
 
         <?php foreach ($normal as $value) { ?>
-            <li class="bronz">  
+            <li class="gold">  
                 <table><tbody><tr>
                             <td width="40%"><h2> <?php echo $value->nashat; ?> </h2></td>
-                            <td ><h2>  </h2>  <?php echo $value->name; ?></td>
+                            <td ><h2>   <?php echo $value->name; ?></h2></td>
                         </tr> <tr>
                             <td><h2> <?php echo $value->phone; ?> </h2></td>
                             <td width="40%"><h2> <?php echo $value->address; ?></h2>  </td>

@@ -253,5 +253,11 @@ class site extends CI_Controller {
         $data1['result'] = $this->dept->showAll_deptANDsub();
         $this->load->view('index_trains', $data1);
     }
+//////////////////////////////////////
+     function logout() {
+
+        $this->session->sess_destroy();
+        $this->load->view('view_login');
+    }
 
 }

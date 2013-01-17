@@ -1,5 +1,5 @@
 /*
- * jQuery Nivo Slider v3.1
+ * jQuery Nivo Slider v3.2
  * http://nivo.dev7studios.com
  *
  * Copyright 2012, Dev7studios
@@ -74,7 +74,7 @@
         }
         
         // Set first background
-        var sliderImg = $('<img class="nivo-main-image" src="#" />');
+        var sliderImg = $('<img/>').addClass('nivo-main-image');
         sliderImg.attr('src', vars.currentImage.attr('src')).show();
         slider.append(sliderImg);
 
@@ -123,7 +123,7 @@
         if(settings.directionNav){
             slider.append('<div class="nivo-directionNav"><a class="nivo-prevNav">'+ settings.prevText +'</a><a class="nivo-nextNav">'+ settings.nextText +'</a></div>');
             
-            $('a.nivo-prevNav', slider).live('click', function(){
+            $(slider).on('click', 'a.nivo-prevNav', function(){
                 if(vars.running) { return false; }
                 clearInterval(timer);
                 timer = '';
@@ -131,7 +131,7 @@
                 nivoRun(slider, kids, settings, 'prev');
             });
             
-            $('a.nivo-nextNav', slider).live('click', function(){
+            $(slider).on('click', 'a.nivo-nextNav', function(){
                 if(vars.running) { return false; }
                 clearInterval(timer);
                 timer = '';
@@ -637,15 +637,15 @@
     $.fn.nivoSlider.defaults = {
         effect: 'random',
         slices: 15,
-        boxCols: 18,
-        boxRows: 14,
+        boxCols: 8,
+        boxRows: 4,
         animSpeed: 500,
-        pauseTime: 4000,
+        pauseTime: 3000,
         startSlide: 0,
-        directionNav: false,
-        controlNav: false,
+        directionNav: true,
+        controlNav: true,
         controlNavThumbs: false,
-        pauseOnHover: false,
+        pauseOnHover: true,
         manualAdvance: false,
         prevText: 'Prev',
         nextText: 'Next',

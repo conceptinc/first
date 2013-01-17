@@ -8,6 +8,7 @@
     </head>
 
     <body>
+    <?php include('view_menu.php')?>
         <?php 
         
         if(isset($error)){

@@ -55,7 +55,7 @@
     </head>
     <?php include('dbcon.php'); ?>
     <body>
-
+<?php include('view_menu.php')?>
         <?php echo form_open_multipart('civou/c_adv/editAdv'); ?>
 
         <!--        <form action="#" name="form" id="form" method="post" onsubmit="return alert_id();"

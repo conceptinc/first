@@ -14,6 +14,7 @@
 
     </style>
     <body >
+    <?php include('view_menu.php')?>
         <div id="upload_form">
             <?php
             if (isset($errors)) {
