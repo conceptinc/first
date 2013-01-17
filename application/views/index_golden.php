@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US"><head profile="http://gmpg.org/xfn/11">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        <title>دليل طنطا </title>
+        <title>دليل طنطا.كوم</title>
         <link rel="shortcut icon" href="<?php echo base_url();?>images/head.png" type="image/x-icon"/>
 
         <link rel="stylesheet" href="<?php echo base_url(); ?>css/style.css"  type="text/css" media="screen" />
@@ -10,7 +10,7 @@
         <link rel="stylesheet" href="<?php echo base_url(); ?>css/menu_style.css" type="text/css" media="screen" />
         <!-- jquery ui custom build (for animation easing) -->
 
-  <script type="text/javascript" src="<?php echo base_url();?>js/jquery-1.7.1.min.js"></script>
+   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
      <script type="text/javascript" src="<?php echo base_url();?>js/custom.js" ></script>
     <script src="<?php echo base_url();?>js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
         <!--script src="js/jquery.lint.js" type="text/javascript" charset="utf-8"></script-->
