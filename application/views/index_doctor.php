@@ -19,7 +19,7 @@
 #doc{float:right;padding:10px;width:680px; text-align:right;background:url(<?php echo base_url();?>images/doc.png) top left no-repeat;-webkit-border-radius: 10px;
 -moz-border-radius: 10px;
 border-radius: 10px;
-border:1px solid #eeeeee;
+border:1px solid #e0e0e0;
 margin-bottom:20px;
 height:130px;
 

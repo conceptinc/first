@@ -39,7 +39,7 @@ class adv extends CI_Model {
     }
 
     public function showAllBySubDeptID($sub_id, $type) {
-        $query = "select id,name,nashat,address,phone,type from adv where sub_dept_id = ? and type='$type' order by id desc";
+        $query = "select id,name,nashat,address,phone,type,`desc` from adv where sub_dept_id = ? and type='$type' order by id desc";
         $result = $this->db->query($query, $sub_id);
         return $result->result();
     }

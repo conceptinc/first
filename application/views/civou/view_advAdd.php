@@ -163,9 +163,18 @@
 
     </head>
     <?php include('dbcon.php'); ?>
+<style type="text/css">
+ .error{color:#F00;font-size:18px}
 
+</style>
     <body>
 <?php include('view_menu.php')?>
+
+ <br/><br/>
+       <?php if(isset($error)){echo '<p class="error">'. $error.'</p>';} ?>
+        <br/><br/>
+        
+        <div class="error"><?php echo validation_errors(); ?></div>
         <?php echo form_open_multipart('civou/c_adv/addAdv'); ?>
 
         <!--        <form action="#" name="form" id="form" method="post" onsubmit="return alert_id();"

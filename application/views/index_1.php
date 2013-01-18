@@ -12,7 +12,20 @@
      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
      <script type="text/javascript" src="<?php echo base_url();?>js/custom.js" ></script>
     
+<style type="text/css">
 
+
+#doc{float:right;padding:10px;width:680px; text-align:right;background:url(<?php echo base_url();?>images/advs_bg.png) no-repeat;-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+border:1px solid #ccc;
+margin-bottom:20px;
+height:95px;
+
+}
+#doc table tr td{padding:3px;}
+.doc{position:absolute; width:200px; height:100px;margin-left:-180px; margin-top:20px}
+</style>
 </head>
 <body id="home" class="home blog cufon-enabled ie et_includes_sidebar">
 		<?php include('header.php')?>	

@@ -53,6 +53,23 @@ class c_adv extends CI_Controller {
 
     function addAdv() {
         if ($this->session->userdata('logged_in')) {
+			 $this->load->library('form_validation');
+        $this->form_validation->set_rules('adv_name', ' Name ', 'required|trim|max_length[45]|xss_clean');
+        $this->form_validation->set_rules('adv_nashat', 'nashat ', 'required|trim|max_length[45]|xss_clean');
+        $this->form_validation->set_rules('adv_address', 'address ', 'required|trim|max_length[45]|xss_clean');
+        $this->form_validation->set_rules('adv_phone', 'phone ', 'required|trim|max_length[45]|xss_clean|numeric');
+		$this->form_validation->set_rules('desc', 'description ', 'required|trim|max_length[138]|xss_clean');
+		
+
+        if ($this->form_validation->run() == false) {
+            $error = array();
+            $error['error'] = "";
+            $error['dept_id'] = 0;
+            $this->load->view("civou/view_advAdd", $error);
+        } else {
+
+			
+			
             $type = $this->input->post('advtype');
             $dept = $this->input->post('search_category');
             $subDept = $this->input->post('sub_category');
@@ -91,7 +108,8 @@ class c_adv extends CI_Controller {
                 $this->addGalleryPhoto($name);
             }
             $this->load->view('civou/view_advAdd');
-        } else {
+        }
+		} else {
             
         }
     }
