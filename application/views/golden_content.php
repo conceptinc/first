@@ -1,7 +1,7 @@
 <div id="adv_content">
     <div class="boxLeft">
 
-        <ul class="ads" style="text-align:right;font-size:15px;">
+        <ul class="ads" style="text-align:right;font-size:15px;;">
 
             <!------------------- ads details ------------------------->
             <?php foreach ($res as $s) { ?>

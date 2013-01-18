@@ -14,8 +14,8 @@
                     </a>
 
                 <?php } ?>   
-                <h5><?php echo $last_view->name; ?></h5>
-                <p style="height:55px;">
+                <h5 style="font-family:myfont2;"><?php echo $last_view->name; ?></h5>
+                <p style="height:55px; font-size:12px; font-family:myfont2">
                     <?php echo $last_view->desc; ?>
                 </p>
 
