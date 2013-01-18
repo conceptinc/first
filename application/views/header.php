@@ -13,6 +13,8 @@
 
             <?php echo form_close(); ?>
         </div> <!-- #search-bar -->
+        
+        
 
         <div id="menu">
             <ul id="secondary-menu" class="nav superfish clearfix">

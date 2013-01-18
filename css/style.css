@@ -101,8 +101,9 @@ img#about-image { float: left; margin: 3px 8px 8px 0px; }
 .container { text-align: left; width: 962px; margin: 0 auto; position: relative; }
 
 #header { padding: 25px 0px 0px; background: #ffffff url("../images/header-bottom-bg.png")/*tpa=http://elegantthemes.com/preview/eStore/wp-content/themes/eStore/images/header-bottom-bg.png*/ repeat-x bottom left; height: 101px; }
-	img#logo { float: right; margin: 0px 23px 0px 0px; }
-	#search-bar { float: left; margin-left:10px; background: url("../images/search-bg.png") no-repeat; width: 162px; height: 31px; margin-top: 21px; margin-right:6px;font-family: 'myfont'; }
+	img#logo { float: left; margin: -19px 23px 0px 6px; }
+	#under{float:right; position:relative;margin-left:100px;margin-top:21px; }
+	#search-bar { float: right;  background: url("../images/search-bg.png") no-repeat; width: 162px; height: 31px; margin-top:4px; margin-right:10px;font-family: 'myfont'; }
 		#search-bar #searchinput { background: none; border: none; float: left; margin: -23px 0px 0 30px; width: 112px; padding-left: 10px; font-size: 13px;  text-align:right;font-family: 'myfont';}
 		#search-bar #searchsubmit { margin-top: 1px; }
 	
@@ -390,7 +391,7 @@ ul#secondary-menu { padding: 25px 0px 0px 0px; }
 /*------------------------------------------------*/
 /*-------------------[COMMENTS]-------------------*/
 /*------------------------------------------------*/
-#adv_content{ width:700px; margin:auto; margin-top:20px;margin-bottom:20px;}
+#adv_content{ width:700px; margin:auto; margin-top:20px;margin-bottom:20px; font-family:'myfont2';}
 .adv_img{padding:3px;border:1px solid #ccc;}
 #details table{height:117px;}
 #details table tr td{text-align:right;padding-right:10px;font-size:18px;}
@@ -647,6 +648,7 @@ font-family: 'myfont';
     font-weight: ;
     
 }
+#ads table tr td{font-family:'myfont2'}
 
 /* gold */
 ul.ads li.gold {
@@ -859,3 +861,13 @@ ul.ads li.bronz a.moree {
 
 .level-2 ul li{display:inline;padding-left:32px; margin:auto;font-family: 'myfont';;}
 #gallery {}
+#doc{float:right;padding:10px;width:680px; text-align:right;background:url('../images/advs_bg.png') no-repeat;-webkit-border-radius: 10px;
+-moz-border-radius: 10px;
+border-radius: 10px;
+border:1px solid #ccc;
+margin-bottom:20px;
+height:95px;
+
+}
+#doc table tr td{padding:3px;}
+.doc{position:absolute; width:200px; height:100px;margin-left:-180px; margin-top:20px}
