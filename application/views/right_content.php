@@ -4,11 +4,17 @@
         <span>دخول العملاء للتعديل علي اعلانتهم</span>
         <p>
             <label for="login">البريد الالكتروني</label>
-            <input type="text" name="login" placeholder="اسم العميل" requried />
+           
+            
+             <?php echo form_input(array('id' => '', 'name' => 'login','value'=>'....اسم العميل',
+			'onblur'=>"if(this.value=='') this.value='....اسم العميل'" ,'onfocus'=>"if(this.value =='....اسم العميل' ) this.value=''"
+			)); ?>
         </p>
         <p>
             <label for="password">كلمه المرور</label>
-            <input type="password" name='password' placeholder="كلمه المرور"  /> 
+            <?php echo form_password(array('id' => '', 'name' => 'password','value'=>'....اسم العميل',
+			'onblur'=>"if(this.value=='') this.value='....اسم العميل'" ,'onfocus'=>"if(this.value =='....اسم العميل' ) this.value=''"
+			)); ?>
         </p>
 
         <p>

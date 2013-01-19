@@ -23,7 +23,7 @@ margin-bottom:20px;
 height:95px;
 
 }
-#doc table tr td{padding:3px;}
+#doc table tr td{padding:3px;font-size:15px;}
 .doc{position:absolute; width:200px; height:100px;margin-left:-180px; margin-top:20px}
 </style>
 </head>

@@ -8,7 +8,9 @@
             <?php echo form_open_multipart('search/'); ?>
             <input type="image" src="<?php echo base_url(); ?>images/search-icon.png"  />
 
-            <?php echo form_input(array('id' => 'searchinput', 'name' => 'keywords', 'placeHolder' => '....ابحث في الموقع')); ?>
+            <?php echo form_input(array('id' => 'searchinput', 'name' => 'keywords','value'=>'....ابحث في الموقع',
+			'onblur'=>"if(this.value=='') this.value='....ابحث في الموقع'" ,'onfocus'=>"if(this.value =='....ابحث في الموقع' ) this.value=''"
+			)); ?>
 
 
             <?php echo form_close(); ?>
