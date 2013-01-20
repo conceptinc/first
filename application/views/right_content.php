@@ -1,22 +1,4 @@
 <div id="login">
-    <div id="main" class="form-4">
-        <?php echo form_open(''); ?> 
-        <span>دخول العملاء للتعديل علي اعلانتهم</span>
-        <p>
-            <label for="login">البريد الالكتروني</label>
-           
-            
-             <?php echo form_input(array('id' => '', 'name' => 'login','value'=>'....اسم العميل',
-			'onblur'=>"if(this.value=='') this.value='....اسم العميل'" ,'onfocus'=>"if(this.value =='....اسم العميل' ) this.value=''"
-			)); ?>
-        </p>
-        <p>
-            <label for="password">كلمه المرور</label>
-            <?php echo form_password(array('id' => '', 'name' => 'password','value'=>'....اسم العميل',
-			'onblur'=>"if(this.value=='') this.value='....اسم العميل'" ,'onfocus'=>"if(this.value =='....اسم العميل' ) this.value=''"
-			)); ?>
-        </p>
-
     <?php if (isset($user)) { ?>
         <?php if (!$user) { ?>
             <div id="main" class="form-4">
@@ -24,20 +6,30 @@
                 <span>دخول العملاء للتعديل علي اعلانتهم</span>
                 <p>
                     <label for="login">البريد الالكتروني</label>
-                    <input type="text" name="username" placeholder="اسم العميل" requried />
+
+
+                    <?php
+                    echo form_input(array('id' => '', 'name' => 'username', 'value' => '....اسم العميل',
+                        'onblur' => "if(this.value=='') this.value='....اسم العميل'", 'onfocus' => "if(this.value =='....اسم العميل' ) this.value=''"
+                    ));
+                    ?>
                 </p>
                 <p>
                     <label for="password">كلمه المرور</label>
-                    <input type="password" name='password' placeholder="كلمه المرور"  requried /> 
+                    <?php
+                    echo form_password(array('id' => '', 'name' => 'password', 'value' => '....اسم العميل',
+                        'onblur' => "if(this.value=='') this.value='....اسم العميل'", 'onfocus' => "if(this.value =='....اسم العميل' ) this.value=''"
+                    ));
+                    ?>
                 </p>
                 <p>
                     <input type="submit" name="submit" value="دخول">
                 </p>       
-                <?php echo form_close(); ?>
+            <?php echo form_close(); ?>
             </div>
-            <?php
-        } else {
-            ?>
+        <?php
+    } else {
+        ?>
             <a href="<?php echo site_url("c_custmer/logout/$user") ?>" > خروج   </a>
             <br/>
             <a href="<?php echo site_url("c_custmer/edit/$user") ?>" > التعديل على الاعلان  </a>
