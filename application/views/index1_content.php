@@ -68,13 +68,17 @@
                                  
                                 <td width="50%">
 
-                              الاسم:                                                             
-                                    <font color="#057de7">
+<table>
+<tr>الاسم :<td></td><font color="#057de7">
                                     <?php echo $value->name; ?>                                                           </font>
                                     <img src="<?php echo base_url(); ?>images/bullet_red.png"
                                          width="16"
                                          height="16" 
-                                         class="icon">    
+                                         class="icon">  </tr>
+</table>
+
+                                                                                         
+                                      
 
                                 </td>
                             </tr>
@@ -111,7 +115,7 @@
 
                     <div class="clear"></div>
 
-                    <table width="600px" style="text-align:right; font-size:14px;">
+                    <table  width="600px" style="text-align:right; font-size:14px;">
                         <tbody>
                             <tr>
                              <td width="50%">
@@ -158,13 +162,16 @@
                                  
                                 <td width="50%">
 
-                              الاسم:                                                             
-                                    <font color="#057de7">
+<table>
+<tr>الاسم :<td></td><font color="#057de7">
                                     <?php echo $value->name; ?>                                                           </font>
                                     <img src="<?php echo base_url(); ?>images/bullet_red.png"
                                          width="16"
                                          height="16" 
-                                         class="icon">    
+                                         class="icon">  </tr>
+</table>
+
+                                    
 
                                 </td>
                             </tr>
@@ -239,14 +246,16 @@
                                  
                                 <td width="50%">
 
-                              الاسم:                                                             
-                                    <font color="#057de7">
+<table>
+<tr>الاسم :<td></td><font color="#057de7">
                                     <?php echo $value->name; ?>                                                           </font>
                                     <img src="<?php echo base_url(); ?>images/bullet_red.png"
                                          width="16"
                                          height="16" 
-                                         class="icon">    
+                                         class="icon">  </tr>
+</table>
 
+                                    
                                 </td>
                             </tr>
                         </tbody>

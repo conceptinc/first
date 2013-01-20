@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="<?php echo base_url();?>css/menu_style.css" type="text/css" media="screen" />
 <!-- jquery ui custom build (for animation easing) -->
 
-     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
      <script type="text/javascript" src="<?php echo base_url();?>js/custom.js" ></script>
     
     
@@ -164,7 +164,7 @@ margin-top:70px;
 	
 
 		
-	 <script type="text/javascript" src="<?php echo base_url();?>js/superfish.js" ></script>
+	  <script type="text/javascript" src="<?php echo base_url();?>js/superfish.js" ></script>
 <script type="text/javascript">
 	var currentImage;
     var currentIndex = -1;
@@ -204,7 +204,10 @@ margin-top:70px;
 	});
     
 	
-		jQuery('ul#secondary-menu').superfish({ 
+		
+	</script>
+    <script type="text/javascript">
+	jQuery('ul#secondary-menu').superfish({ 
 			delay:       300,                            // one second delay on mouseout 
 			animation:   {opacity:'show',height:'show'},  // fade-in and slide-down animation 
 			speed:       'fast',                          // faster animation speed 
@@ -212,8 +215,8 @@ margin-top:70px;
 			dropShadows: false                            // disable drop shadows 
 		});
 		
-		et_search_bar();
-	</script>	
+		
+        </script>
 </body>
 
 </html>			

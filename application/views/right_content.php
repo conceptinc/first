@@ -1,4 +1,21 @@
 <div id="login">
+    <div id="main" class="form-4">
+        <?php echo form_open(''); ?> 
+        <span>دخول العملاء للتعديل علي اعلانتهم</span>
+        <p>
+            <label for="login">البريد الالكتروني</label>
+           
+            
+             <?php echo form_input(array('id' => '', 'name' => 'login','value'=>'....اسم العميل',
+			'onblur'=>"if(this.value=='') this.value='....اسم العميل'" ,'onfocus'=>"if(this.value =='....اسم العميل' ) this.value=''"
+			)); ?>
+        </p>
+        <p>
+            <label for="password">كلمه المرور</label>
+            <?php echo form_password(array('id' => '', 'name' => 'password','value'=>'....اسم العميل',
+			'onblur'=>"if(this.value=='') this.value='....اسم العميل'" ,'onfocus'=>"if(this.value =='....اسم العميل' ) this.value=''"
+			)); ?>
+        </p>
 
     <?php if (isset($user)) { ?>
         <?php if (!$user) { ?>

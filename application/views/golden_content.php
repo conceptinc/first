@@ -1,13 +1,13 @@
 <div id="adv_content">
     <div class="boxLeft">
 
-        <ul class="ads" style="text-align:right;font-size:15px;;">
+        <ul class="ads" style="text-align:right;font-size:15px;font-family:'myfont2';">
 
             <!------------------- ads details ------------------------->
             <?php foreach ($res as $s) { ?>
                 <li class="level-1">
 
-                    <table style="text-align:right;float:right">
+                    <table id="gold_table" style="text-align:right;float:right">
                         <tbody>
                             <tr>
                                 <td><h2 style="padding-top:10px;">
@@ -16,16 +16,19 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>
-                                    <strong><?php echo $s->nashat; ?></strong>
-                                    <img src="<?php echo base_url(); ?>images/arrow-small.png"class="icon"> 
+                         
+                            <td>
+                                    عدد الزيارات : <?php echo $s->views; ?>
+                                    <img src="<?php echo base_url(); ?>images/arrow-small.png"class="icon">   
                                 </td>
+                               
                             </tr>
                             <tr>
                                 <td>
-                                    <strong>عدد الزيارات : <?php echo $s->views; ?></strong>
-                                    <img src="<?php echo base_url(); ?>images/arrow-small.png"class="icon">   
-                                </td>
+                               الاسم :
+                                   <?php echo $s->name; ?>
+                                    <img src="<?php echo base_url(); ?>images/arrow-small.png"class="icon"> 
+                                </td> 
                             </tr>
                         </tbody>
                     </table>
@@ -34,23 +37,17 @@
 
                     <ul>
                         <li class="level-2">
-                            <div class="top">
-                                <b> معلومات عامة</b></span>
-                                <span><img src="<?php echo base_url(); ?>images/arrow-small.png" class="icon">
-
-                                    </div>
-                                    <br>
-
-                                    <li class="line2" >
-
-                                        الإسم : <span><?php echo $s->name; ?></span>
-                                        <img class="icon" src="<?php echo base_url(); ?>images/bullet_red.png" width="16" height="16"></li><li class="line1">
+                          
+                                    <li class="line1">
                                         العنوان : <span><?php echo $s->address; ?></span>
-                                        <img class="icon" src="<?php echo base_url(); ?>images/bullet_red.png"width="16" height="16"></li><li class="line2">
+                                       <img src="<?php echo base_url(); ?>images/arrow-small.png" class="icon">
+                                       </li><li class="line1">
                                         النشاط : <span><?php echo $s->nashat; ?></span>
-                                        <img class="icon" src="<?php echo base_url(); ?>images/bullet_red.png" width="16" height="16"></li><li class="line1">
+                                       <img src="<?php echo base_url(); ?>images/arrow-small.png" class="icon">
+                                       </li><li class="line1">
                                         التليفون  : <span><?php echo $s->phone; ?></span>
-                                        <img class="icon" src="<?php echo base_url(); ?>images/bullet_red.png" width="16" height="16"></li>
+                                       <img src="<?php echo base_url(); ?>images/arrow-small.png" class="icon">
+                                       </li>
 
                                     </li>
 

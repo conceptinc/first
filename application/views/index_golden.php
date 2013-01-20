@@ -17,7 +17,9 @@
         <link rel="stylesheet" href="<?php echo base_url(); ?>css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet" charset="utf-8" />
 
 
-
+<style type="text/css">
+body{font-family:'myfont2';}
+</style>
     </head>
     <body id="home" class="home blog cufon-enabled ie et_includes_sidebar">
         <?php include('header.php') ?>
