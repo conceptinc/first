@@ -14,8 +14,23 @@ class c_dept extends CI_Controller {
 
     // add main deprtment 
 
-  
-  
+    public function mohamed() {
+        
+    }
+
+    public function malah(){
+        
+    }
+    
+    public function temraz(){
+        
+    }
+
+    
+function temraz2(){
+}
+ 
+
     public function add() {
 
         if ($this->session->userdata('logged_in')) {

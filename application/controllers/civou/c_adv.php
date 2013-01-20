@@ -30,27 +30,12 @@ class c_adv extends CI_Controller {
             $config['max_size'] = '20000';
             $this->load->library('upload', $config);
 
-            /////////////  for  thumbanial /////////////////////////////////////
-            $thum_path = realpath(APPPATH . '../public/original/thumbs');
-            $con = array(
-                'image_library' => 'gd2',
-                'source_image' => '',
-                'maintain_ratio' => TRUE,
-                'width' => 100,
-                'height' => 100,
-                'new_image' => $thum_path
-            );
-            $this->load->library('image_lib', $con);
-
             ///////////// for loop and code that upload  photo /////////////////////  
             $i = 0;
             foreach ($_FILES as $file) {
                 if ($this->upload->do_upload("file" . $i)) {
                     $phot_data = $this->upload->data();
                     $photo_name[$i] = $phot_data['file_name'];
-                    $con['source_image'] = $phot_data['full_path'];
-                    $this->image_lib->initialize($con);
-                    $this->image_lib->resize();
                     $i++;
                 }
             }
@@ -68,117 +53,64 @@ class c_adv extends CI_Controller {
 
     function addAdv() {
         if ($this->session->userdata('logged_in')) {
-            
-            $this->load->library('form_validation');
-            $this->form_validation->set_rules('adv_name', ' Name ', 'required|trim|max_length[45]|xss_clean');
-            $this->form_validation->set_rules('adv_nashat', 'nashat ', 'required|trim|max_length[45]|xss_clean');
-            $this->form_validation->set_rules('adv_address', 'address ', 'required|trim|max_length[445]|xss_clean');
-            $this->form_validation->set_rules('adv_phone', 'phone ', 'required|trim|max_length[445]|xss_clean|numeric');
-            $this->form_validation->set_rules('desc', 'description ', 'required|trim|max_length[1385]|xss_clean');
+			 $this->load->library('form_validation');
+        $this->form_validation->set_rules('adv_name', ' Name ', 'required|trim|max_length[45]|xss_clean');
+        $this->form_validation->set_rules('adv_nashat', 'nashat ', 'required|trim|max_length[45]|xss_clean');
+        $this->form_validation->set_rules('adv_address', 'address ', 'required|trim|max_length[45]|xss_clean');
+        $this->form_validation->set_rules('adv_phone', 'phone ', 'required|trim|max_length[45]|xss_clean|numeric');
+		$this->form_validation->set_rules('desc', 'description ', 'required|trim|max_length[138]|xss_clean');
+		
 
-            if ($this->form_validation->run() == false) {
-                $error = array();
-                $error['error'] = "";
-                $error['dept_id'] = 0;
-                $this->load->view("civou/view_advAdd", $error);
-            } else {
-
-                $type = $this->input->post('advtype');
-                $dept = $this->input->post('search_category');
-                $subDept = $this->input->post('sub_category');
-                $name = $this->input->post('adv_name');
-                $desc = $this->input->post('desc');
-                $nashat = $this->input->post('adv_nashat');
-                $address = $this->input->post('adv_address');
-                $phone = $this->input->post('adv_phone');
-
-                $db_value = array(
-                    'name' => $name,
-                    'desc' => $desc,
-                    'nashat' => $nashat,
-                    'address' => $address,
-                    'phone' => $phone,
-                    'dept_id' => $dept,
-                    'sub_dept_id' => $subDept
-                );
-                // 3 for normal adv  
-                if ($type == 3) {
-                    $db_value['type'] = 'n';
-                    $this->load->model('adv');
-                    $this->adv->addNormalAdv($db_value);
-                    // 2  for sliver adv      
-                } else if ($type == 2) {
-                    $db_value['type'] = 's';
-                    $this->load->model('adv');
-                    $this->adv->addNormalAdv($db_value);
-                    $this->addLevel2('s', $name);
-                    //  1  for golden adv 
-                } else if ($type == 1) {
-                    $db_value['type'] = 'g';
-                    $this->load->model('adv');
-                    $this->adv->addNormalAdv($db_value);
-                    $this->addLevel2('g', $name);
-                    $this->addGalleryPhoto($name);
-                }
-                $this->load->view('civou/view_advAdd');
-            }
+        if ($this->form_validation->run() == false) {
+            $error = array();
+            $error['error'] = "";
+            $error['dept_id'] = 0;
+            $this->load->view("civou/view_advAdd", $error);
         } else {
-            
-        }
-    }
 
-    function edit() {
+			
+			
+            $type = $this->input->post('advtype');
+            $dept = $this->input->post('search_category');
+            $subDept = $this->input->post('sub_category');
+            $name = $this->input->post('adv_name');
+            $desc = $this->input->post('desc');
+            $nashat = $this->input->post('adv_nashat');
+            $address = $this->input->post('adv_address');
+            $phone = $this->input->post('adv_phone');
 
-        if ($this->session->userdata('logged_in')) {
-            if ($this->uri->segment(4) != '') {
-
+            $db_value = array(
+                'name' => $name,
+                'desc' => $desc,
+                'nashat' => $nashat,
+                'address' => $address,
+                'phone' => $phone,
+                'dept_id' => $dept,
+                'sub_dept_id' => $subDept
+            );
+            // 3 for normal adv  
+            if ($type == 3) {
+                $db_value['type'] = 'n';
                 $this->load->model('adv');
-                $this->load->model('golden');
-                $this->load->model('sliver');
-
-                $id = mysql_escape_string($this->uri->segment(4));
-                $type = $this->adv->getTypeById($id);
-                if ($type == 's') {
-                    $data1['res'] = $this->sliver->selectAllFromSliver($id);
-                    // load adv photo 
-                    $z = $this->adv->selectLevel2PhotoById($id);
-                    $phot = array();
-                    foreach ($z as $value) {
-                        $phot[] = array('url' => base_url() . "public/original/" . $value->name,
-                            'th_url_photo' => base_url() . "public/original/thumbs/" . $value->name
-                        );
-                    }
-                    $data1['photo'] = $phot;
-                } else if ($type == 'g') {
-                    $data1['res'] = $this->golden->selectAllFromGolden($id);
-                    // load adv photo 
-                    $z = $this->adv->selectLevel2PhotoById($id);
-                    $phot = array();
-                    foreach ($z as $value) {
-                        $phot[] = array('url' => base_url() . "public/original/" . $value->name,
-                            'th_url_photo' => base_url() . "public/original/thumbs/" . $value->name
-                        );
-                    }
-                    $data1['photo'] = $phot;
-                    // load golden adv gallery 
-                    $z2 = $this->golden->selectGalleryPhotoByID($id);
-                    $ga = array();
-                    foreach ($z2 as $value) {
-                        $ga[] = array('url_ga' => base_url() . "public/golden/" . $value->name,
-                            'th_url' => base_url() . "public/golden/thumbs/" . $value->name
-                        );
-                    }
-                    $data1['gallery'] = $ga;
-                } else if ($type == 'n') {
-                    
-                } else {
-                    
-                }
-
-                $this->load->view('civou/view_updateAdv', $data1);
+                $this->adv->addNormalAdv($db_value);
+                // 2  for sliver adv      
+            } else if ($type == 2) {
+                $db_value['type'] = 's';
+                $this->load->model('adv');
+                $this->adv->addNormalAdv($db_value);
+                $this->addLevel2('s', $name);
+                //  1  for golden adv 
+            } else if ($type == 1) {
+                $db_value['type'] = 'g';
+                $this->load->model('adv');
+                $this->adv->addNormalAdv($db_value);
+                $this->addLevel2('g', $name);
+                $this->addGalleryPhoto($name);
             }
-        } else {
-            echo "y are not login";
+            $this->load->view('civou/view_advAdd');
+        }
+		} else {
+            
         }
     }
 
@@ -263,12 +195,12 @@ class c_adv extends CI_Controller {
             $subDept = $this->input->post('sub_category');
             $this->load->model('sliver');
             $this->load->model('golden');
+
             if ($type == 1) {
                 $data['res'] = $this->golden->selectAll($dept, $subDept);
                 $this->load->view('civou/view_edit2', $data);
             } else if ($type == 2) {
-                $data['res'] = $this->sliver->selectAllAdv($dept, $subDept);
-                $this->load->view('civou/view_edit2', $data);
+                
             } else if ($type == 3) {
                 
             } else {
@@ -279,70 +211,26 @@ class c_adv extends CI_Controller {
         }
     }
 
-    function delete() {
-        if ($this->session->userdata('logged_in')) {
-            if ($this->uri->segment(4) != '') {
-                $this->load->model('adv');
-                $this->load->model('golden');
-                $id = $this->uri->segment(4);
-                $type = $this->adv->getTypeById($id);
-                // delete level 2 photo 
-                if ($type == 'g' || $type == 's') {
-                    $data = $this->adv->selectLevel2PhotoById($id);
-                    foreach ($data as $value) {
-                        $ph_link = APPPATH . '../public/original/' . $value->name;
-                        $ph_link_thums = APPPATH . '../public/original/thumbs/' . $value->name;
-                        unlink($ph_link);
-                        unlink($ph_link_thums);
-                    }
-                }
-                // delete  golden gallery photo 
-                if ($type == 'g') {
-                    $data = $this->golden->selectGalleryPhotoByID($id);
-                    foreach ($data as $value) {
-                        $ph_link = APPPATH . '../public/golden/' . $value['name'];
-                        $ph_link_thums = APPPATH . '../public/golden/thumbs/' . $value['name'];
-                        unlink($ph_link);
-                        unlink($ph_link_thums);
-                    }
-                }
-                // delete  the adv from database 
-                $this->adv->deleteAdv($id);
-                $this->load->view('civou/view_editAdv');
-            }
-        } else {
-            echo "y are not login";
-        }
-    }
-
-    public function active() {
-
+    function delete($type, $id) {
         if ($this->session->userdata('logged_in')) {
             if ($this->uri->segment(3) != '') {
-                $id = $this->uri->segment(4);
+                $id = $this->uri->segment(3);
                 $this->load->model('adv');
-                $sl = $this->adv->active($id);
-                redirect('c_adv/load_adv_edit');
-            } else {
-                redirect('');
-            }
-        } else {
-            redirect('');
-        }
-    }
+                $this->adv->getTypeById($id);
 
-    public function disactive() {
-        if ($this->session->userdata('logged_in')) {
-            if ($this->uri->segment(3) != '') {
-                $id = $this->uri->segment(4);
-                $this->load->model('adv');
-                $sl = $this->adv->disactive($id);
-                redirect('c_adv/load_adv_edit');
-            } else {
-                redirect('');
+                if ($type == 1) {
+                    $data['res'] = $this->golden->selectAll($dept, $subDept);
+                    $this->load->view('civou/view_edit2', $data);
+                } else if ($type == 2) {
+                    
+                } else if ($type == 3) {
+                    
+                } else {
+                    
+                }
             }
         } else {
-            redirect('');
+            
         }
     }
 

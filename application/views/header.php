@@ -95,11 +95,11 @@
                         <div class="item">
                             <?php if ($pic->type == 'g') { ?>
                                 <a href="<?php echo base_url(); ?>site/showGoldenAdvDetail/<?php echo $pic->adv_id; ?>" class="product">
-                                    <img src="<?php echo base_url(); ?>public/original/thumbs/<?php echo $pic->main_photo; ?>"  width='109' height='109' />															<span class="tag" style="min-width:20px;"><span><?php echo $pic->views; ?></span></span>
+                                    <img src="<?php echo base_url(); ?>public/original/<?php echo $pic->main_photo; ?>"  width='109' height='109' />															<span class="tag" style="min-width:20px;"><span><?php echo $pic->views; ?></span></span>
                                 </a>
                             <?php } else { ?>
                                 <a href="<?php echo base_url(); ?>site/showSliverAdvDetail/<?php echo $pic->adv_id; ?>" class="product">
-                                    <img src="<?php echo base_url(); ?>public/original/thumbs/<?php echo $pic->main_photo; ?>"  width='109' height='109' />															<span class="tag" style="min-width:20px;"><span><?php echo $pic->views; ?></span></span>
+                                    <img src="<?php echo base_url(); ?>public/original/<?php echo $pic->main_photo; ?>"  width='109' height='109' />															<span class="tag" style="min-width:20px;"><span><?php echo $pic->views; ?></span></span>
                                 </a>
                             <?php } ?>
                         </div> <!-- .item -->

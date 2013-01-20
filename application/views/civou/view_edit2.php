@@ -15,7 +15,7 @@
 
     </style>
     <body >
-        <?php include('view_menu.php') ?>
+<?php include('view_menu.php')?>
         <table border="1" width="900">
 
             <th> مسح</th>
@@ -28,20 +28,21 @@
                 <?php foreach ($res as $pic) { ?>
                     <tr>
 
-                        <td><a class="delete" href="<?php echo base_url(); ?>civou/c_adv/delete/<?php echo $pic->id; ?>
+
+                        <td><a class="delete" href="<?php echo base_url(); ?>c_adv/delete/<?php echo $pic->id; ?>
                                " >مسح</a>
                         </td>
 
-                        <td><a class="edit" href="<?php echo base_url(); ?>civou/c_adv/edit/<?php echo $pic->id; ?>
+                        <td><a class="edit" href="<?php echo base_url(); ?>c_adv/edit/<?php echo $pic->id; ?>
                                " >تعديل </a>
                         </td>
 
                         <td>
                             <?php if ($pic->active == 1) { ?>
-                                <a class="delete" href="<?php echo base_url(); ?>civou/c_adv/disactive/<?php echo $pic->id; ?>" >ايقاف </a>
+                                <a class="delete" href="<?php echo base_url(); ?>c_adv/disactive/<?php echo $pic->id; ?>" >ايقاف </a>
 
                             <?php } else { ?>
-                                <a class="delete" href="<?php echo base_url(); ?>civou/c_adv/active/<?php echo $pic->id; ?>" >تفعيل </a>
+                                <a class="delete" href="<?php echo base_url(); ?>c_adv/active/<?php echo $pic->id; ?>" >تفعيل </a>
                             <?php } ?>
 
                         </td>

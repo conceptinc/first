@@ -287,9 +287,11 @@
         <script src="<?php echo base_url(); ?>js/jquery.js" type="text/javascript" ></script>
         <script type="text/javascript">
             
-            $(document).ready(function() {
-                
-            });
+            $(document).ready(function() {$('#uploaderform2').hide();
+                $('#uploaderform').hide();
+                $('#vedio').hide();
+                $('#user').hide();
+                $('#pass').hide(); });
              
             $('#type').change( 
             function(){
