@@ -1,11 +1,11 @@
 
 #wrapper{
-    width:930px;
+    width:935px;
     height:420px;
 	text-align:left;
     margin: auto ;
 	
-    padding:40px 0px 0px 8px;
+    padding:40px 0px 0px 5px;
 	border:none;
 	display:block;
 	
@@ -13,7 +13,7 @@
 
 
 #bigPic{
-	width:930px;
+	width:935px;
 	height:420px;
 	padding:0px;
 	display:block;

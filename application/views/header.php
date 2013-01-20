@@ -8,8 +8,8 @@
             <?php echo form_open_multipart('search/'); ?>
             <input type="image" src="<?php echo base_url(); ?>images/search-icon.png"  />
 
-            <?php echo form_input(array('id' => 'searchinput', 'name' => 'keywords','value'=>'....ابحث في الموقع',
-			'onblur'=>"if(this.value=='') this.value='....ابحث في الموقع'" ,'onfocus'=>"if(this.value =='....ابحث في الموقع' ) this.value=''"
+            <?php echo form_input(array('id' => 'searchinput', 'name' => 'keywords','value'=>'بتدور علي ايه ؟؟',
+			'onblur'=>"if(this.value=='') this.value='بتدور علي ايه ؟؟'" ,'onfocus'=>"if(this.value =='بتدور علي ايه ؟؟' ) this.value=''"
 			)); ?>
 
 
@@ -65,7 +65,7 @@
                                     <?php foreach ($big_pics as $pic) { ?>
                                         <a href="<?php echo $pic->link; ?>">
 
-                                            <img src="<?php echo base_url(); ?>public/uploads/slider/<?php echo $pic->pic_name; ?>" width="930" height="420"  /></a>
+                                            <img src="<?php echo base_url(); ?>public/uploads/slider/<?php echo $pic->pic_name; ?>" width="935" height="420"  /></a>
 
                                     <?php } ?>
                                 <?php } ?>

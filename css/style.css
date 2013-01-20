@@ -103,8 +103,8 @@ img#about-image { float: left; margin: 3px 8px 8px 0px; }
 #header { padding: 25px 0px 0px; background: #ffffff url("../images/header-bottom-bg.png")/*tpa=http://elegantthemes.com/preview/eStore/wp-content/themes/eStore/images/header-bottom-bg.png*/ repeat-x bottom left; height: 101px; }
 	img#logo { float: left; margin: -19px 23px 0px 6px; }
 	#under{float:right; position:relative;margin-left:100px;margin-top:21px; }
-	#search-bar { float: right;  background: url("../images/search-bg.png") no-repeat; width: 162px; height: 31px; margin-top:4px; margin-right:10px;font-family: 'myfont'; }
-		#search-bar #searchinput { background: none; border: none; float: left; margin: -23px 0px 0 30px; width: 112px; padding-left: 10px; font-size: 13px;  text-align:right;font-family: 'myfont';}
+	#search-bar { float: right;  background: url("../images/search-bg.png") no-repeat; width: 162px; height: 31px; margin-top:4px; margin-right:10px;font-family:Tahoma, Geneva, sans-serif;font-weight:bold; }
+		#search-bar #searchinput { background: none; border: none; float: left; margin: -27px 0px 0 30px; width: 112px; padding-left: 10px; font-size: 13px;  text-align:right;font-family:'myfont2';}
 		#search-bar #searchsubmit { margin-top: 1px; }
 	
 	#menu { position: absolute; bottom: -103px; left: 0px; background: url("../images/secondary-menu.png")/*tpa=http://elegantthemes.com/preview/eStore/wp-content/themes/eStore/images/secondary-menu.png*/ no-repeat; width: 961px; height: 100px; z-index: 10; }
