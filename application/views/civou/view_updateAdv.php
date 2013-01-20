@@ -170,9 +170,10 @@
 
 
         <?php
+        if(isset($customer)){
         if (!$customer) {
             include('view_menu.php');
-        }
+        }}
         ?>
 
         <br/><br/>
