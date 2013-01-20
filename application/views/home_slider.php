@@ -16,7 +16,7 @@
                                     <div class="item-top"></div>
                                     <div class="item-content">
                                         <span class="tag"><span><?php echo $pic->views; ?></span></span>
-                                        <img style="margin-left:-14px; margin-top:-7px;" src="<?php echo base_url(); ?>public/original/<?php echo $pic->main_photo; ?>"  alt='<?php echo $pic->name ?>' width='196' height='152' />											
+                                        <img style="margin-left:-14px; margin-top:-7px;" src="<?php echo base_url(); ?>public/original/thumbs/<?php echo $pic->main_photo; ?>"  alt='<?php echo $pic->name ?>' width='196' height='152' />											
                                     </div> <!-- .item-content -->
 
                                     <?php if ($pic->type == 'g') { ?>
