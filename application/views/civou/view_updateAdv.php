@@ -162,121 +162,140 @@
 
 
     </head>
-    <?php include('dbcon.php'); ?>
-<style type="text/css">
- .error{color:#F00;font-size:18px}
+    <style type="text/css">
+        .error{color:#F00;font-size:18px}
 
-</style>
+    </style>
     <body>
-<?php include('view_menu.php')?>
 
- <br/><br/>
-       <?php if(isset($error)){echo '<p class="error">'. $error.'</p>';} ?>
-        <br/><br/>
-        
-        <div class="error"><?php echo validation_errors(); ?></div>
-        <?php echo form_open_multipart('civou/c_adv/addAdv'); ?>
-
-        <!--        <form action="#" name="form" id="form" method="post" onsubmit="return alert_id();"
-                      enctype="multipart/form-data"  >-->
-
-        <div class="both">
-            <h4>Select Category</h4>
-            <select name="search_category"  id="search_category_id">
-                <option value="" selected="selected"></option>
-                <?php
-                $query = "select * from dept";
-                $results = mysql_query($query);
-                while ($rows = mysql_fetch_assoc(@$results)) {
-                    ?>
-                    <option value="<?php echo $rows['id']; ?>"><?php echo $rows['name']; ?></option>
-                <?php }
-                ?>
-            </select>		
-        </div>
-
-        <div class="both">
-            <h4 id="show_heading">Select Sub Category</h4>
-            <div id="show_sub_categories" align="center">
-                <img src="<?php echo base_url(); ?>images/loader.gif" style="margin-top:8px; float:left" id="loader" alt="" />
-            </div>
-        </div>
-        <br clear="all" /><br clear="all" />
-        <!--        </form>-->
-
-        <div>
-
-            <select name="advtype"  id="type" >
-                <option value="1" >ذهبى </option>
-                <option value="2" >فضى </option>
-                <option value="3" >عادى</option>
-            </select>
-
-            <?php
-            echo "<br/><br/>";
-            echo "الاسم   :   ";
-            echo form_input('adv_name');
-            echo "<br/><br/>";
-            echo "الوصف  :   ";
-            echo form_input('desc');
-            echo "<br/><br/>";
-            echo "النشاط   :  ";
-            echo form_input('adv_nashat');
-            echo "<br/><br/>";
-            echo "العنوان   :  ";
-            echo form_input('adv_address');
-            echo "<br/><br/>";
-            echo "التليفون   :  ";
-            echo form_input('adv_phone');
-            echo "<br/><br/>";
-
-            echo " <div id='user' >";
-            echo "  صاحب الاعلان    :  ";
-            echo form_input('username');
-            echo "<br/><br/>";
-
-            echo "كلمه السر    :  ";
-            echo form_input('pass');
-            echo "<br/><br/>";
-            echo "</div>";
-
-            echo " <div id='vedio' >";
-            echo "  الفيديو :   ";
-            echo form_input('vedio');
-            echo "<br/><br/>";
-            echo "</div>";
-            ?>
-
-        </div>
-
-        <div id="uploaderform">
-            <!--            <form  name="UploadForm" id="UploadForm">-->
-            <label>  صور خاصه بالاعلان 
-                <span class="small"><a href="#" id="AddMoreFileBox">Add More Files</a></span>
-            </label>
-            <div id="AddFileInputBox">
-                <input id="fileInputBox" style="margin-bottom: 5px;" type="file"  name="file0"/></div>
-            <div class="sep_s"></div>
-            <div id="progressbox"><div id="progressbar"></div ><div id="statustxt">0%</div ></div>
-            <!--            </form>-->
-        </div>
-
-        <div id="uploaderform2">
-            <!--            <form  name="UploadForm" id="UploadForm">-->
-            <label>  صور خاصه بالبوم الصور للاعلان الذهبى  
-                <span class="small"><a href="#" id="AddMoreFileBox2">Add More Files</a></span>
-            </label>
-            <div id="AddFileInputBox2">
-                <input id="fileInputBox" style="margin-bottom: 5px;" type="file"  name="gallery0"/></div>
-            <div class="sep_s"></div>
-
-            <div id="progressbox"><div id="progressbar"></div ><div id="statustxt">0%</div ></div>
-            <!--            </form>-->
-        </div>
-
-        <br/><br/>
 
         <?php
+        if (!$customer) {
+            include('view_menu.php');
+        }
+        ?>
+
+        <br/><br/>
+        <?php
+        if (isset($error)) {
+            echo '<p class="error">' . $error . '</p>';
+        }
+        ?>
+        <br/><br/>
+
+        <div class="error"><?php echo validation_errors(); ?></div>
+        <?php echo form_open_multipart('civou/c_adv/updateAdv'); ?>
+
+
+
+        <?php
+        foreach ($res as $value) {
+
+
+            echo "<br/><br/>";
+            echo "الاسم   :   ";
+            echo form_input('adv_name', $value->name);
+            echo "<br/><br/>";
+            echo "الوصف  :   ";
+            echo form_input('desc', $value->desc);
+            echo "<br/><br/>";
+            echo "النشاط   :  ";
+            echo form_input('adv_nashat', $value->nashat);
+            echo "<br/><br/>";
+            echo "العنوان   :  ";
+            echo form_input('adv_address', $value->address);
+            echo "<br/><br/>";
+            echo "التليفون   :  ";
+            echo form_input('adv_phone', $value->phone);
+            echo "<br/><br/>";
+
+            if (isset($value->username)) {
+                echo " <div id='user' >";
+                echo "  صاحب الاعلان    :  ";
+                echo form_input('username', $value->username);
+                echo "<br/><br/>";
+
+                echo "كلمه السر    :  ";
+                echo form_input('pass', $value->password);
+                echo "<br/><br/>";
+                echo "</div>";
+            }
+
+            if (isset($value->vedio)) {
+                echo " <div id='vedio' >";
+                echo "  الفيديو :   ";
+                echo form_input('vedio');
+                echo "<br/><br/>";
+                echo "</div>";
+            }
+            ?>
+
+
+            <div id="uploaderform">
+                <!--            <form  name="UploadForm" id="UploadForm">-->
+                <label>  صور خاصه بالاعلان 
+                    <span class="small"><a href="#" id="AddMoreFileBox">Add More Files</a></span>
+                </label>
+                <div id="AddFileInputBox">
+                    <table border="1" > 
+                        <?php
+                        foreach ($photo as $ph) {
+                            $i = 0;
+                            ?>
+                            <tr>
+                                <td>
+                                    <input id="fileInputBox" style="margin-bottom: 5px;" type="file"  name="<?php echo "file.$i."; ?>"/>
+                                </td>
+                                <td>
+                                    <img src="<?php echo $ph['th_url_photo'] ?>"  >
+                                </td>     
+                            </tr>
+                            <?php
+                            $i++;
+                        }
+                        ?>
+                    </table>
+                </div>
+
+                <div class="sep_s"></div>
+                <div id="progressbox"><div id="progressbar"></div ><div id="statustxt">0%</div ></div>
+                <!--            </form>-->
+            </div>
+
+            <?php if (isset($gallery)) { ?>
+
+                <div id="uploaderform2">
+                    <!--            <form  name="UploadForm" id="UploadForm">-->
+                    <label>  صور خاصه بالبوم الصور للاعلان الذهبى  
+                        <span class="small"><a href="#" id="AddMoreFileBox2">Add More Files</a></span>
+                    </label>
+                    <div id="AddFileInputBox2">
+                        <table border="1" >
+                            <?php
+                            foreach ($gallery as $value) {
+                                $i = 0;
+                                ?> 
+                                <tr>
+                                    <td>
+                                        <input id="fileInputBox" style="margin-bottom: 5px;" type="file"  name="<?php echo "gallery.$i."; ?>"/>
+                                    </td><td>
+                                        <img src="<?php echo $value['th_url'] ?>"  >                     
+                                    </td>  
+                                    <?php
+                                    $i++;
+                                }
+                                ?>
+                        </table>
+                    </div>
+                    <div class="sep_s"></div>
+                    <div id="progressbox"><div id="progressbar"></div ><div id="statustxt">0%</div ></div>
+                    <!--            </form>-->
+                </div>
+            <?php } ?>
+            <br/><br/>
+
+            <?php
+        }
         echo form_submit('upload', 'حفظ');
 
         echo "<br/><br/>";
@@ -287,39 +306,36 @@
         <script src="<?php echo base_url(); ?>js/jquery.js" type="text/javascript" ></script>
         <script type="text/javascript">
             
-            $(document).ready(function() {
+            $(document).ready(function() {$('#uploaderform2').hide();
+                $('#type').change( 
+                function(){
+                    var list_value=$('#type').val();
                 
-            });
-             
-            $('#type').change( 
-            function(){
-                var list_value=$('#type').val();
+                    if(list_value=='1'){
+                        $('#uploaderform2').show();
+                        $('#uploaderform').show();
+                        $('#vedio').show();
+                        $('#user').show();
+                        $('#pass').show();
+                    }
                 
-                if(list_value=='1'){
-                    $('#uploaderform2').show();
-                    $('#uploaderform').show();
-                    $('#vedio').show();
-                    $('#user').show();
-                    $('#pass').show();
+                    else if(list_value=='2'){
+                        $('#uploaderform2').hide();
+                        $('#uploaderform').show();
+                        $('#vedio').hide();
+                        $('#user').show();
+                        $('#pass').show();
+                    }
+                
+                    else if(list_value=='3'){
+                        $('#uploaderform2').hide();
+                        $('#uploaderform').hide();
+                        $('#vedio').hide();
+                        $('#user').hide();
+                        $('#pass').hide();
+                    }
                 }
-                
-                else if(list_value=='2'){
-                    $('#uploaderform2').hide();
-                    $('#uploaderform').show();
-                    $('#vedio').hide();
-                    $('#user').show();
-                    $('#pass').show();
-                }
-                
-                else if(list_value=='3'){
-                    $('#uploaderform2').hide();
-                    $('#uploaderform').hide();
-                    $('#vedio').hide();
-                    $('#user').hide();
-                    $('#pass').hide();
-                }
-            }
-        );
+            );
     
         </script> 
 
