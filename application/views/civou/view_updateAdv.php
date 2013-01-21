@@ -160,7 +160,6 @@
 
         <!-- end of upload form code **************************************************** -->
 
-
     </head>
     <style type="text/css">
         .error{color:#F00;font-size:18px}
@@ -168,12 +167,12 @@
     </style>
     <body>
 
-
         <?php
-        if(isset($customer)){
-        if (!$customer) {
-            include('view_menu.php');
-        }}
+        if (isset($customer)) {
+            if (!$customer) {
+                include('view_menu.php');
+            }
+        }
         ?>
 
         <br/><br/>
@@ -185,13 +184,14 @@
         <br/><br/>
 
         <div class="error"><?php echo validation_errors(); ?></div>
-        <?php echo form_open_multipart('civou/c_adv/updateAdv'); ?>
-
+        <?php echo form_open_multipart('c_custmer/updateAdv'); ?>
 
 
         <?php
         foreach ($res as $value) {
 
+            echo form_hidden('id', $value->id);
+            echo form_hidden('type', $value->type);
 
             echo "<br/><br/>";
             echo "الاسم   :   ";

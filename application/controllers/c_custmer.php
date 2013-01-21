@@ -81,13 +81,64 @@ class c_custmer extends CI_Controller {
                 } else {
                     
                 }
-                $data1['customer']=true;
+                $data1['customer'] = true;
                 $this->load->view('civou/view_updateAdv', $data1);
             } else {
                 echo " 3eb tl3b kteer";
             }
         } else {
             echo " u are not login  ";
+        }
+    }
+
+    function updateAdv() {
+
+
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('adv_name', ' Name ', 'required|trim|max_length[45]|xss_clean');
+        $this->form_validation->set_rules('adv_nashat', 'nashat ', 'required|trim|max_length[45]|xss_clean');
+        $this->form_validation->set_rules('adv_address', 'address ', 'required|trim|max_length[445]|xss_clean');
+        $this->form_validation->set_rules('adv_phone', 'phone ', 'required|trim|max_length[445]|xss_clean|numeric');
+        $this->form_validation->set_rules('desc', 'description ', 'required|trim|max_length[1385]|xss_clean');
+
+        if ($this->form_validation->run() == false) {
+            echo "error ";
+        } else {
+            $this->load->model('adv');
+            $id = $this->input->post('id');
+            $type = $this->input->post('type');
+            $name = $this->input->post('adv_name');
+            $desc = $this->input->post('desc');
+            $nashat = $this->input->post('adv_nashat');
+            $address = $this->input->post('adv_address');
+            $phone = $this->input->post('adv_phone');
+
+            $db_value = array(
+                'name' => $name,
+                'desc' => $desc,
+                'nashat' => $nashat,
+                'address' => $address,
+                'phone' => $phone
+            );
+            $this->adv->updateAdv($id, $db_value);
+
+            if ($type == 's' || $type == 'g') {
+                $username = $this->input->post('username');
+                $pass = $this->input->post('pass');
+                $level2 = array('username' => $username, 'password' => $pass);
+                $this->adv->updateLevel2($id, $level2);
+            }
+            if ($type == 'g') {
+                $vedio = $this->input->post('vedio');
+                $golden = array('vedio' => $vedio);
+                $this->adv->updateGolden($id, $golden);
+            }
+        }
+
+        if ($this->session->userdata('logged_in')) {
+            redirect('civou/c_adv/load_adv_edit');
+        } else {
+            redirect('site');
         }
     }
 

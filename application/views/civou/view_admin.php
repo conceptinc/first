@@ -51,18 +51,22 @@
                     <td>
                         <a href="<?php echo site_url('civou/c_adv/load_adv_edit'); ?>" >   التعديل على الاعلانات </a>
                     </td>
-                    <td>
-                        <a href="<?php echo site_url('civou/c_doctor/load_doctor'); ?>" >     اداره الاطباء  </a>
-                    </td>
+                    <td><a href="<?php echo site_url('site/logout'); ?>" >خروج </a> </td>
                 </tr>
-                <tr>
-                   
+            </table>      
+            <h3> اداره الاطباء </h3> 
+            <table border="1" width="900" >
+                <tr>   
                     <td>
                         <a href="<?php echo site_url('civou/c_doctor/load_doctorDeptAdd'); ?>" >     اضافه قسم الاطباء  </a>
                     </td>
-                    <td><a href="<?php echo site_url('site/logout'); ?>" >خروج </a> </td>
+                    <td>
+                        <a href="<?php echo site_url('civou/c_doctor/load_doctor'); ?>" >      اضافه اعلان طبيب   </a>
+                    </td>
                 </tr>
-            </table>                                               
+            </table>
+
+
         </div>
 
         <div id="footer">

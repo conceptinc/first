@@ -53,9 +53,9 @@ class adv extends CI_Model {
         return $result->result();
     }
 
-    public function showAllByDeptID($sub_id, $type) {
+    public function showAllByDeptID($dept_id, $type) {
         $query = "select id,name,nashat,address,phone,type,`desc` from adv where dept_id = ? and type='$type' order by id desc";
-        $result = $this->db->query($query, $sub_id);
+        $result = $this->db->query($query, $dept_id);
         return $result->result();
     }
 
@@ -102,22 +102,20 @@ class adv extends CI_Model {
         }
     }
 
-    function updateAdv($id,$data) {
+    function updateAdv($id, $data) {
         $this->db->where('id', $id);
         $this->db->update('adv', $data);
     }
-    
-    function updateLevel2($id,$data) {
+
+    function updateLevel2($id, $data) {
         $this->db->where('adv_id', $id);
         $this->db->update('level2', $data);
     }
-    
-    function updateGolden($id,$data) {
-        $this->db->where('id', $id);
+
+    function updateGolden($id, $data) {
+        $this->db->where('g_id', $id);
         $this->db->update('golden', $data);
     }
-    
-    
 
 }
 

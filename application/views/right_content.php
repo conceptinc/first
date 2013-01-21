@@ -57,7 +57,7 @@
         foreach ($result as $row) {
             if (!isset($row->sd_id)) {
                 $v = $row->d_name;
-                echo "<li><a href=" . site_url() . "site/showByDeptId/" . $r->d_id . " style=\"color:\"> " . $v . " </a></li>";
+                echo "<li><a href=" . site_url() . "site/showByDeptId/" . $row->d_id . " style=\"color:\"> " . $v . " </a></li>";
             } else {
                 if ($v != $row->d_name) {
                     $v = $row->d_name;
