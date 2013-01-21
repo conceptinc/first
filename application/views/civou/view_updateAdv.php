@@ -188,10 +188,8 @@
         <?php echo form_open_multipart('civou/c_adv/updateAdv'); ?>
 
 
-
         <?php
         foreach ($res as $value) {
-
 
             echo "<br/><br/>";
             echo "الاسم   :   ";
