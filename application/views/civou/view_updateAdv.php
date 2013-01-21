@@ -160,14 +160,12 @@
 
         <!-- end of upload form code **************************************************** -->
 
-
     </head>
     <style type="text/css">
         .error{color:#F00;font-size:18px}
 
     </style>
     <body>
-
 
         <?php
         if(isset($customer)){
