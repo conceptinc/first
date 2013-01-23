@@ -15,7 +15,7 @@
 
             <?php echo form_close(); ?>
         </div> <!-- #search-bar -->
-        
+        <div id="clock"> <img src="<?php echo base_url();?>images/header_clock.png"  width="280" height="89" /></div>
         
 
         <div id="menu">
