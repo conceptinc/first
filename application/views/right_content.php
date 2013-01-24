@@ -4,7 +4,7 @@
         <?php if (!$user) { ?>
             <div id="main" class="form-4">
                 <?php echo form_open('c_custmer/enter'); ?> 
-                <span>دخول العملاء للتعديل علي اعلانتهم</span>
+                <span>دخول العملاء لتعديل اعلانتهم</span>
                 <p>
                     <label for="login">البريد الالكتروني</label>
                     <?php
@@ -25,13 +25,20 @@
                 </p>       
                 <?php echo form_close(); ?>
             </div>
+             
             <?php
+			
         } else {
             ?>
-            <a href="<?php echo site_url("c_custmer/logout/$user") ?>" > خروج   </a>
+           <div id="agent">
+             <a id="edit" href="<?php echo site_url("c_custmer/edit/$user") ?>" > التعديل على الاعلان  </a>
+
             <br/>
-            <a href="<?php echo site_url("c_custmer/edit/$user") ?>" > التعديل على الاعلان  </a>
+            <a id="exit" href="<?php echo site_url("c_custmer/logout/$user") ?>" > خروج   </a>
+            </div>
+           
             <?php
+			
         }
     } else {
         
@@ -42,7 +49,7 @@
         }
     }
     ?>
-
+ 
 </div>
 
 <!----------------------------------------------- main menu ----------------------------------------------->        

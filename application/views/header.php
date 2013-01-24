@@ -15,7 +15,7 @@
 
             <?php echo form_close(); ?>
         </div> <!-- #search-bar -->
-        <div id="clock"> <img src="<?php echo base_url();?>images/header_clock.png"  width="280" height="89" /></div>
+        <div id="clock"> <img src="<?php echo base_url();?>images/header_clock.png"  width="290" height="89" /></div>
         
 
         <div id="menu">
@@ -57,6 +57,7 @@
             <div class="container">
                 <div id="main_s" style="width:940px;margin-left:0px;"><!------------main slider----------------->
 
+                   
                     <div id='wrapper'>
 
                         <div id='body'>
