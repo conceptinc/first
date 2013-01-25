@@ -260,5 +260,47 @@ function check_url_g($id ){
             return false;
         }
 	}
+///////////////////////////////////
+function contact_form($name,$mail,$message){
+	$sql=' insert into contact(name,mail,message)
+			              values(?,?,?)';
+		$result=$this->db->query($sql,array($name,$mail,$message));
+		if ($this->db->affected_rows()==1) {
+            return true;
+        } else {
+            return false;
+        }				  
+	}
+////////////////////////////////////////////
+function select_contacts(){
+	$sql='select * from contact ';
+	$result=$this->db->query($sql);
+	if ($result->num_rows() >=1) {
+            return $result;
+        } else {
+            return false;
+        }
+	}
+	/////////////////////////////////
+	function select_contacts_level2($id){
+		$sql='select * from contact where id=? ';
+	$result=$this->db->query($sql,$id);
+	if ($result->num_rows() >=1) {
+            return $result;
+        } else {
+            return false;
+        }
+		}	
+		//////////////////////////////
+		function read_message($id){
+			$v=1;
+			$sql='update contact set `read`=? where id=? ';
+	$result=$this->db->query($sql,array($v,$id));
+	if ($this->db->affected_rows()==1) {
+            return true;
+        } else {
+            return false;
+        }
+			}
 }
 

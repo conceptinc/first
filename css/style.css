@@ -880,3 +880,25 @@ height:95px;
 }
 #doc table tr td{padding:3px; }
 .doc{position:absolute; width:200px; height:100px;margin-left:-180px; margin-top:20px}
+
+#contact_head{float:right;padding:10px; }
+#contact_p{float:right;padding:10px;}
+.text-form_send{padding-bottom:90px;}
+#contact span{float:right; padding-right:50px;color:#333;}
+#contact tr td {padding:5px}
+#contact{float:right;margin-right:-45px;margin-top:20px;}
+#contact input , textarea{float:right;color:#333;text-align:right;color:#000;
+		padding:7px 9px 6px; 
+		margin:0; 
+		 
+		border:1px solid #e5e5e5; 
+		background:#fff;
+		outline:none;}
+#contact textarea:active{outline:none; border:none ;}		
+		
+#contact_submit{float:left; color:#000;font-family:'myfont2'}
+
+#contact_submit:hover{ cursor:pointer;color:#960}
+#contact_man{position:absolute;}
+#valid{position:absolute; margin-left:300px;margin-top:270px;color:#960;}
+#sent ,dnot_sent{position:absolute; margin-left:460px;margin-top:-50px;color:#960;font-size:15px;}

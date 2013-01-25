@@ -5,9 +5,10 @@
 	text-align:left;
     margin: auto ;
 	
-    padding:40px 0px 0px 5px;
+    padding:47px 0px 0px 0px;
 	border:none;
 	display:block;
+	border-raduis:10px;
 	
 }
 
@@ -17,7 +18,7 @@
 	height:420px;
 	padding:0px;
 	display:block;
-	border: 7px solid #fff;
+	border: 10px solid #fff;
 }
 #bigPic img{
 	position:relative;

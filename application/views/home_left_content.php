@@ -2,7 +2,7 @@
     <?php foreach ($last_views as $last_view) { ?>
         <div class="product">
             <div class="product-content clearfix">
-                <?php if ($last_view->type == 'g') { ?>
+                <?php if ($last_view->type == 'g' || $last_view->type == 's') { ?>
                     <a href="<?php echo base_url(); ?>site/showGoldenAdvDetail/<?php echo $last_view->adv_id; ?>"  class="image">
                         <span class="rounded" ><img src="<?php echo base_url(); ?>public/original/thumbs/<?php echo $last_view->main_photo; ?>" width="192" height="130" /></span>
                         <span class="tag" style="left: -9px;"><span><?php echo $last_view->views; ?></span></span>

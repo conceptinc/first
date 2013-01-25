@@ -16,6 +16,8 @@
 <li><a href="<?php echo site_url('civou/c_adv/load_adv_edit'); ?>" >   التعديل على الاعلانات </a></li>
 <li><a href="<?php echo site_url('civou/c_doctor/load_doctor'); ?>" >     اداره الاطباء  </a></li>
 <li> <a href="<?php echo site_url('civou/c_doctor/load_doctorDeptAdd'); ?>" >     اضافه قسم الاطباء  </a></li>
-<li><a href="<?php echo site_url('site/logout'); ?>" >خروج </a> </li>
+<li> <a href="<?php echo site_url('civou/c_sitead/contact_level1'); ?>" >  الرسائل الوارده  </a> </li>
+<li><a href="<?php echo site_url('site/logout'); ?>" >تسجيل خروج</a> </li>
+
 </ul>
 </div>

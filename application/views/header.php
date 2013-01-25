@@ -38,7 +38,7 @@
                     </ul>
                 </li>
                 <li class="page_item page-item-"><a href="<?php echo base_url(); ?>site/load_trains/"><strong>مواعيد القطارات</strong></a></li>
-                <li class="page_item page-item-275"><a href="#"><strong>اتصل بنا</strong></a></li>
+                <li class="page_item page-item-275"><a href="<?php  echo site_url('site/contact_us') ?>"><strong>اتصل بنا</strong></a></li>
                 <li class="page_item page-item-"><a href="<?php  echo site_url('site/load_whoAre') ?>"><strong>عن الموقع</strong></a></li>
 
 

@@ -27,31 +27,32 @@
         <div id="header" >
         </div>
         <div id="content">
+        
             <table border="1" width="900" >
                 <h3> اداره  الاقسام 
                 </h3>                                          
                 <tr>                                                 
-                    <td>
+                    <td width="50%">
                         <a href="<?php echo site_url('civou/c_dept/load_dept_view'); ?>"  >   اداره الاقسام  الرئيسيه  </a>
                     </td>
-                    <td>
+                    <td width="50%">
                         <a href="<?php echo site_url('civou/c_dept/loadSubDeptView'); ?>"  >   اداره الاقسام  الفرعيه   </a>
                     </td>
 
                 </tr>
                 <tr>
-                    <td>
+                    <td width="50%">
                         <a href="<?php echo site_url('civou/add_panners'); ?>" > اضافه بنر رئيسي </a>
                     </td>
                     <td>
                         <a href="<?php echo site_url('civou/c_adv/load_adv_add'); ?>" > اداره الاعلانات </a>
-                    </td>
+                    </td width="50%">
                 </tr>
                 <tr>
-                    <td>
+                    <td width="50%">
                         <a href="<?php echo site_url('civou/c_adv/load_adv_edit'); ?>" >   التعديل على الاعلانات </a>
-                    </td>
-                    <td><a href="<?php echo site_url('site/logout'); ?>" >خروج </a> </td>
+                    </td width="50%">
+                    <td><a href="<?php echo site_url('site/logout'); ?>" >تسجيل خروج </a> </td>
                 </tr>
             </table>      
             <h3> اداره الاطباء </h3> 
@@ -64,8 +65,22 @@
                         <a href="<?php echo site_url('civou/c_doctor/load_doctor'); ?>" >      اضافه اعلان طبيب   </a>
                     </td>
                 </tr>
+                
+               
             </table>
-
+ <h3> الرسائل الوارده </h3> 
+            <table border="1" width="900" >
+               
+                
+                <tr>   
+                    <td width="50%">
+                       
+                    </td>
+                    <td>
+                        <a href="<?php echo site_url('civou/c_sitead/contact_level1'); ?>" >  الرسائل الوارده  </a> 
+                    </td>
+                </tr>
+            </table>
 
         </div>
 
