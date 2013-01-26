@@ -6,9 +6,11 @@ class c_doctor extends CI_Controller {
         if ($this->session->userdata('logged_in')) {
             if ($this->session->userdata('logged_in')) {
                 $this->load->library('form_validation');
-                $this->form_validation->set_rules('adv_name', ' Name ', 'required|trim|xss_clean');
-                $this->form_validation->set_rules('adv_spe', 'nashat ', 'required|trim|xss_clean');
-                $this->form_validation->set_rules('adv_address', 'address ', 'required|trim|xss_clean');
+                $this->form_validation->set_rules('adv_name', ' Name ', 'required|trim|max_length[100]|xss_clean');
+                $this->form_validation->set_rules('adv_spe', 'nashat ', 'required|trim|max_length[100]xss_clean');
+                $this->form_validation->set_rules('adv_address', 'address ', 'required|max_length[39]trim|xss_clean');
+				$this->form_validation->set_rules('adv_f_date', 'date', 'required|max_length[39]trim|xss_clean');
+				$this->form_validation->set_rules('adv_f_time', 'time', 'required|max_length[12]trim|xss_clean');
                 $this->form_validation->set_rules('adv_phone', 'phone ', 'required|trim|xss_clean|numeric');
 
                 if ($this->form_validation->run() == false) {

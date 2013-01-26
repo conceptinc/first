@@ -72,9 +72,9 @@ class c_adv extends CI_Controller {
             $this->load->library('form_validation');
             $this->form_validation->set_rules('adv_name', ' Name ', 'required|trim|max_length[45]|xss_clean');
             $this->form_validation->set_rules('adv_nashat', 'nashat ', 'required|trim|max_length[45]|xss_clean');
-            $this->form_validation->set_rules('adv_address', 'address ', 'required|trim|max_length[445]|xss_clean');
-            $this->form_validation->set_rules('adv_phone', 'phone ', 'required|trim|max_length[445]|xss_clean|numeric');
-            $this->form_validation->set_rules('desc', 'description ', 'required|trim|max_length[1385]|xss_clean');
+            $this->form_validation->set_rules('adv_address', 'address ', 'required|trim|max_length[100]|xss_clean');
+            $this->form_validation->set_rules('adv_phone', 'phone ', 'required|trim|max_length[11]|xss_clean|numeric');
+            $this->form_validation->set_rules('desc', 'description ', 'required|trim|max_length[138]|xss_clean');
 
             if ($this->form_validation->run() == false) {
                 $error = array();

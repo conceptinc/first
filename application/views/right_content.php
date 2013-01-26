@@ -1,3 +1,4 @@
+<style type="text/css">#invalid{color:#C90;margin-right:4px;}</style>
 <div id="login">
 
     <?php if (isset($user)) { ?>
@@ -45,7 +46,7 @@
     }
     if (isset($logged_error2)) {
         if ($logged_error2) {
-            echo " Username Or Password is Invalid ";
+            echo "<p id='invalid'> اسم العميل او الرقم السري احدهما خطأ </p>";
         }
     }
     ?>
