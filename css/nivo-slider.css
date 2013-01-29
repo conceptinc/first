@@ -39,7 +39,7 @@
 	
 	display:none;
 	background:white; 
-	 
+	filter:alpha(opacity=0); 
 	opacity:0;
 }
 /* The slices and boxes in the Slider */
@@ -53,7 +53,7 @@
 .nivo-box {
 	display:block;
 	position:absolute;
-
+	
 	overflow:hidden;
 }
 .nivo-box img { display:block; }
@@ -73,7 +73,9 @@
 	display: none;
 	-moz-opacity: 0.8;
 	filter:alpha(opacity=8);
-	
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
 }
 .nivo-caption p {
 	padding:5px;

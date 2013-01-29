@@ -1,155 +1,152 @@
+<style type="text/css">
+
+
+ 
+ </style>
 <div id="adv_content">
     <div class="boxLeft">
 
-        <ul class="ads" style="text-align:right;font-size:15px;font-family:'myfont2';">
+        
 
             <!------------------- ads details ------------------------->
+            <div id="adv_title">
+           
+             <?php foreach ($res as $s) { ?>
+             <table width="100%" style="text-align:right" >
+             <tr>
+             <td width="20%"><img class="adv_logo" src="<?php echo base_url();?>images/adv_logo.png" /></td>
+             <td width="70%">
+             
+             
+         
+             <table width="100%">
+             <tr><td> <p class="adv_name"><?php echo $s->name; ?></p></td></tr>
+             <tr><td> <p class="adv_view"> <span><?php echo $s->views; ?></span>: عدد الزوار</p></td></tr>
+             </table>
+            
+             
+             </td>
+            
+             <td width="10%"> <img class="gold_title" src="<?php echo base_url();?>images/adv_title.png" /></td>
+             
+             </tr>
+             </table>
+           
+            
+             <?php }?>
+             
+            
+            </div>
+            
+            <div id="info_table">
+
+            <img class="tabe_info" src="<?php echo base_url();?>images/adv_tabe_h.png" />
+           
+ <table width="700" id="table_content">
             <?php foreach ($res as $s) { ?>
-                <li class="level-1">
-
-                    <table id="gold_table" style="text-align:right;float:right">
-                        <tbody>
-                            <tr>
-                                <td><h2 style="padding-top:10px;">
-                                        <font color="#51adfe"><?php echo $s->name; ?> </font>
-                                        <img src="<?php echo base_url(); ?>images/vcard.png"class="icon"></h2>
-                                </td>
-                            </tr>
-                            <tr>
-                         
-                            <td>
-                                    عدد الزيارات : <?php echo $s->views; ?>
-                                    <img src="<?php echo base_url(); ?>images/arrow-small.png"class="icon">   
-                                </td>
-                               
-                            </tr>
-                            <tr>
-                                <td>
-                               الاسم :
-                                   <?php echo $s->name; ?>
-                                    <img src="<?php echo base_url(); ?>images/arrow-small.png"class="icon"> 
-                                </td> 
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <div class="clear"></div>
-
-                    <ul>
-                        <li class="level-2">
-                          
-                                    <li class="line1">
-                                        العنوان : <span><?php echo $s->address; ?></span>
-                                       <img src="<?php echo base_url(); ?>images/arrow-small.png" class="icon">
-                                       </li><li class="line1">
-                                        النشاط : <span><?php echo $s->nashat; ?></span>
-                                       <img src="<?php echo base_url(); ?>images/arrow-small.png" class="icon">
-                                       </li><li class="line1">
-                                        التليفون  : <span><?php echo $s->phone; ?></span>
-                                       <img src="<?php echo base_url(); ?>images/arrow-small.png" class="icon">
-                                       </li>
-
-                                    </li>
-
-                                    <!---------------->
-
-                                    <li class="level-2" style="padding-top:15px;">
-                                        <div class="top">
-                                            <b>صور خاصة بالاعلان</b>
-                                            <span>
-
-                                                <img src="<?php echo base_url(); ?>/images/arrow-small.png" class="icon">
-
-                                            </span>
-                                        </div>
-
-                                        <table>
-                                            <tbody>
-                                                <tr>
-                                                    <td>
-                                            <center>
-                                                <?php foreach ($photo as $value) { ?>
-                                                    <img  class="img_gallery" src="<?php echo $value['url'] ?> "  style="margin:auto; width:700px; margin-top:20px;" >
+            
+            
+            <tr>
+            <td id="dif" width="50%">
+            <table >
+           <tr>
+           <td><?php echo $s->nashat; ?></td>
+           <td style="color:#9e0101" width="17%">: النشاط</td>
+           <td width="5%"> <img class="dot" src="<?php echo base_url();?>images/dot.png" /></td>
+           </tr>
+           </table>
+            </td>
+            <td width="50%">
+            
+           <table id="">
+           <tr>
+           <td><?php echo $s->name; ?></td>
+           <td style="color:#9e0101;padding-right:-6px;" width="15%">: الاسم</td>
+           <td width="1%"> <img class="dot" src="<?php echo base_url();?>images/dot.png"  /></td>
+           </tr>
+           </table>
+            
+            
+           </td>
+            
+            </td>
+            </tr>
+            
+            
+            <tr>
+            <td width="50%">
+            <table >
+           <tr>
+           <td><?php echo $s->address; ?></td>
+           <td style="color:#9e0101 ;margin-right:-10px;" width="15%">: العنوان</td>
+           <td width="5%"> <img class="dot" src="<?php echo base_url();?>images/dot.png" /></td>
+           </tr>
+           </table>
+            </td>
+            <td id="dif" width="50%">
+            <table >
+           <tr>
+           <td><?php echo $s->phone; ?></td>
+           <td style="color:#9e0101" width="17%">: التليفون</td>
+           <td width="5%"> <img class="dot" src="<?php echo base_url();?>images/dot.png" /></td>
+           </tr>
+           </table></td>
+            </tr>
+             <?php }?>
+            </table>
+            
+            </div>
+            
+             <div id="general_photo">
+               <img class="photo_head" src="<?php echo base_url();?>images/adv_tabe_h2.png" />
+               <div id="adv_images">
+               <?php foreach ($photo as $value) { ?>
+                                                    
+                                                    <img class="adv_images" src="<?php echo $value['url'] ?>" width="690" />
                                                     <br>
                                                 <?php } ?>
-                                            </center> 
-                                            </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>    
-
-
-                                    </li>
-
-
-                                    <!---------------->
-
-
-
-
-                                    <!---------------->
-
-                                    <li class="level-2" style="padding: 15px 0 15px 0">
-                                        <div class="top" style="padding: 0px 0 15px 0">
-                                            <span>مكتبة الصور<img src="<?php echo base_url(); ?>images/arrow-small.png" class="icon"></span>
-                                        </div>
-
-                                        <ul class="gallery clearfix" id="gallery">
+               
+              
+               </div>
+            </div>
+           <div id="photo_gallery">
+            <img class="photo_head" src="<?php echo base_url();?>images/adv_tabe_h3.png" />
+            <div id="adv_images_gallery">
+             <div id="adv_images_gallery2">
+             
+              <ul  class="gallery clearfix" id="gallery"  >
                                             <?php if(isset($gallery)){?>
                                             <?php foreach ($gallery as $im) { ?>
                                                 <li class="photos" > 
                                                     <a href="<?php echo $im['url_ga'] ?> "  rel="prettyPhoto[gallery]"  > 
-                                                        <img class="img_gallery" src="<?php echo $im['th_url'] ?> " width="120" height="120" />   
+                                                        <img class="adv_images" src="<?php echo $im['th_url'] ?> " width="125" height="120" />   
                                                     </a> 
                                                 </li>
                                             <?php } ?>
                                              <?php } ?>
-                                        </ul>
-                                    </li>
+             </ul>
+             
+  
+   </div>
+ </div>
+           </div>
+            
 
-                                    <!---------------->
-
-                                    <li class="level-2" style="">
-                                        <div class="top" style="padding: 0px 0 15px 0">
-                                            <span>
-                                                مكتبة الفيديو<img src="<?php echo base_url(); ?>images/arrow-small.png" class="icon"></span>
-                                        </div>
-
-
-
-                                        <div class="clear"> </div>
-                                        <iframe width='640' height='360'
+           <!-- video ------>
+           <div id="video">
+           <img class="photo_head" src="<?php echo base_url();?>images/adv_tabe_h4.png" />
+<div id="adv_video">
+     <iframe width='680' id="iframe" height='400'
                                                 src='http://www.youtube.com/embed/<?php echo $s->vedio; ?>?feature=player_detailpage' 
                                                 frameborder='0' allowfullscreen>
-                                        </iframe>       <br />
-                                        <br><br>
+                                        </iframe>    
+</div>
+           </div>
+           
+                    <div class="clear"></div>
 
-
-
-
-                                    </li>
-
-
-
-
-
-
-                                    </ul>
-
-
-                                    </li> <!-- End li.level-i -->
-
-
-
-
-
-
-                                    <?php
-                                }
-                                ?>
-
-                                </ul>
-                        </div>
+ 
+                   </div>
 
 
                         </div>

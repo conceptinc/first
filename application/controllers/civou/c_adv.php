@@ -36,8 +36,8 @@ class c_adv extends CI_Controller {
                 'image_library' => 'gd2',
                 'source_image' => '',
                 'maintain_ratio' => TRUE,
-                'width' => 100,
-                'height' => 100,
+                'width' => 200,
+                'height' => 150,
                 'new_image' => $thum_path
             );
             $this->load->library('image_lib', $con);
@@ -205,8 +205,8 @@ class c_adv extends CI_Controller {
                 'image_library' => 'gd2',
                 'source_image' => '',
                 'maintain_ratio' => TRUE,
-                'width' => 100,
-                'height' => 100,
+                'width' => 200,
+                'height' => 200,
                 'new_image' => $thum_path
             );
             $this->load->library('image_lib', $con);

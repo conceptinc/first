@@ -82,7 +82,7 @@ height:130px;
             	if(currentImage != indexImage ){
                     $(currentImage).css('z-index',2);
                     clearTimeout(myTimer);
-                    $(currentImage).fadeOut(0, function() {
+                    $(currentImage).fadeOut(3, function() {
 					    myTimer = setTimeout("showNext()", 4000);
 					    $(this).css({'display':'none','z-index':1})
 					});
@@ -112,44 +112,7 @@ height:130px;
 	
 	</script>	
     <script type="text/javascript" src="<?php echo base_url();?>js/superfish.js" ></script>
-<script type="text/javascript">
-	var currentImage;
-    var currentIndex = -1;
-    var interval;
-    function showImage(index){
-        if(index < $('#bigPic img').length){
-        	var indexImage = $('#bigPic img')[index]
-            if(currentImage){   
-            	if(currentImage != indexImage ){
-                    $(currentImage).css('z-index',2);
-                    clearTimeout(myTimer);
-                    $(currentImage).fadeOut(0, function() {
-					    myTimer = setTimeout("showNext()", 4000);
-					    $(this).css({'display':'none','z-index':1})
-					});
-                }
-            }
-            $(indexImage).css({'display':'block', 'opacity':1});
-            currentImage = indexImage;
-            currentIndex = index;
-           
-        }
-    }
-    
-    function showNext(){
-        var len = $('#bigPic img').length;
-        var next = currentIndex < (len-1) ? currentIndex + 1 : 0;
-        showImage(next);
-    }
-    
-    var myTimer;
-    
-    $(document).ready(function() {
-	    myTimer = setTimeout("showNext()",0);
-		showNext(); //loads first image
-       
-	});
-    
+
 	
 		jQuery('ul#secondary-menu').superfish({ 
 			delay:       300,                            // one second delay on mouseout 

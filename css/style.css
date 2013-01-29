@@ -865,10 +865,10 @@ ul.ads li.bronz a.moree {
     -webkit-border-radius: 2px;
 	font-family: 'myfont2';
 }
-.photos img{display:inline;padding:3px; border:1px solid #ccc;margin-bottom:20px;font-family: 'myfont2';}
+.photos img{display:inline;padding:5px; border:1px solid #ccc;margin-bottom:20px;font-family: 'myfont2';}
 
-.level-2 ul li{display:inline;padding-left:32px; margin:auto;font-family: 'myfont2';;}
-#gallery {}
+.level-2 ul li{display:inline;padding-left:33px;font-family: 'myfont2';;}
+
 #doc{float:right;padding:10px;width:680px; text-align:right;background:url('../images/advs_bg.png') no-repeat;-webkit-border-radius: 10px;
 -moz-border-radius: 10px;
 border-radius: 10px;
@@ -902,3 +902,27 @@ height:95px;
 #contact_man{position:absolute;}
 #valid{position:absolute; margin-left:300px;margin-top:270px;color:#960;}
 #sent ,dnot_sent{position:absolute; margin-left:460px;margin-top:-50px;color:#960;font-size:15px;}
+#adv_titl{float:right; font-family:Tahoma, Geneva, sans-serif}
+.gold_title{float:right; padding-right:5px;}
+.adv_name{float:right; font-family:Tahoma, Geneva, sans-serif; font-size:16px;color:#9e0101;font-weight:bold;padding-top:9px;}
+.adv_view{font-family:Tahoma, Geneva, sans-serif; font-size:16px;color:#000;font-weight:bold;padding-top:50px;
+}
+.adv_logo{padding-left:10px;}
+#info_table{margin-top:70px;float:right}
+#info_table table tr td{font-family:Tahoma, Geneva, sans-serif; text-align:right;padding:5px;}
+#dif{background-color:#f2f3f3;}
+.tabe_info{margin-left:5px;}
+#info_table #table_content{margin-left:7px;margin-top:-2px;text-align:right}
+.dot{margin-right:-10px;}
+#subtable tr td{padding:0px;margin:0px;}
+#general_photo{margin-top:170px;}
+.photo_head{margin-left:-1px;margin-top:70px;}
+#adv_images{background-color:#e9e7e3;margin-top:-5px;}
+.adv_images{margin-top:2px;margin-left:5px;padding:10px 0 10px 0;}
+#adv_images_gallery{background-color:#e9e7e3;margin-top:-4px; }
+#adv_images_gallery2{padding:10px 0 0px 30px;}
+#adv_images_gallery img{padding:3px; border:2px solid #fff;margin-right:20px; margin-bottom:20px;}
+.adv_images_galler{margin-top:2px;margin-left:5px;padding:10px 0 10px 0;}
+#adv_video{background-color:#e9e7e3;margin-top:-5px;}
+#iframe{padding:10px}
+#gallery li{display:inline;}
