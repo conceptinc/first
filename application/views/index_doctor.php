@@ -111,7 +111,7 @@ height:130px;
     
 	
 	</script>	
-    <script type="text/javascript" src="<?php echo base_url();?>js/superfish.js" ></script>
+    <script type="text/javascript" src="<?php echo base_url();?>js/superfish.js" >
 
 	
 		jQuery('ul#secondary-menu').superfish({ 

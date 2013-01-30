@@ -226,7 +226,8 @@ class site extends CI_Controller {
         $data1['result'] = $this->dept->showAll_deptANDsub();
         $this->load->view('index_trains', $data1);
     }
-	////////////////////////////////////////////
+
+    ////////////////////////////////////////////
     function contact_us() {
         $data1 = array();
         $this->load->model('slider_model');
@@ -238,61 +239,59 @@ class site extends CI_Controller {
         $data1['result'] = $this->dept->showAll_deptANDsub();
         $this->load->view('view_contact', $data1);
     }
-//////////////////////////////////////
-function contact_validation(){
-	$this->load->library('form_validation');
-			$this->form_validation->set_rules('name', 'Name', 'required|max_length[60]|trim|xss_clean');
-			$this->form_validation->set_rules('message', 'Message', 'required|max_length[500]|trim|xss_clean');
-			$this->form_validation->set_rules('email', 'Email', 			                                                            'required|trim|xss_clean|valid_email|max_length[200]|xss_clean');
-			
-			
-			
-			if($this->form_validation->run()){
-				$name=$this->input->post('name');
-				$mail=$this->input->post('email');
-				$message=$this->input->post('message');
-			    $this->load->model('slider_model');
-				if($this->slider_model->contact_form($name,$mail,$message)){
-					$data1 = array();
-					$data1['sent']="تم ارسال الرساله بنجاح";
-					
-        $this->load->model('slider_model');
-        $slider_pics = $this->slider_model->load_img();
-        if ($slider_pics->num_rows() > 0)
-            $data1['big_pics'] = $slider_pics->result();
 
-        $this->load->model('dept');
-        $data1['result'] = $this->dept->showAll_deptANDsub();
-        $this->load->view('view_contact', $data1);
-					}else{
-						$data1 = array();
-						$data1['dont_sent']="عفوا لم ترسل الرساله لخطأ ما <br />
+//////////////////////////////////////
+    function contact_validation() {
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('name', 'Name', 'required|max_length[60]|trim|xss_clean');
+        $this->form_validation->set_rules('message', 'Message', 'required|max_length[500]|trim|xss_clean');
+        $this->form_validation->set_rules('email', 'Email', 'required|trim|xss_clean|valid_email|max_length[200]|xss_clean');
+
+
+
+        if ($this->form_validation->run()) {
+            $name = $this->input->post('name');
+            $mail = $this->input->post('email');
+            $message = $this->input->post('message');
+            $this->load->model('slider_model');
+            if ($this->slider_model->contact_form($name, $mail, $message)) {
+                $data1 = array();
+                $data1['sent'] = "تم ارسال الرساله بنجاح";
+                $this->load->model('slider_model');
+                $slider_pics = $this->slider_model->load_img();
+                if ($slider_pics->num_rows() > 0)
+                    $data1['big_pics'] = $slider_pics->result();
+
+                $this->load->model('dept');
+                $data1['result'] = $this->dept->showAll_deptANDsub();
+                $this->load->view('view_contact', $data1);
+            }else {
+                $data1 = array();
+                $data1['dont_sent'] = "عفوا لم ترسل الرساله لخطأ ما <br />
 حاول مره ثانيه ";
 
-        $this->load->model('slider_model');
-        $slider_pics = $this->slider_model->load_img();
-        if ($slider_pics->num_rows() > 0)
-            $data1['big_pics'] = $slider_pics->result();
+                $this->load->model('slider_model');
+                $slider_pics = $this->slider_model->load_img();
+                if ($slider_pics->num_rows() > 0)
+                    $data1['big_pics'] = $slider_pics->result();
 
-        $this->load->model('dept');
-        $data1['result'] = $this->dept->showAll_deptANDsub();
-        $this->load->view('view_contact', $data1);
-						}
-				
-				}else{
-					$data1 = array();
-        $this->load->model('slider_model');
-        $slider_pics = $this->slider_model->load_img();
-        if ($slider_pics->num_rows() > 0)
-            $data1['big_pics'] = $slider_pics->result();
+                $this->load->model('dept');
+                $data1['result'] = $this->dept->showAll_deptANDsub();
+                $this->load->view('view_contact', $data1);
+            }
+        }else {
+            $data1 = array();
+            $this->load->model('slider_model');
+            $slider_pics = $this->slider_model->load_img();
+            if ($slider_pics->num_rows() > 0)
+                $data1['big_pics'] = $slider_pics->result();
 
-        $this->load->model('dept');
-        $data1['result'] = $this->dept->showAll_deptANDsub();
-        $this->load->view('view_contact', $data1);
-					}
+            $this->load->model('dept');
+            $data1['result'] = $this->dept->showAll_deptANDsub();
+            $this->load->view('view_contact', $data1);
+        }
+    }
 
-	
-	}
 ////////////////////////////////////////
     function logout() {
 
