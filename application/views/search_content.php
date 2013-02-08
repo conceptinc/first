@@ -1,4 +1,4 @@
-<div id="adv_content">
+﻿<div id="adv_content">
 
     <ul class="ads">
 
@@ -99,7 +99,7 @@
              <div id="doc">
             <ul class="ads" >
            
-             <a style="float:right;position:absolute;margin-left:39px;margin-top:64px;" href="<?php echo base_url(); ?>site/showٍٍٍSilverAdvDetail/<?php echo $id; ?>"  class="more"><span>التفاصيل</span></a>
+             <a style="float:right;position:absolute;margin-left:39px;margin-top:64px;" href="<?php echo base_url(); ?>site/showSliverAdvDetail/<?php echo $id; ?>"  class="more"><span>التفاصيل</span></a>
          
                 <li class="doctors" style="float:right;margin-top:3px;margin-left:5px;" >
                  <img src="<?php echo base_url(); ?>images/vcard.png" class="icon"style="float:right;margin-top:3px;margin-left:5px;" >
@@ -133,7 +133,7 @@
                         </tbody>
                     </table>
 
-                    <table width="600px"style=" font-size:14px;text-align:right;">
+                    <table width="600px" style=" font-size:14px;text-align:right;">
                         <tbody>
                             <tr>
                             </tr>

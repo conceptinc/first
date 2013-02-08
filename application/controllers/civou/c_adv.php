@@ -73,7 +73,7 @@ class c_adv extends CI_Controller {
             $this->form_validation->set_rules('adv_name', ' Name ', 'required|trim|max_length[45]|xss_clean');
             $this->form_validation->set_rules('adv_nashat', 'nashat ', 'required|trim|max_length[45]|xss_clean');
             $this->form_validation->set_rules('adv_address', 'address ', 'required|trim|max_length[100]|xss_clean');
-            $this->form_validation->set_rules('adv_phone', 'phone ', 'required|trim|max_length[11]|xss_clean|numeric');
+            $this->form_validation->set_rules('adv_phone', 'phone ', 'required|trim|max_length[25]|xss_clean|numeric');
             $this->form_validation->set_rules('desc', 'description ', 'required|trim|max_length[138]|xss_clean');
 
             if ($this->form_validation->run() == false) {
@@ -82,6 +82,7 @@ class c_adv extends CI_Controller {
                 $error['dept_id'] = 0;
                 $this->load->view("civou/view_advAdd", $error);
             } else {
+
                 $type = $this->input->post('advtype');
                 $dept = $this->input->post('search_category');
                 $subDept = $this->input->post('sub_category');
@@ -97,17 +98,9 @@ class c_adv extends CI_Controller {
                     'nashat' => $nashat,
                     'address' => $address,
                     'phone' => $phone,
-                    'dept_id' => $dept
+                    'dept_id' => $dept,
+                    'sub_dept_id' => $subDept
                 );
-                if (isset($subDept)) {
-                    if (!empty($subDept)) {
-                          $db_value['sub_dept_id']=$subDept;       
-                    }else{
-                         $db_value['sub_dept_id']=0;
-                    }
-                }else{
-                     $db_value['sub_dept_id']=0;
-                }
                 // 3 for normal adv  
                 if ($type == 3) {
                     $db_value['type'] = 'n';
@@ -181,7 +174,7 @@ class c_adv extends CI_Controller {
                 } else {
                     
                 }
-
+                
                 $data1['customer'] = false;
                 $this->load->view('civou/view_updateAdv', $data1);
             }
@@ -278,8 +271,7 @@ class c_adv extends CI_Controller {
                 $data['res'] = $this->sliver->selectAllAdv($dept, $subDept);
                 $this->load->view('civou/view_edit2', $data);
             } else if ($type == 3) {
-                $data['res'] = $this->adv->selectAllAdv($dept, $subDept);
-                $this->load->view('civou/view_edit2', $data);
+                
             } else {
                 
             }
@@ -327,11 +319,11 @@ class c_adv extends CI_Controller {
     public function active() {
 
         if ($this->session->userdata('logged_in')) {
-            if ($this->uri->segment(4) != '') {
+            if ($this->uri->segment(3) != '') {
                 $id = $this->uri->segment(4);
                 $this->load->model('adv');
                 $sl = $this->adv->active($id);
-                redirect('civou/c_adv/load_adv_edit');
+                redirect('c_adv/load_adv_edit');
             } else {
                 redirect('');
             }
@@ -342,11 +334,11 @@ class c_adv extends CI_Controller {
 
     public function disactive() {
         if ($this->session->userdata('logged_in')) {
-            if ($this->uri->segment(4) != '') {
+            if ($this->uri->segment(3) != '') {
                 $id = $this->uri->segment(4);
                 $this->load->model('adv');
                 $sl = $this->adv->disactive($id);
-                redirect('civou/c_adv/load_adv_edit');
+                redirect('c_adv/load_adv_edit');
             } else {
                 redirect('');
             }

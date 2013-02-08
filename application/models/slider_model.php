@@ -302,5 +302,32 @@ function select_contacts(){
             return false;
         }
 			}
-}
+		///////////////////////////
+		function add_comment($adv_id,$name,$email,$comment){
+			$sql=' insert into comments(comment,name,level2_id,email)
+			              values(?,?,?,?)';
+		$result=$this->db->query($sql,array($comment,$name,$adv_id,$email));
+		if ($this->db->affected_rows()==1) {
+            return true;
+        } else {
+            return false;
+        }
+			
+			}
+	
+	///////////////////////////////	
+	function get_comment($adv_id){
+		$sql='select * from comments where level2_id=? ';
+	$result=$this->db->query($sql,$adv_id);
+	if ($result->num_rows() >=1) {
+            return $result;
+        } else {
+            return false;
+        }
+		}	
+	//////////////////////////////////
+		
+		
+		
+        }
 

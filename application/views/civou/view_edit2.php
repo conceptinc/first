@@ -28,6 +28,7 @@
                 <?php foreach ($res as $pic) { ?>
                     <tr>
 
+
                         <td><a class="delete" href="<?php echo base_url(); ?>civou/c_adv/delete/<?php echo $pic->id; ?>
                                " >مسح</a>
                         </td>

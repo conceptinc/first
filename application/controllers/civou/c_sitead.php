@@ -37,44 +37,48 @@ class c_sitead extends CI_Controller {
         }
     }
 
+   ////////////////////////////////////////////
+   function contact_level1(){
+	   $this->load->model('slider_model');
+	   if($this->slider_model->select_contacts()){
+		   $contacts=$this->slider_model->select_contacts();
+		    if ($contacts->num_rows() > 0){
+            $data['contacts'] = $contacts->result();
+			}else{
+				 $data['error']="لا يوجد رسائل ارسلت بعد ";
+				}
+		   
+		   
+		   }else{
+			   $data['error']="لا يوجد رسائل ارسلت بعد ";
+			   }
+	   $this->load->view('civou/contact_level1',$data);
+	   } 
     ////////////////////////////////////////////
-    function contact_level1() {
-        $this->load->model('slider_model');
-        if ($this->slider_model->select_contacts()) {
-            $contacts = $this->slider_model->select_contacts();
-            if ($contacts->num_rows() > 0) {
-                $data['contacts'] = $contacts->result();
-            } else {
-                $data['error'] = "لا يوجد رسائل ارسلت بعد ";
-            }
-        } else {
-            $data['error'] = "لا يوجد رسائل ارسلت بعد ";
-        }
-        $this->load->view('civou/contact_level1', $data);
-    }
-
-    ////////////////////////////////////////////
-    function contact_level2() {
-        if ($this->uri->segment(4) != '') {
-            $id = mysql_escape_string($this->uri->segment(4));
-            $this->load->model('slider_model');
-            $this->slider_model->read_message($id);
-            if ($this->slider_model->select_contacts_level2($id)) {
-                $contacts = $this->slider_model->select_contacts_level2($id);
-                if ($contacts->num_rows() > 0) {
-                    $data['contacts'] = $contacts->result();
-                } else {
-                    $data['error'] = "محتوي الرساله غير موجود";
-                }
-            } else {
-                $data['error'] = "محتوي الرساله غير موجود";
-            }
-            $this->load->view('civou/contact_level2', $data);
-        } else {
-            $data['error'] = "لا يوجد رسائل بهذا العنوان ";
-            $this->load->view('civou/contact_level2', $data);
-        }
-    }
+   function contact_level2(){
+	    if ($this->uri->segment(4) != '') {
+        $id = mysql_escape_string($this->uri->segment(4));
+	   $this->load->model('slider_model');
+	   $this->slider_model->read_message($id);
+	   if($this->slider_model->select_contacts_level2($id)){
+		   $contacts=$this->slider_model->select_contacts_level2($id);
+		    if ($contacts->num_rows() > 0){
+            $data['contacts'] = $contacts->result();
+			}else{
+				 $data['error']="محتوي الرساله غير موجود";
+				}
+		   
+		   
+		   }else{
+			   $data['error']="محتوي الرساله غير موجود";
+			   }
+	   $this->load->view('civou/contact_level2',$data);
+	   }else{
+	    $data['error']="لا يوجد رسائل بهذا العنوان ";
+		 $this->load->view('civou/contact_level2',$data);
+	   }
+	   } 
+	   
 
 }
 

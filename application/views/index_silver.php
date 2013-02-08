@@ -8,10 +8,18 @@
     <link rel="stylesheet" href="<?php echo base_url();?>css/slider_style.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="<?php echo base_url();?>css/menu_style.css" type="text/css" media="screen" />
 <!-- jquery ui custom build (for animation easing) -->
+<script type="text/javascript">
+var base_url=" <?php echo base_url();?>";
+</script>
+<script type="text/javascript">
+var adv_id="<?php foreach ($res as $s) {  echo $s->id;} ?>";
 
-     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+</script>
+
+<script type="text/javascript" src="<?php echo base_url();?>js/jquery-1.7.1.min.js"></script>
      <script type="text/javascript" src="<?php echo base_url();?>js/custom.js" ></script>
     
+    <script src="<?php echo base_url();?>js/chat.js" type="text/javascript" ></script>
     
 
 </head>

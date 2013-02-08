@@ -12,7 +12,7 @@ function search_results($keywords){
 	$total_keywords=count($keywords);
 	
 	foreach($keywords as $key=>$keyword){
-		$where .="`desc` like '%$keyword%'";
+		$where .="`name` like '%$keyword%'";
 		if($key !=($total_keywords -1)){
 			$where .="AND";
 			}

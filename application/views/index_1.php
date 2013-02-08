@@ -114,8 +114,8 @@ height:95px;
 		showNext(); //loads first image
        
 	});
-    
-	
+    </script>
+	<script type="text/javascript">
 		jQuery('ul#secondary-menu').superfish({ 
 			delay:       300,                            // one second delay on mouseout 
 			animation:   {opacity:'show',height:'show'},  // fade-in and slide-down animation 

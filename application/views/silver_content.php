@@ -103,6 +103,55 @@
             </div>
         
         
+            <div id="comments">
+   <img class="photo_head" src="<?php echo base_url();?>images/adv_tabe_h5.png" />
+      <div id="comments_div">
+      <div id="comment_info">
+       
+ 
+     
+ 
+      
+      </div>
+    
+              <div id="comment_form">
+      <?php echo form_open('comments');?>                    
+  <table id="contact2" width="500" border="0">
+  <tr>
+    <td width="394"> <?php echo form_input(array('id'=>'name','name'=>'name' ));?></td>
+    <td width="96"><span class="text-form">: الاسم</span> </td>
+  </tr>
+<tr>
+    <td width="394"> <?php echo form_input(array('id'=>'email','name'=>'email',"style"=>"text-align:left" ));?></td>
+    <td width="96"><span class="text-form" >: الايميل</span> </td>
+  </tr>
+  <tr>
+    <td>  <?php echo form_textarea(array('id'=>'comment','name'=>'message','rows'=>'5'
+				  )); ?>
+	</td>
+    <td><span  style="padding-top:-140px;">: التعليق</span> </td>
+  </tr>
+  <tr>
+    <td>
+    
+    <?php echo form_button(array('name'=>'submit','id'=>'contact_submit'),'علق');?></td>
+    </td>
+    <td>
+    </td>
+    
+  </tr>
+</table>
+ 
+<?php echo form_close();?>
+ 
+ 
+ </div>
+ 
+ 
+     
+      </div>
+      </div>
+        
         
                         </div>
 

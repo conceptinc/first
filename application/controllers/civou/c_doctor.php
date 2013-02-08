@@ -11,7 +11,7 @@ class c_doctor extends CI_Controller {
                 $this->form_validation->set_rules('adv_address', 'address ', 'required|max_length[39]trim|xss_clean');
 				$this->form_validation->set_rules('adv_f_date', 'date', 'required|max_length[39]trim|xss_clean');
 				$this->form_validation->set_rules('adv_f_time', 'time', 'required|max_length[12]trim|xss_clean');
-                $this->form_validation->set_rules('adv_phone', 'phone ', 'required|trim|xss_clean|numeric');
+                $this->form_validation->set_rules('adv_phone', 'phone', 'required|trim|xss_clean|max_length[25]');
 
                 if ($this->form_validation->run() == false) {
                     $error['error'] = "";

@@ -12,7 +12,7 @@
      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
      <script type="text/javascript" src="<?php echo base_url();?>js/custom.js" ></script>
     
-    
+
 	<style type="text/css">
 
 
@@ -28,9 +28,8 @@ height:130px;
 </style>
 </head>
 <body id="home" class="home blog cufon-enabled ie et_includes_sidebar">
-	
-	<?php include('header.php')?>	
-    	<div id="content" >
+		<?php include('header.php')?>	
+	<div id="content" >
 		<div class="container clearfix">	
         <p id="new"></p>
 
@@ -44,12 +43,17 @@ height:130px;
     
     <!---------------------------------------- left column the most view ------------------------------------------------------>
 		<div id="left-column">
-	<?php include('doctor_content.php');?>
+			<?php include('doctor_content.php');?>	
+	  
+	
+	<div class="clear"></div>			<div class='wp-pagenavi'>
+
+</div>	
 		</div> <!-- #left-column -->
 <!----------------------------------- the right column site menu ----------------------------------------------------------->
-		<div id="sidebar">
+<div id="sidebar">
 	<div id="eshopw_cart-4" class="widget eshop-widget eshopcart_widget">
-    <?php include('right_content.php');?>           
+		  <?php include('right_content.php');?>
 <!-- End css3menu.com BODY section -->
   </div> <!-- end .widget -->		
     
@@ -62,7 +66,7 @@ height:130px;
 	<!---------------------------------------- footer ------------------------------------------------------>
 			<div id="footer">
 				<p id="copyright">
-                 <?php include('footer.php');?>
+                <?php include('footer.php');?>
 			</div> <!-- #footer-->
 			
 		</div> <!-- .container -->
@@ -71,6 +75,8 @@ height:130px;
 
 		
 	 
+
+    <script type="text/javascript" src="<?php echo base_url();?>js/superfish.js" ></script>
 <script type="text/javascript">
 	var currentImage;
     var currentIndex = -1;
@@ -82,7 +88,7 @@ height:130px;
             	if(currentImage != indexImage ){
                     $(currentImage).css('z-index',2);
                     clearTimeout(myTimer);
-                    $(currentImage).fadeOut(3, function() {
+                    $(currentImage).fadeOut(0, function() {
 					    myTimer = setTimeout("showNext()", 4000);
 					    $(this).css({'display':'none','z-index':1})
 					});
@@ -108,12 +114,8 @@ height:130px;
 		showNext(); //loads first image
        
 	});
-    
-	
-	</script>	
-    <script type="text/javascript" src="<?php echo base_url();?>js/superfish.js" >
-
-	
+    </script>
+	<script type="text/javascript">
 		jQuery('ul#secondary-menu').superfish({ 
 			delay:       300,                            // one second delay on mouseout 
 			animation:   {opacity:'show',height:'show'},  // fade-in and slide-down animation 

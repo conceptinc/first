@@ -43,37 +43,6 @@ class adv extends CI_Model {
         $this->db->delete('adv');
     }
 
-    function deleteLevel2Photo($level2_id) {
-        $this->db->where('level2_id', $level2_id);
-        $this->db->delete('photo');
-    }
-
-    function deleteGalleryPhoto($g_id) {
-        $this->db->where('g_id', $g_id);
-        $this->db->delete('gallery');
-    }
-
-    function removeLevel2PhotoFromHard($id) {
-        $data = $this->selectLevel2PhotoById($id);
-        foreach ($data as $value) {
-            $ph_link = APPPATH . '../public/original/' . $value->name;
-            $ph_link_thums = APPPATH . '../public/original/thumbs/' . $value->name;
-            unlink($ph_link);
-            unlink($ph_link_thums);
-        }
-    }
-
-    function removeGalleryPhotoFromHard($id) {
-        $this->load->model('golden');
-        $data = $this->golden->selectGalleryPhotoByID($id);
-        foreach ($data as $value) {
-            $ph_link = APPPATH . '../public/golden/' . $value['name'];
-            $ph_link_thums = APPPATH . '../public/golden/thumbs/' . $value['name'];
-            unlink($ph_link);
-            unlink($ph_link_thums);
-        }
-    }
-
     function createDoctor($dc) {
         $this->db->insert("doctor", $dc);
     }

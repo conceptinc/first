@@ -85,9 +85,9 @@
                         </tbody>
                     </table>
   </li>
-  <?php if(isset($hamada)){?>
-  <img style="float:left;position:absolute;margin-left:-80px;margin-top:-10px;" src="<?php echo base_url(); ?>images/gold.png"  width="180" height="100" />
-  <?php }?>
+  
+  <img style="float:left;position:absolute;margin-left:-80px;margin-top:-4px;" src="<?php echo base_url(); ?>images/gold.png"    />
+  
             </ul>
 
         </div>

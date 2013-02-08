@@ -83,10 +83,10 @@ dd  { margin-left: 1.5em;}
 blockquote  { margin: 1.5em; padding: 1em; color: #666666; background: #e6e6e6; font-style: italic; border: 1px solid #dcdcdc; }
 	blockquote p { padding-bottom: 0px; }
 
-input[type=text],input.text, input.title, textarea, select { background-color:#fff; border:1px solid #bbb; padding: 2px; color: #4e4e4e; }
-input[type=text]:focus, input.text:focus, input.title:focus, textarea:focus, select:focus { border-color:#2D3940; color: #3e3e3e; }
-input[type=text], input.text, input.title, textarea, select { margin:0.5em 0; }
-textarea { padding: 4px; }
+input[type=text],input.text, input.title, select { background-color:#fff; border:1px solid #bbb; padding: 2px; color: #4e4e4e; }
+input[type=text]:focus, input.text:focus, input.title:focus,  select:focus { border-color:#2D3940; color: #3e3e3e; }
+input[type=text], input.text, input.title, , select { margin:0.5em 0; }
+
 
 img#about-image { float: left; margin: 3px 8px 8px 0px; }
 
@@ -887,16 +887,51 @@ height:95px;
 #contact span{float:right; padding-right:50px;color:#333;}
 #contact tr td {padding:5px}
 #contact{float:right;margin-right:-45px;margin-top:20px;}
-#contact input , textarea{float:right;color:#333;text-align:right;color:#000;
+#contact input , textarea , button{float:right;color:#333;text-align:right;color:#000;
 		padding:7px 9px 6px; 
 		margin:0; 
 		 
 		border:1px solid #e5e5e5; 
 		background:#fff;
 		outline:none;}
-#contact textarea:active{outline:none; border:none ;}		
+#contact2{margin-left:240px;}		
+#contact2 tr td {padding:5px}		
+#contact2 input , textarea{float:right;color:#333;text-align:right;color:#000;
+		padding:7px 9px 6px; 
+		margin:0; 
+		 
+		border:1px solid #e5e5e5; 
+		background:#fff;
+		outline:none;}		
+		#update_content table {margin-bottom:50px;}
+#update_content table tr td{padding:5px;text-align:right}		
+#update_content input[type="text"]{float:right;color:#333;text-align:right;color:#000;
+		padding:7px 9px 6px; 
+		margin:0; 
+		 width:303px;
+		border:1px solid #e5e5e5; 
+		background:#fff;
+		outline:none;}
 		
-#contact_submit{float:left; color:#000;font-family:'myfont2'}
+
+textarea:active{outline:none; border:none ;}		
+#update_submit{background: none; border: none;
+	text-align:right;
+	width:100px;
+	height:30px;
+	padding-right:4px;
+	
+	text-align:center;
+	
+	background:#666;
+	color:#fff;
+	cursor:pointer;
+	font-family: 'myfont2';
+	margin-top:-60px;
+	margin-left:595px;
+	}	
+#media_share{margin-left:5px;margin-top:5px;}		
+#contact_submit{float:right; color:#000;font-family:'myfont2'}
 
 #contact_submit:hover{ cursor:pointer;color:#960}
 #contact_man{position:absolute;}
@@ -907,8 +942,8 @@ height:95px;
 .adv_name{float:right; font-family:Tahoma, Geneva, sans-serif; font-size:16px;color:#9e0101;font-weight:bold;padding-top:9px;}
 .adv_view{font-family:Tahoma, Geneva, sans-serif; font-size:16px;color:#000;font-weight:bold;padding-top:50px;
 }
-.adv_logo{padding-left:10px;}
-#info_table{margin-top:70px;float:right}
+.adv_logo{padding-left:0px;}
+#info_table{margin-top:50px;float:right}
 #info_table table tr td{font-family:Tahoma, Geneva, sans-serif; text-align:right;padding:5px;}
 #dif{background-color:#f2f3f3;}
 .tabe_info{margin-left:5px;}
@@ -926,3 +961,13 @@ height:95px;
 #adv_video{background-color:#e9e7e3;margin-top:-5px;}
 #iframe{padding:10px}
 #gallery li{display:inline;}
+#avatar{position:absolute;margin-left:620px;margin-top:20px;}
+
+#comments_div{background-color:#fff;background-image:url(../images/ecailles.png);margin-top:-5px;padding:10px 0 20px 0;}
+#comment_name{margin-left:620px;}
+textarea {resize:vertical;}
+#comment_info{margin-bottom:20px;}	 
+#comment_info  
+ 
+#comment_form{float:right;background-image:url(../images/ecailles.png);padding-top:0px}
+#no_comment{}	 

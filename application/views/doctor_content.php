@@ -13,18 +13,10 @@
 
                     <div class="clear"></div>
 
-                    <table width="600px" style="text-align:right; font-size:14px;">
+                    <table width="600px" style="text-align:right; font-size:12px;">
                         <tbody>
                             <tr>
                              <td width="50%">
-
-                                    التيليفون:                                                              
-                                    <font color="#057de7">
-                                    <?php echo $value->phone; ?>                                                         </font>
-                                    <img src="<?php echo base_url(); ?>images/bullet_red.png" width="16" height="16" class="icon">
-                                </td>
-                                                               
-                                 <td width="50%">
 
                                     التخصص :                                                               
                                     <font color="#057de7">
@@ -32,6 +24,15 @@
                                     <img src="<?php echo base_url(); ?>images/bullet_red.png"
                                          width="16" height="16" 
                                          class="icon">
+                                </td>
+                                                               
+                                 <td width="50%">
+
+                                   
+                                          التيليفون:                                                              
+                                    <font color="#057de7" style="font-size:13px;">
+                                    <?php echo $value->phone; ?>                                                         </font>
+                                    <img src="<?php echo base_url(); ?>images/bullet_red.png" width="16" height="16" class="icon">
                                 </td>
                                
                             </tr>
@@ -132,6 +133,5 @@
     <?php } ?>
 </div>
 
-<div class="clear"></div>			<div class='wp-pagenavi'>
 
-</div>	
+	

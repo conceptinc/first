@@ -23,7 +23,7 @@
 
 
                 <li  class="current_page_item"><a href="<?php echo base_url(); ?>site/"><strong>الرئيسيه</strong></a></li>	
-                <li class="page_item page-item-"><a href="#"><strong>الاطباء</strong></a>
+                <li class="page_item page-item-"><a href="#"><strong>مواعيد الاطباء</strong></a>
                     <ul class="sub-menu">
 
                         <?php
